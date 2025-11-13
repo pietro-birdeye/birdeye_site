@@ -1,0 +1,109 @@
+export type NavItemKind = 'home' | 'showcase';
+
+export interface NavItem {
+  id: string;
+  title: string;
+  path: string;
+  kind: NavItemKind;
+  summary?: string;
+}
+
+export interface NavGroup {
+  id: string;
+  title: string;
+  items: NavItem[];
+}
+
+export interface ShowcasePage {
+  slug: string;
+  title: string;
+  path: string;
+  htmlPath: string;
+  css: string[];
+  summary?: string;
+}
+
+const showcaseModules = import.meta.glob('../html/harmony-showcase/*.html', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+});
+
+const toSlug = (path: string) => path.split('/').pop()?.replace(/\.html(?:\?raw)?$/, '') ?? '';
+const toTitle = (slug: string) =>
+  slug
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+
+const showcaseCssMap: Record<string, string[]> = {
+  button: ['@harmony/components/button.css'],
+  segmented: ['@harmony/components/segmented.css'],
+  textfield: ['@harmony/components/textfield.css'],
+  colors: ['@harmony/tokens/tokens.css'],
+  typography: ['@harmony/tokens/tokens.css'],
+  dropdown: ['@harmony/components/dropdown.css'],
+  expander: ['@harmony/components/expander.css'],
+  toggle: ['@harmony/components/toggle.css'],
+  tabs: ['@harmony/components/tabs.css'],
+  textrename: ['@harmony/components/textrename.css'],
+  bob: [],
+  'widget-faq': [], // FAQ widget has inline styles
+};
+
+const showcasePaths = Object.keys(showcaseModules).sort();
+export const showcasePages: ShowcasePage[] = showcasePaths.map((path) => {
+  const slug = toSlug(path);
+  const title = toTitle(slug);
+  return {
+    slug,
+    title,
+    path: `#/harmony/${slug}`,
+    htmlPath: path,
+    css: showcaseCssMap[slug] ?? [],
+  } satisfies ShowcasePage;
+});
+
+export const showcaseIndex = new Map(showcasePages.map((page) => [page.slug, page] as const));
+
+// Optional navigation config to group and order showcase pages
+import { navConfig } from './nav.config';
+interface NavConfigGroup { id: string; title: string; items: string[] }
+interface NavConfig { groups: NavConfigGroup[] }
+
+const allShowcaseSlugs = new Set(showcasePages.map((p) => p.slug));
+
+const pageToNav = (page: ShowcasePage): NavItem => ({
+  id: `showcase-${page.slug}`,
+  title: page.title,
+  path: page.path,
+  kind: 'showcase' as const,
+  summary: page.summary,
+});
+
+const buildShowcaseGroups = (): NavGroup[] => {
+  if (!navConfig) {
+    // Fallback: single group with all showcase pages
+    return [{ id: 'components', title: 'Components', items: showcasePages.map(pageToNav) }];
+  }
+  const remaining = new Set(allShowcaseSlugs);
+  const groups: NavGroup[] = [];
+  for (const g of navConfig.groups) {
+    const items: NavItem[] = [];
+    for (const slug of g.items) {
+      const page = showcaseIndex.get(slug);
+      if (!page) continue;
+      items.push(pageToNav(page));
+      remaining.delete(slug);
+    }
+    if (items.length) groups.push({ id: g.id, title: g.title, items });
+  }
+  // Ignore pages not listed in config; no implicit 'Other' group
+  return groups;
+};
+
+export const navGroups: NavGroup[] = buildShowcaseGroups();
+
+export const navIndex = new Map<string, NavItem>();
+navGroups.forEach((group) => {
+  group.items.forEach((item) => navIndex.set(item.path, item));
+});

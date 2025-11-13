@@ -1,0 +1,12 @@
+packages:
+  - admin
+  - joni
+  - prague
+  - steve
+  - harmony
+  - harmony/*
+  - tooling/*
+  - lab/*
+
+onlyBuiltDependencies:
+  - esbuild

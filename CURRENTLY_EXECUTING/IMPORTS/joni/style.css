@@ -1,0 +1,55 @@
+@import '../harmony/tokens.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui, system-ui, sans-serif);
+  background: var(--color-system-gray-6);
+  color: var(--color-text);
+}
+
+
+.stage {
+  width: 100%;
+  padding-inline: 60px;
+}
+
+.grid {
+  width: 100%;
+   padding-inline: 20px;
+  max-width: 1600px;
+  margin-inline: auto;
+}
+
+.header,
+.subheader,
+.product {
+  min-height: 480px;
+}
+
+.header {
+  display: flex;
+  gap: 1rem;
+}
+
+.ablock,
+.bblock {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm, 0.5rem);
+}
+
+.ablock {
+  background: var(--color-system-blue);
+  color: var(--color-system-white);
+}
+
+.bblock {
+  background: var(--color-system-cyan);
+  color: var(--color-system-black);
+}

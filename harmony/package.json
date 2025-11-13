@@ -1,0 +1,13 @@
+{
+  "name": "@ck/harmony",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.15.1",
+  "main": "index.html",
+  "scripts": {
+    "build": "node ../scripts/build-harmony.js && node ../scripts/copy-harmony-assets.js",
+    "prepare": "pnpm run build"
+  }
+}
+
+

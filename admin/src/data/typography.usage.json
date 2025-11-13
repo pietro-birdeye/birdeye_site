@@ -1,0 +1,313 @@
+[
+  {
+    "var": "--fs-11",
+    "rem": 0.6875,
+    "count": 10,
+    "components": [
+      "button",
+      "dropdown",
+      "menuactions",
+      "slider",
+      "tabs",
+      "textedit",
+      "textfield"
+    ],
+    "occurrences": [
+      {
+        "component": "button",
+        "selector": ".harm-btn-ictxt[data-size=\"xs\"]",
+        "file": "button/button.css"
+      },
+      {
+        "component": "button",
+        "selector": ".harm-btn-txt[data-size=\"xs\"]",
+        "file": "button/button.css"
+      },
+      {
+        "component": "dropdown",
+        "selector": ".harm-dropdown[data-size=\"sm\"] .harm-dropdown__value-label",
+        "file": "dropdown/dropdown.css"
+      },
+      {
+        "component": "dropdown",
+        "selector": ".harm-dropdown[data-size=\"sm\"] .harm-dropdown__value-choice",
+        "file": "dropdown/dropdown.css"
+      },
+      {
+        "component": "menuactions",
+        "selector": ".harm-btn-menuactions[data-size=\"xs\"]",
+        "file": "menuactions/menuactions.css"
+      },
+      {
+        "component": "slider",
+        "selector": ".harm-slider[data-size=\"sm\"]",
+        "file": "slider/slider.css"
+      },
+      {
+        "component": "tabs",
+        "selector": ".harm-tabs[data-size=\"sm\"] .harm-tab__label",
+        "file": "tabs/tabs.css"
+      },
+      {
+        "component": "textedit",
+        "selector": ".harm-textedit[data-size=\"sm\"] .harm-textedit__previewin",
+        "file": "textedit/textedit.css"
+      },
+      {
+        "component": "textfield",
+        "selector": ".harm-textfield[data-size=\"sm\"] .harm-textfield__display-label",
+        "file": "textfield/textfield.css"
+      },
+      {
+        "component": "textfield",
+        "selector": ".harm-textfield[data-size=\"sm\"] .harm-textfield__field",
+        "file": "textfield/textfield.css"
+      }
+    ]
+  },
+  {
+    "var": "--fs-12",
+    "rem": 0.75,
+    "count": 12,
+    "components": [
+      "button",
+      "dropdown",
+      "menuactions",
+      "slider",
+      "tabs",
+      "textedit",
+      "textfield",
+      "toggle"
+    ],
+    "occurrences": [
+      {
+        "component": "button",
+        "selector": ".harm-btn-ictxt[data-size=\"sm\"]",
+        "file": "button/button.css"
+      },
+      {
+        "component": "button",
+        "selector": ".harm-btn-txt[data-size=\"sm\"]",
+        "file": "button/button.css"
+      },
+      {
+        "component": "dropdown",
+        "selector": ".harm-dropdown[data-size=\"md\"] .harm-dropdown__value-label",
+        "file": "dropdown/dropdown.css"
+      },
+      {
+        "component": "dropdown",
+        "selector": ".harm-dropdown[data-size=\"md\"] .harm-dropdown__value-choice",
+        "file": "dropdown/dropdown.css"
+      },
+      {
+        "component": "menuactions",
+        "selector": ".harm-btn-menuactions[data-size=\"sm\"]",
+        "file": "menuactions/menuactions.css"
+      },
+      {
+        "component": "slider",
+        "selector": ".harm-slider",
+        "file": "slider/slider.css"
+      },
+      {
+        "component": "tabs",
+        "selector": ".harm-tab__label",
+        "file": "tabs/tabs.css"
+      },
+      {
+        "component": "textedit",
+        "selector": ".harm-textedit__previewin",
+        "file": "textedit/textedit.css"
+      },
+      {
+        "component": "textedit",
+        "selector": ".harm-textedit[data-size=\"md\"] .harm-textedit__previewin",
+        "file": "textedit/textedit.css"
+      },
+      {
+        "component": "textfield",
+        "selector": ".harm-textfield[data-size=\"md\"] .harm-textfield__display-label",
+        "file": "textfield/textfield.css"
+      },
+      {
+        "component": "textfield",
+        "selector": ".harm-textfield[data-size=\"md\"] .harm-textfield__field",
+        "file": "textfield/textfield.css"
+      },
+      {
+        "component": "toggle",
+        "selector": ".harm-toggle[data-size=\"sm\"] .harm-toggle__label",
+        "file": "toggle/toggle.css"
+      }
+    ]
+  },
+  {
+    "var": "--fs-13",
+    "rem": 0.8125,
+    "count": 5,
+    "components": [
+      "button",
+      "menuactions",
+      "slider",
+      "tabs"
+    ],
+    "occurrences": [
+      {
+        "component": "button",
+        "selector": ".harm-btn-ictxt[data-size=\"md\"]",
+        "file": "button/button.css"
+      },
+      {
+        "component": "button",
+        "selector": ".harm-btn-txt[data-size=\"md\"]",
+        "file": "button/button.css"
+      },
+      {
+        "component": "menuactions",
+        "selector": ".harm-btn-menuactions[data-size=\"md\"]",
+        "file": "menuactions/menuactions.css"
+      },
+      {
+        "component": "slider",
+        "selector": ".harm-slider[data-size=\"lg\"]",
+        "file": "slider/slider.css"
+      },
+      {
+        "component": "tabs",
+        "selector": ".harm-tabs[data-size=\"lg\"] .harm-tab__label",
+        "file": "tabs/tabs.css"
+      }
+    ]
+  },
+  {
+    "var": "--fs-14",
+    "rem": 0.875,
+    "count": 12,
+    "components": [
+      "button",
+      "dropdown",
+      "textedit",
+      "textfield",
+      "toggle"
+    ],
+    "occurrences": [
+      {
+        "component": "button",
+        "selector": ".harm-btn-ictxt[data-size=\"lg\"]",
+        "file": "button/button.css"
+      },
+      {
+        "component": "button",
+        "selector": ".harm-btn-txt[data-size=\"lg\"]",
+        "file": "button/button.css"
+      },
+      {
+        "component": "dropdown",
+        "selector": ".harm-dropdown__value-label",
+        "file": "dropdown/dropdown.css"
+      },
+      {
+        "component": "dropdown",
+        "selector": ".harm-dropdown__value-choice",
+        "file": "dropdown/dropdown.css"
+      },
+      {
+        "component": "dropdown",
+        "selector": ".harm-dropdown[data-size=\"lg\"] .harm-dropdown__value-label",
+        "file": "dropdown/dropdown.css"
+      },
+      {
+        "component": "dropdown",
+        "selector": ".harm-dropdown[data-size=\"lg\"] .harm-dropdown__value-choice",
+        "file": "dropdown/dropdown.css"
+      },
+      {
+        "component": "textedit",
+        "selector": ".harm-textedit[data-size=\"lg\"] .harm-textedit__previewin",
+        "file": "textedit/textedit.css"
+      },
+      {
+        "component": "textfield",
+        "selector": ".harm-textfield__display-label",
+        "file": "textfield/textfield.css"
+      },
+      {
+        "component": "textfield",
+        "selector": ".harm-textfield__field",
+        "file": "textfield/textfield.css"
+      },
+      {
+        "component": "textfield",
+        "selector": ".harm-textfield[data-size=\"lg\"] .harm-textfield__display-label",
+        "file": "textfield/textfield.css"
+      },
+      {
+        "component": "textfield",
+        "selector": ".harm-textfield[data-size=\"lg\"] .harm-textfield__field",
+        "file": "textfield/textfield.css"
+      },
+      {
+        "component": "toggle",
+        "selector": ".harm-toggle[data-size=\"md\"] .harm-toggle__label",
+        "file": "toggle/toggle.css"
+      }
+    ]
+  },
+  {
+    "var": "--fs-15",
+    "rem": 0.9375,
+    "count": 3,
+    "components": [
+      "button",
+      "textrename"
+    ],
+    "occurrences": [
+      {
+        "component": "button",
+        "selector": ".harm-btn-ictxt[data-size=\"xl\"]",
+        "file": "button/button.css"
+      },
+      {
+        "component": "button",
+        "selector": ".harm-btn-txt[data-size=\"xl\"]",
+        "file": "button/button.css"
+      },
+      {
+        "component": "textrename",
+        "selector": ".harm-textrename__input",
+        "file": "textrename/textrename.css"
+      }
+    ]
+  },
+  {
+    "var": "--fs-16",
+    "rem": 1,
+    "count": 1,
+    "components": [
+      "toggle"
+    ],
+    "occurrences": [
+      {
+        "component": "toggle",
+        "selector": ".harm-toggle[data-size=\"lg\"] .harm-toggle__label",
+        "file": "toggle/toggle.css"
+      }
+    ]
+  },
+  {
+    "var": "--fs-18",
+    "rem": 1.125,
+    "count": 1,
+    "components": [
+      "textrename"
+    ],
+    "occurrences": [
+      {
+        "component": "textrename",
+        "selector": ".harm-textrename__label",
+        "file": "textrename/textrename.css"
+      }
+    ]
+  }
+]

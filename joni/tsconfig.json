@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.app-base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "types": []
+  },
+  "include": ["src"]
+}

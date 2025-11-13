@@ -1,0 +1,239 @@
+<div class="harmony-preview typography-page">
+  <style>
+    /* Page-scoped overrides — fluid rows that never wrap blocks */
+    .typography-page .row {
+      display: flex;
+      flex-wrap: nowrap;                 /* never wrap blocks */
+      align-items: center;
+      column-gap: clamp(4px, 2vw, 32px); /* outer gutter shrinks first */
+      row-gap: 0;
+      width: 100%;
+      overflow-x: auto;                  /* fallback if still too narrow */
+      -webkit-overflow-scrolling: touch;
+    }
+    .typography-page .row-header { flex: 0 0 clamp(80px, 12vw, 160px); white-space: nowrap; }
+    /* Text sample */
+    .typography-page .specdpreview { display: inline-flex; align-items: center; gap: clamp(4px, 1vw, 12px); flex: 0 1 auto; min-width: 0; white-space: nowrap; }
+    .typography-page .preview-specs { width: clamp(56px, 14vw, 160px); text-align: right; overflow: hidden; text-overflow: ellipsis; }
+    .typography-page .componentpreview { justify-content: flex-start; }
+  </style>
+
+  <h3 class="section-header">Headings</h3>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Heading 1</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.heading-1</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="heading-1">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Heading 2</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.heading-2</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="heading-2">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Heading 3</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.heading-3</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="heading-3">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Heading 4</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.heading-4</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="heading-4">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Heading 5</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.heading-5</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="heading-5">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Heading 6</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.heading-6</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="heading-6">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-header">Body</h3>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Body</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.body</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="body">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Body Small</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.body-small</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="body-small">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Body Large</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.body-large</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="body-large">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-header">Labels & Captions</h3>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Label</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.label</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="label">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Label Small</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.label-small</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="label-small">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Caption</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.caption</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="caption">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Caption Small</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.caption-small</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="caption-small">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-header">Overline</h3>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Overline</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.overline</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="overline">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-cols="1">
+    <div class="row-header">Overline Small</div>
+    <div class="specdpreview">
+      <div class="preview-specs">
+        <div class="preview-specs__row">
+          <span class="preview-specs__detail">.overline-small</span>
+        </div>
+      </div>
+      <div class="componentpreview">
+        <div class="overline-small">The quick brown fox jumps over the lazy dog</div>
+      </div>
+    </div>
+  </div>
+
+</div>

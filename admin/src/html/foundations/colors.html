@@ -1,0 +1,643 @@
+<div class="harmony-preview colors-page">
+  <style>
+    /* local-only helpers for the color chips */
+    .chip { inline-size: 72px; block-size: 56px; border-radius: var(--control-radius-lg); }
+    .token-label { color: color-mix(in oklab, var(--devstudio-text), transparent 30%); }
+    /* neutral contrast: light uses black mix, dark uses white mix */
+    .nc { background: color-mix(in oklab, black 25%, var(--neutral-base)); }
+    :root[data-theme="dark"] .nc { background: color-mix(in oklab, white 25%, var(--neutral-base)); }
+
+    /* Page-scoped overrides — fluid rows that never wrap blocks */
+    .colors-page .row {
+      display: flex;
+      flex-wrap: nowrap;                 /* never wrap blocks */
+      align-items: center;
+      column-gap: clamp(4px, 2vw, 32px); /* outer gutter shrinks first */
+      row-gap: 0;
+      width: 100%;
+      overflow-x: auto;                  /* fallback if still too narrow */
+      -webkit-overflow-scrolling: touch;
+    }
+    .colors-page .row-header { flex: 0 0 clamp(80px, 12vw, 160px); white-space: nowrap; }
+    /* Tight label+chip pair; allow overall pair to shrink */
+    .colors-page .specdpreview { display: inline-flex; align-items: center; gap: clamp(4px, 1vw, 12px); flex: 0 1 auto; min-width: 0; white-space: nowrap; }
+    .colors-page .preview-specs { width: clamp(56px, 14vw, 160px); text-align: right; overflow: hidden; text-overflow: ellipsis; }
+    .colors-page .componentpreview { justify-content: flex-start; }
+
+  </style>
+
+  <!-- System -->
+  <h3>System</h3>
+
+  <!-- Red -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Red</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-red</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-red);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">red-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-red-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">red.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-red-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">red.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-red-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">red.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-red-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">red.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-red-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">red.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-red-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Orange -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Orange</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-orange</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-orange);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">orange-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-orange-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">orange.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-orange-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">orange.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-orange-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">orange.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-orange-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">orange.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-orange-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">orange.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-orange-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Yellow -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Yellow</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-yellow</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-yellow);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">yellow-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-yellow-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">yellow.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-yellow-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">yellow.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-yellow-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">yellow.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-yellow-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">yellow.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-yellow-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">yellow.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-yellow-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Green -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Green</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-green</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-green);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">green-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-green-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">green.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-green-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">green.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-green-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">green.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-green-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">green.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-green-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">green.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-green-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Mint -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Mint</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-mint</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-mint);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">mint-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-mint-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">mint.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-mint-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">mint.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-mint-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">mint.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-mint-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">mint.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-mint-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">mint.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-mint-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Teal -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Teal</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-teal</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-teal);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">teal-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-teal-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">teal.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-teal-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">teal.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-teal-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">teal.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-teal-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">teal.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-teal-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">teal.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-teal-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Cyan -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Cyan</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-cyan</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-cyan);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">cyan-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-cyan-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">cyan.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-cyan-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">cyan.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-cyan-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">cyan.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-cyan-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">cyan.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-cyan-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">cyan.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-cyan-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Blue -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Blue</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-blue</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-blue);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">blue-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-blue-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">blue.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-blue-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">blue.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-blue-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">blue.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-blue-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">blue.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-blue-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">blue.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-blue-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Indigo -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Indigo</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-indigo</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-indigo);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">indigo-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-indigo-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">indigo.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-indigo-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">indigo.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-indigo-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">indigo.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-indigo-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">indigo.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-indigo-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">indigo.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-indigo-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Purple -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Purple</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-purple</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-purple);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">purple-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-purple-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">purple.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-purple-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">purple.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-purple-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">purple.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-purple-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">purple.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-purple-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">purple.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-purple-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Pink -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Pink</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-pink</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-pink);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">pink-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-pink-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">pink.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-pink-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">pink.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-pink-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">pink.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-pink-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">pink.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-pink-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">pink.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-pink-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Brown -->
+  <div class="row" data-cols="2" data-kind="system">
+    <div class="row-header">Brown</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-brown</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-brown);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">brown-contrast</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-brown-contrast);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">brown.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-brown-1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">brown.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-brown-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">brown.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-brown-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">brown.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-brown-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">brown.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-brown-5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Neutrals -->
+  <h3>Neutrals</h3>
+
+  <!-- Gray -->
+  <div class="row" data-cols="2">
+    <div class="row-header">Gray</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-gray</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-contrast</span></div>
+      <div class="componentpreview"><div class="chip nc" style="--neutral-base: var(--color-system-gray);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-step1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-step2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-step3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-step4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-step5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Gray 2 -->
+  <div class="row" data-cols="2">
+    <div class="row-header">Gray 2</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-gray-2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-2-contrast</span></div>
+      <div class="componentpreview"><div class="chip nc" style="--neutral-base: var(--color-system-gray-2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-2.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-2-step1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-2.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-2-step2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-2.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-2-step3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-2.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-2-step4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-2.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-2-step5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Gray 3 -->
+  <div class="row" data-cols="2">
+    <div class="row-header">Gray 3</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-gray-3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-3-contrast</span></div>
+      <div class="componentpreview"><div class="chip nc" style="--neutral-base: var(--color-system-gray-3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-3.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-3-step1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-3.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-3-step2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-3.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-3-step3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-3.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-3-step4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-3.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-3-step5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Gray 4 -->
+  <div class="row" data-cols="2">
+    <div class="row-header">Gray 4</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-gray-4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-4-contrast</span></div>
+      <div class="componentpreview"><div class="chip nc" style="--neutral-base: var(--color-system-gray-4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-4.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-4-step1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-4.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-4-step2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-4.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-4-step3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-4.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-4-step4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-4.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-4-step5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Gray 5 -->
+  <div class="row" data-cols="2">
+    <div class="row-header">Gray 5</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-gray-5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-5);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-5-contrast</span></div>
+      <div class="componentpreview"><div class="chip nc" style="--neutral-base: var(--color-system-gray-5);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-5.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-5-step1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-5.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-5-step2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-5.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-5-step3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-5.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-5-step4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-5.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-5-step5);"></div></div>
+    </div>
+  </div>
+
+  <!-- Gray 6 -->
+  <div class="row" data-cols="2">
+    <div class="row-header">Gray 6</div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">--color-system-gray-6</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-6);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-6-contrast</span></div>
+      <div class="componentpreview"><div class="chip nc" style="--neutral-base: var(--color-system-gray-6);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-6.1</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-6-step1);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-6.2</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-6-step2);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-6.3</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-6-step3);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-6.4</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-6-step4);"></div></div>
+    </div>
+    <div class="specdpreview">
+      <div class="preview-specs"><span class="token-label">gray-6.5</span></div>
+      <div class="componentpreview"><div class="chip" style="background:var(--color-system-gray-6-step5);"></div></div>
+    </div>
+  </div>
+</div>
+<script type="module">
+  (() => {
+    const rows = document.querySelectorAll('.specdpreview');
+    rows.forEach((row) => {
+      const label = row.querySelector('.token-label');
+      if (!label) return;
+      const chip = row.querySelector('.componentpreview .chip');
+      if (!chip) return;
+      const match = chip.style.background.match(/var\((--color-system-[^)]+)\)/);
+      if (!match) return;
+      const token = match[1].replace('--color-system-', '');
+      label.textContent = token;
+    });
+  })();
+</script>

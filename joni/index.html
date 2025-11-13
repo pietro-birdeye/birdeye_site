@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joni Sandbox</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="section-name">
+      <div class="stage stage-hero">
+        <div data-global-nav></div>
+        <div class="grid">
+          <div class="ablock">
+            <div class="joni-label">Joni · Creative Sandbox</div>
+            <h1>Site layout experiments fueled by Harmony tokens</h1>
+            <p class="joni-caption">
+              The stage/grid structure defines the foundational rhythm—the first grid contains A/B blocks.
+            </p>
+          </div>
+          <div class="bblock">
+            <div class="joni-hero-card joni-hero-card--primary">
+              <h2>Primary message</h2>
+              <p>Use Harmony tokens to keep spacing and colors consistent across every block.</p>
+            </div>
+            <div class="joni-hero-card joni-hero-card--accent">
+              <h2>Secondary callout</h2>
+              <p>Accent surfaces can reuse the same color palette while staying within the grid.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-name">
+      <div class="stage">
+        <div class="grid">
+          <div class="ablock">
+            <h3>Supporting sections</h3>
+            <p>
+              Everything inside this grid remains in block A for now. Future rows may reuse B, but we control placement
+              explicitly.
+            </p>
+            <p class="joni-caption">
+              Additional copy, diffused call-to-actions, or detail bullets can live here while keeping the rhythm consistent.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-name">
+      <div class="stage">
+        <div class="grid">
+          <div class="ablock">
+            <div class="joni-product joni-product--hero">
+              <h3>Product hero</h3>
+              <p>Compose stacked content blocks with Harmony spacing tokens (var(--space-4) etc.).</p>
+            </div>
+            <div class="joni-product joni-product--details">
+              <p>Additional details, specs, or testimonials can sit below the hero while staying within the grid.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/script.ts"></script>
+  </body>
+</html>
