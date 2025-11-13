@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "outputDirectory": "steve/public",
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
         "installCommand": "pnpm install",
-        "buildCommand": "pnpm build"
+        "buildCommand": "pnpm build",
+        "distDir": "steve/public"
       }
     }
   ]
