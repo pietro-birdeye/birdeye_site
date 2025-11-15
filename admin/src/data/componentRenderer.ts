@@ -28,6 +28,15 @@ type Preview = {
 
 const wrapPreviewComponents = new Set<string>(['button', 'textrename']);
 
+const DIETER_BODY_CLASS_BY_SIZE: Record<string, string> = {
+  md: 'body-m',
+  lg: 'body-m',
+  xl: 'body-l',
+  '2xl': 'body-l',
+  '3xl': 'body-xl',
+  '4xl': 'body-xl',
+};
+
 const withParent = (context: RuntimeContext, parent?: RuntimeContext): RuntimeContext => ({
   ...context,
   __parent: parent,
@@ -161,6 +170,12 @@ const buildPreviewsFromDefaults = (defaults: any[]): Preview[] => {
         }
 
         const appliedSize = typeof context.size === 'string' ? context.size : undefined;
+        if (appliedSize) {
+          const bodyClass = DIETER_BODY_CLASS_BY_SIZE[appliedSize];
+          if (bodyClass) {
+            context.bodyClass = bodyClass;
+          }
+        }
         const appliedVariant = typeof context.variant === 'string' ? context.variant : undefined;
 
         const typeKey =

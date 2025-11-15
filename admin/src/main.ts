@@ -1,5 +1,7 @@
+import '@harmony/components/button/button.css';
 import { navGroups, showcaseIndex, showcaseModules } from './data/routes';
 import { STEVE_URL } from './data/env';
+import birdeyeLogo from '../../steve/public/v1/logos/birdeyelogo.svg';
 
 // Inject Harmony tokens from Steve if STEVE_URL is provided
 if (STEVE_URL) {
@@ -32,7 +34,22 @@ appRoot.append(shell);
 
 const navHeader = document.createElement('header');
 navHeader.className = 'docs-shell__brand';
-navHeader.innerHTML = '<h2 class="heading-2 docs-shell__brand-title">Harmony</h2>';
+navHeader.style.display = 'flex';
+navHeader.style.alignItems = 'center';
+navHeader.style.gap = '0.5rem';
+
+const navLogo = document.createElement('img');
+navLogo.src = birdeyeLogo;
+navLogo.alt = 'Birdeye logo';
+navLogo.style.width = '32px';
+navLogo.style.height = '32px';
+navLogo.style.objectFit = 'contain';
+
+const navTitle = document.createElement('h2');
+navTitle.className = 'heading-2 docs-shell__brand-title';
+navTitle.textContent = 'Harmony';
+
+navHeader.append(navLogo, navTitle);
 sidebar.append(navHeader);
 
 const nav = document.createElement('nav');

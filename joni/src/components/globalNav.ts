@@ -1,218 +1,99 @@
+import { steveLogoUrl } from '../utils/steve';
+
 const navTemplate = `
-<header class="site-header is-sticky" data-header>
-  <div class="container header-row">
-    <a class="brand" href="#">Joni</a>
-    <nav class="primary-nav">
-      <button
-        class="nav-btn"
-        data-menu-toggle
-        aria-expanded="false"
-        aria-controls="mega-solutions"
-      >
-        Solutions ▾
-      </button>
-      <button
-        class="nav-btn"
-        data-menu-toggle
-        aria-expanded="false"
-        aria-controls="mega-products"
-      >
-        Products ▾
-      </button>
-      <a class="nav-link" href="#culture">Culture</a>
-      <button
-        class="nav-btn"
-        data-menu-toggle
-        aria-expanded="false"
-        aria-controls="mega-resources"
-      >
-        Resources ▾
-      </button>
-      <a class="nav-link" href="#pricing">Pricing</a>
-    </nav>
-    <div class="header-actions">
-      <div class="phone">📞 1 800 561 3357</div>
-      <a class="nav-link" href="#signin">Sign In</a>
-      <a class="nav-link" href="#demo">Watch Demo</a>
+<header class="site-header" data-header>
+  <div class="stage">
+    <div class="grid">
+      <div class="nav" role="navigation" aria-label="Primary">
+        <div class="nav-l">
+          <div class="logo-wrapper">
+            <a class="brand" href="#" aria-label="Birdeye">
+              <img class="brand-logo" src="" alt="Birdeye logo" />
+            </a>
+          </div>
+          <div class="menu-wrapper">
+            <button class="diet-btn-ictxt diet-nav-btn" data-size="xl" data-variant="secondary" type="button">
+              <span class="diet-btn-ictxt__label body-m">Platform</span>
+              <span class="diet-btn-ictxt__icon" data-icon="chevron-down"></span>
+            </button>
+            <button class="diet-btn-ictxt diet-nav-btn" data-size="xl" data-variant="secondary" type="button">
+              <span class="diet-btn-ictxt__label body-m">Solutions</span>
+              <span class="diet-btn-ictxt__icon" data-icon="chevron-down"></span>
+            </button>
+            <button class="diet-btn-ictxt diet-nav-btn" data-size="xl" data-variant="secondary" type="button">
+              <span class="diet-btn-ictxt__label body-m">Partners</span>
+            </button>
+            <button class="diet-btn-ictxt diet-nav-btn" data-size="xl" data-variant="secondary" type="button">
+              <span class="diet-btn-ictxt__label body-m">Resources</span>
+              <span class="diet-btn-ictxt__icon" data-icon="chevron-down"></span>
+            </button>
+            <button class="diet-btn-ictxt diet-nav-btn" data-size="xl" data-variant="secondary" type="button">
+              <span class="diet-btn-ictxt__label body-m">Pricing</span>
+            </button>
+          </div>
+        </div>
+        <div class="nav-r">
+          <div class="cta-wrapper"></div>
+          <div class="phone-wrapper"></div>
+        </div>
+      </div>
     </div>
   </div>
-  <div id="mega-solutions" class="mega" data-mega hidden>
-    <div class="mega-inner">
-      <a class="mega-item" href="#reputation">Reputation</a>
-      <a class="mega-item" href="#messaging">Messaging</a>
-      <a class="mega-item" href="#listings">Listings</a>
-    </div>
-  </div>
-  <div id="mega-products" class="mega" data-mega hidden>
-    <div class="mega-inner">
-      <a class="mega-item" href="#platform">Platform</a>
-      <a class="mega-item" href="#automation">Automation</a>
-      <a class="mega-item" href="#analytics">Analytics</a>
-    </div>
-  </div>
-  <div id="mega-resources" class="mega" data-mega hidden>
-    <div class="mega-inner">
-      <a class="mega-item" href="#blog">Blog</a>
-      <a class="mega-item" href="#stories">Customer Stories</a>
-      <a class="mega-item" href="#guides">Guides</a>
-    </div>
-  </div>
+  <div class="mega-panel" aria-label="Navbar mega panel"></div>
 </header>
 `;
 
-const OPEN_DELAY_MS = 80;
-const CLOSE_DELAY_MS = 160;
-
 export function mountGlobalNav(root: HTMLElement) {
   root.innerHTML = navTemplate;
-  const header = root.querySelector<HTMLElement>('[data-header]');
-  if (header) {
-    initNavMega(header);
+  const logo = root.querySelector<HTMLImageElement>('.brand-logo');
+  if (logo) {
+    logo.src = steveLogoUrl();
   }
+  initNavMenu(root);
 }
 
-function initNavMega(header: HTMLElement) {
-  if (header.dataset.navMega === 'initialized') {
-    return;
-  }
-  header.dataset.navMega = 'initialized';
-  const triggers = Array.from(header.querySelectorAll<HTMLButtonElement>('[data-menu-toggle]'));
-  const panels = new Map<string, HTMLElement>();
-  triggers.forEach((trigger) => {
-    const targetId = trigger.getAttribute('aria-controls');
-    if (!targetId) return;
-    const panel = header.querySelector<HTMLElement>(`#${CSS.escape(targetId)}`);
-    if (panel) {
-      panels.set(targetId, panel);
-    }
-  });
+const MEGA_CONTENT: Record<string, string> = {
+  Platform: 'Platform content goes here.',
+  Solutions: 'Solutions content goes here.',
+  Partners: 'Partners content goes here.',
+  Resources: 'Resources content goes here.',
+  Pricing: 'Pricing content goes here.',
+};
 
-  if (!triggers.length || !panels.size) {
-    return;
-  }
+function initNavMenu(root: HTMLElement) {
+  const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('.diet-nav-btn'));
+  const megaPanel = root.querySelector<HTMLElement>('.mega-panel');
+  let openButton: HTMLButtonElement | null = null;
 
-  let openId: string | null = null;
-  let openTimer = 0;
-  let closeTimer = 0;
-  let backdrop: HTMLDivElement | null = null;
-
-  function ensureBackdrop() {
-    if (backdrop) {
-      return backdrop;
-    }
-    const existing = document.querySelector<HTMLDivElement>('.nav-backdrop');
-    if (existing) {
-      backdrop = existing;
-      return backdrop;
-    }
-    const element = document.createElement('div');
-    element.className = 'nav-backdrop';
-    element.addEventListener('click', closeAll);
-    document.body.appendChild(element);
-    backdrop = element;
-    return element;
+  function closeMenu() {
+    if (!megaPanel) return;
+    megaPanel.classList.remove('is-open');
+    openButton?.setAttribute('aria-expanded', 'false');
+    openButton = null;
   }
 
-  function isWithinHeader(element: EventTarget | null) {
-    return element instanceof Node && header.contains(element);
-  }
-
-  function show(id: string) {
-    if (openId === id) {
+  function openMenu(button: HTMLButtonElement, label: string) {
+    if (!megaPanel) return;
+    if (openButton === button) {
+      closeMenu();
       return;
     }
-    panels.forEach((panel, pid) => {
-      if (pid !== id) {
-        hide(pid);
-      }
-    });
-    const panel = panels.get(id);
-    const trigger = triggers.find((t) => t.getAttribute('aria-controls') === id);
-    if (!panel || !trigger) return;
-    trigger.setAttribute('aria-expanded', 'true');
-    panel.hidden = false;
-    panel.classList.add('is-open');
-    openId = id;
-    header.classList.add('nav-open');
-    ensureBackdrop().classList.add('is-visible');
+    buttons.forEach((btn) => btn.setAttribute('aria-expanded', 'false'));
+    button.setAttribute('aria-expanded', 'true');
+    openButton = button;
+    megaPanel.textContent = MEGA_CONTENT[label] ?? '';
+    megaPanel.classList.add('is-open');
   }
 
-  function hide(id: string) {
-    const panel = panels.get(id);
-    const trigger = triggers.find((t) => t.getAttribute('aria-controls') === id);
-    if (!panel || !trigger) return;
-    trigger.setAttribute('aria-expanded', 'false');
-    panel.classList.remove('is-open');
-    panel.hidden = true;
-    if (openId === id) {
-      openId = null;
-    }
-    if (!openId) {
-      header.classList.remove('nav-open');
-      backdrop?.classList.remove('is-visible');
-    }
-  }
-
-  function closeAll() {
-    panels.forEach((_, key) => hide(key));
-  }
-
-  function scheduleOpen(id: string) {
-    clearTimeout(openTimer);
-    clearTimeout(closeTimer);
-    openTimer = setTimeout(() => show(id), OPEN_DELAY_MS);
-  }
-
-  function scheduleClose(id: string) {
-    clearTimeout(openTimer);
-    clearTimeout(closeTimer);
-    closeTimer = setTimeout(() => hide(id), CLOSE_DELAY_MS);
-  }
-
-  triggers.forEach((trigger) => {
-    const targetId = trigger.getAttribute('aria-controls');
-    if (!targetId) return;
-    trigger.addEventListener('mouseenter', () => scheduleOpen(targetId));
-    trigger.addEventListener('mouseleave', (event) => {
-      const to = event.relatedTarget;
-      if (to && panels.get(targetId)?.contains(to as Node)) return;
-      scheduleClose(targetId);
-    });
-    trigger.addEventListener('click', (event) => {
-      event.preventDefault();
-      if (openId === targetId) {
-        closeAll();
-      } else {
-        show(targetId);
-      }
-    });
-    trigger.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        closeAll();
-      }
-    });
-  });
-
-  panels.forEach((panel, id) => {
-    panel.addEventListener('mouseenter', () => {
-      clearTimeout(closeTimer);
-    });
-    panel.addEventListener('mouseleave', (event) => {
-      const to = event.relatedTarget;
-      if (to && isWithinHeader(to)) return;
-      scheduleClose(id);
-    });
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      closeAll();
-    }
+  buttons.forEach((button) => {
+    const label = button.querySelector<HTMLElement>('.diet-btn-ictxt__label')?.textContent?.trim() ?? '';
+    button.setAttribute('aria-expanded', 'false');
+    button.addEventListener('click', () => openMenu(button, label));
   });
 
   document.addEventListener('click', (event) => {
-    if (!isWithinHeader(event.target)) {
-      closeAll();
+    if (!root.contains(event.target as Node)) {
+      closeMenu();
     }
   });
 }

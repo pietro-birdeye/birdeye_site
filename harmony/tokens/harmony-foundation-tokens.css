@@ -30,6 +30,9 @@
   --control-size-md: 1.5rem;    /* 24px */
   --control-size-lg: 1.75rem;   /* 28px */
   --control-size-xl: 2rem;      /* 32px */
+  --control-size-2xl: 2.25rem;  /* 36px */
+  --control-size-3xl: 2.5rem;   /* 40px */
+  --control-size-4xl: 2.75rem;  /* 44px */
 
   /* Control spacing */
   --control-padding-inline: var(--space-2); /* 8px universal control side padding */
