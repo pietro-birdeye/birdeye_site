@@ -47,7 +47,6 @@ const showcaseCssMap: Record<string, string[]> = {
   tabs: ['@harmony/components/tabs.css'],
   textrename: ['@harmony/components/textrename.css'],
   bob: [],
-  'widget-faq': [], // FAQ widget has inline styles
 };
 
 const showcasePaths = Object.keys(showcaseModules).sort();

@@ -1,6 +1,6 @@
 # Harmony
 
-Harmony is Clickeen’s shared design system: a token-first, CSS-only library that powers Bob, Venice, and any future surfaces. This document explains how Harmony is structured, how to integrate it safely, and how the Harmony Admin preview harness fits into the workflow.
+Harmony is Birdeye’s shared design system: a token-first, CSS-only library that powers Bob, Venice, and any future surfaces. This document explains how Harmony is structured, how to integrate it safely, and how the Harmony Admin preview harness fits into the workflow.
 
 - **Component contracts:** `harmonycomponents.md` (live reference for each primitive).
 - **This readme:** global tokens, typography, colors, icons, and the Harmony Admin harness.
@@ -250,4 +250,3 @@ After changing core renderer or CSS imports, run through:
 ---
 
 This README keeps Harmony’s global rules and tooling in one place. For per-component integration details, always defer to `harmonycomponents.md`.
-

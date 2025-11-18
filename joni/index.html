@@ -7,58 +7,59 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <div class="section-name">
+    <div class="section-name" data-section-name="Hero block">
       <div class="stage stage-hero">
         <div data-global-nav></div>
-        <div class="grid">
-          <div class="ablock">
-            <div class="joni-label">Joni · Creative Sandbox</div>
-            <h1>Site layout experiments fueled by Harmony tokens</h1>
-            <p class="joni-caption">
-              The stage/grid structure defines the foundational rhythm—the first grid contains A/B blocks.
-            </p>
-          </div>
-          <div class="bblock">
-            <div class="joni-hero-card joni-hero-card--primary">
-              <h2>Primary message</h2>
-              <p>Use Harmony tokens to keep spacing and colors consistent across every block.</p>
-            </div>
-            <div class="joni-hero-card joni-hero-card--accent">
-              <h2>Secondary callout</h2>
-              <p>Accent surfaces can reuse the same color palette while staying within the grid.</p>
-            </div>
-          </div>
+        <div class="grid grid-horizontal" style="background: var(--color-system-indigo-4, #d3dafb);">
+          <div class="ablock">a block</div>
+          <div class="bblock">b block</div>
         </div>
       </div>
     </div>
 
-    <div class="section-name">
-      <div class="stage">
-        <div class="grid">
-          <div class="ablock">
-            <h3>Supporting sections</h3>
-            <p>
-              Everything inside this grid remains in block A for now. Future rows may reuse B, but we control placement
-              explicitly.
-            </p>
-            <p class="joni-caption">
-              Additional copy, diffused call-to-actions, or detail bullets can live here while keeping the rhythm consistent.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- WIP: product-block section -->
 
-    <div class="section-name">
+
+    <div class="section-name" data-section-name="Product block">
       <div class="stage">
-        <div class="grid">
-          <div class="ablock">
-            <div class="joni-product joni-product--hero">
-              <h3>Product hero</h3>
-              <p>Compose stacked content blocks with Harmony spacing tokens (var(--space-4) etc.).</p>
+        <div class="grid grid-vertical" style="background: var(--color-system-pink-4, #f7d7e1);">
+          <div class="largecallout" style="padding-top: var(--space-12, 3.5rem); padding-bottom: var(--space-8, 2rem);">
+            <h1 class="display-hero">Multi-location Marketing is hard. That's why we built ✨ AI Agents.</h1>
+            <button class="diet-btn-txt" data-size="4xl" data-variant="line1">See all Products</button>
+          </div>
+          <div class="cardrow">
+            <div class="card01">
+            <h3 class="heading-1">Listings</h3>
+              <p>Listings AI Agents build presence across platforms, boosting visibility, traffic, and customer growth.</p>
+              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Listings Optimization Agent</button>
             </div>
-            <div class="joni-product joni-product--details">
-              <p>Additional details, specs, or testimonials can sit below the hero while staying within the grid.</p>
+            <div class="card01">
+            <h3 class="heading-1">Reviews</h3>
+              <p>Reviews AI Agents turn reputation into revenue by automating requests, responses, and review marketing.</p>
+              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Review Response Agent</button>
+            </div>
+            <div class="card01">
+            <h3 class="heading-1">Social</h3>
+              <p>Social AI Agents analyze trends, publish at peak times, and respond on-brand to every interaction.</p>
+              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Social Engagement Agent</button>
+            </div>
+          </div>
+
+          <div class="cardrow">
+            <div class="card01">
+            <h3 class="heading-1">Search</h3>
+              <p>Search AI delivers visibility, insights, and execution to make your brand discoverable across AI platforms.</p>
+              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Search Optimization Agent</button>
+            </div>
+            <div class="card01">
+            <h3 class="heading-1">Insights</h3>
+              <p>Competitors AI identifies, benchmarks, and analyzes competitors with real-time insights to give your brand an edge.</p>
+              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Reporting Agent</button>
+            </div>
+            <div class="card01">
+            <h3 class="heading-1">Marketing automation</h3>
+              <p>Marketing automation makes review solicitation simple and allows business owners to reach out to their customers easily.</p>
+              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Segmentation Agent</button>
             </div>
           </div>
         </div>

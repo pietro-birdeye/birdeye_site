@@ -17,6 +17,7 @@ function extractClasses(css) {
   const headings = [];
   const body = [];
   const labels = [];
+  const display = [];
 
   // Extract heading classes (.heading-1 through .heading-6)
   // Handle multi-selector declarations like "h1, .heading-1 {"
@@ -59,7 +60,14 @@ function extractClasses(css) {
 
   labels.push(...Array.from(labelSet));
 
-  return { headings, body, labels };
+  const displayMatches = css.matchAll(/\.display-(h[1-6]|hero)[\s,{]/gm);
+  const displaySet = new Set();
+  for (const match of displayMatches) {
+    displaySet.add(`display-${match[1]}`);
+  }
+  display.push(...Array.from(displaySet));
+
+  return { headings, body, labels, display };
 }
 
 function nameFromClass(className) {
@@ -93,7 +101,7 @@ function buildSection(title, classes, sample) {
 ${rows}`;
 }
 
-function buildPage(headings, body, labels) {
+function buildPage(headings, body, labels, display) {
   return `<div class="harmony-preview typography-page">
   <style>
     /* Page-scoped overrides — fluid rows that never wrap blocks */
@@ -115,6 +123,8 @@ function buildPage(headings, body, labels) {
     .typography-page .componentpreview { justify-content: flex-start; }
   </style>
 
+${buildSection('Display', display, DEFAULT_SAMPLE)}
+
 ${buildSection('Headings', headings, DEFAULT_SAMPLE)}
 
 ${buildSection('Body', body, DEFAULT_SAMPLE)}
@@ -130,11 +140,11 @@ function main() {
   }
 
   const css = fs.readFileSync(TOKENS_FILE, 'utf8');
-  const { headings, body, labels } = extractClasses(css);
+  const { headings, body, labels, display } = extractClasses(css);
 
   console.log(`[generate-typography-page] Extracted ${headings.length} headings, ${body.length} body styles, ${labels.length} label styles`);
 
-  const html = buildPage(headings, body, labels);
+  const html = buildPage(headings, body, labels, display);
 
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
   fs.writeFileSync(OUT_FILE, html, 'utf8');

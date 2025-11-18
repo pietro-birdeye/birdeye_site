@@ -473,7 +473,7 @@ This file is the canonical quick-reference for the CSS-only primitives shipped f
 ## Textrename
 
 - **USE**
-  Inline rename affordance for entities (e.g., widget titles) that toggles between read-only and edit states.
+-  Inline rename affordance for entities (e.g., component titles) that toggles between read-only and edit states.
 
 - **UX**
   - View state resembles a neutral button; hover/press provide subtle feedback.
@@ -484,7 +484,7 @@ This file is the canonical quick-reference for the CSS-only primitives shipped f
   - Host code manages `data-state="view|editing"` on `.harm-textrename`.
   - Clicking the view pill should flip to `editing`, copy the current value into the input, and focus it.
   - `Enter` commits changes (trim empty to default label); `Escape` or blur reverts.
-  - Available sizes: `data-size="md|lg|xl"` (Clickeen defaults to `xl`).
+  - Available sizes: `data-size="md|lg|xl"` (Birdeye defaults to `xl`).
 
 - **Types & Variants**
   | Type | Variants | Supported sizes (`data-size`) | Notes |
@@ -494,16 +494,16 @@ This file is the canonical quick-reference for the CSS-only primitives shipped f
 - **Anatomy**
   ```html
   <div class="harm-textrename" data-size="xl" data-state="view">
-    <div class="harm-textrename__view" role="button" aria-label="Rename widget">
-      <span class="harm-textrename__label heading-3">Untitled widget</span>
+    <div class="harm-textrename__view" role="button" aria-label="Rename title">
+      <span class="harm-textrename__label heading-3">Untitled label</span>
     </div>
     <div class="harm-textrename__edit">
       <input
         class="harm-textrename__input heading-3"
         type="text"
-        value="Untitled widget"
-        placeholder="Untitled widget"
-        aria-label="Widget name"
+        value="Untitled label"
+        placeholder="Untitled label"
+        aria-label="Label name"
       />
     </div>
   </div>

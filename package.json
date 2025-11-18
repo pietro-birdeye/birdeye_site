@@ -1,5 +1,5 @@
 {
-  "name": "clickeen",
+  "name": "birdeye",
   "private": true,
   "packageManager": "pnpm@10.15.1",
   "scripts": {
@@ -10,7 +10,7 @@
     "typecheck": "turbo typecheck",
     "e2e": "turbo run e2e",
     "verify:harmony-button": "node scripts/check-harmony-button.js",
-    "verify:pre-ship": "pnpm --filter @clickeen/pre-ship verify"
+    "verify:pre-ship": "pnpm --filter @birdeye/pre-ship verify"
   },
   "devDependencies": {
     "eslint": "^9.5.0",

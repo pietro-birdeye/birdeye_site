@@ -517,7 +517,7 @@ function closeRename(root: HTMLElement, commit: boolean) {
   const input = root.querySelector<HTMLInputElement>('.harm-textrename__input');
   if (!view || !input) return;
   if (commit) {
-    const next = (input.value ?? '').trim() || 'Untitled widget';
+    const next = (input.value ?? '').trim() || 'Untitled label';
     const label = view.querySelector<HTMLElement>('.harm-textrename__label');
     if (label) label.textContent = next;
     input.value = next;
