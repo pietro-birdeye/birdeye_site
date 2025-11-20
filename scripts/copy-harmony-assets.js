@@ -25,7 +25,8 @@ function copyRecursiveSync(source, destination) {
 
 function main() {
   const src = path.resolve(__dirname, '..', 'harmony', 'dist');
-  const dst = path.resolve(__dirname, '..', 'steve', 'public', 'v1', 'harmony');
+  const dstHarmony = path.resolve(__dirname, '..', 'steve', 'public', 'v1', 'harmony');
+  const dstIconsRoot = path.resolve(__dirname, '..', 'steve', 'public', 'v1', 'icons');
 
   if (!fs.existsSync(src)) {
     console.error(`[copy-harmony-assets] Source not found: ${src}. Did you run pnpm --filter @ck/harmony build?`);
@@ -34,22 +35,49 @@ function main() {
 
   // If destination is a symlink, remove it first
   try {
-    const st = fs.lstatSync(dst);
+    const st = fs.lstatSync(dstHarmony);
     if (st.isSymbolicLink()) {
-      fs.unlinkSync(dst);
+      fs.unlinkSync(dstHarmony);
     }
   } catch (_) {}
 
   // Clean destination then copy
-  fs.rmSync(dst, { recursive: true, force: true });
-  fs.mkdirSync(dst, { recursive: true });
-  copyRecursiveSync(src, dst);
+  fs.rmSync(dstHarmony, { recursive: true, force: true });
+  fs.mkdirSync(dstHarmony, { recursive: true });
+  copyRecursiveSync(src, dstHarmony);
+
+  // Keep consumer-facing SVG icon CDN (steve/public/v1/icons/svg) in sync with Harmony dist icons.
+  const distIconsDir = path.join(src, 'icons');
+  if (fs.existsSync(distIconsDir)) {
+    const distIconsSvg = path.join(distIconsDir, 'svg');
+    if (fs.existsSync(distIconsSvg)) {
+      const dstIconsSvg = path.join(dstIconsRoot, 'svg');
+      if (!fs.existsSync(dstIconsRoot)) {
+        fs.mkdirSync(dstIconsRoot, { recursive: true });
+      }
+      // Replace only the svg/ folder; leave registry.json and any other metadata files intact.
+      fs.rmSync(dstIconsSvg, { recursive: true, force: true });
+      fs.mkdirSync(dstIconsSvg, { recursive: true });
+      copyRecursiveSync(distIconsSvg, dstIconsSvg);
+    }
+
+    // Optionally mirror icons.json alongside registry.json for tooling that expects it.
+    const distIconsManifest = path.join(distIconsDir, 'icons.json');
+    if (fs.existsSync(distIconsManifest)) {
+      if (!fs.existsSync(dstIconsRoot)) {
+        fs.mkdirSync(dstIconsRoot, { recursive: true });
+      }
+      const dstIconsManifest = path.join(dstIconsRoot, 'icons.json');
+      fs.copyFileSync(distIconsManifest, dstIconsManifest);
+    }
+  }
+
   // Ensure README exists to keep directory in repo but prevent asset commits
-  const readmePath = path.join(dst, 'README.md');
+  const readmePath = path.join(dstHarmony, 'README.md');
   if (!fs.existsSync(readmePath)) {
     fs.writeFileSync(readmePath, '# Generated assets\n\nThis folder is populated by the Harmony copy step. Do not commit files here.');
   }
-  console.log(`[copy-harmony-assets] Copied assets from ${src} to ${dst}`);
+  console.log(`[copy-harmony-assets] Copied assets from ${src} to ${dstHarmony} and synced icons to steve/public/v1/icons/svg`);
 }
 
 main();

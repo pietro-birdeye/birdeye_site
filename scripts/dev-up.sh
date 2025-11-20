@@ -4,6 +4,11 @@ set -euo pipefail
 ROOT_DIR=$(cd "$(dirname "$0")/.." && pwd)
 cd "$ROOT_DIR"
 
+echo "[dev-up] Killing existing dev processes (if any)"
+pkill -f "pnpm --filter @clickeen/steve dev" 2>/dev/null || true
+pkill -f "pnpm --filter @clickeen/devstudio dev" 2>/dev/null || true
+pkill -f "pnpm --filter @birdeye/joni dev" 2>/dev/null || true
+
 echo "[dev-up] Killing stale listeners on 4000,4173,5173 (if any)"
 for p in 4000 4173 5173; do
   PIDS=$(lsof -ti tcp:$p -sTCP:LISTEN 2>/dev/null || true)
@@ -33,7 +38,7 @@ for i in {1..15}; do
 done
 
 echo "[dev-up] Starting Joni (4173) with STEVE_URL=$STEVE_URL"
-PORT=4173 VITE_STEVE_URL="$STEVE_URL" nohup pnpm --filter @clickeen/joni dev > CURRENTLY_EXECUTING/joni.dev.log 2>&1 &
+PORT=4173 VITE_STEVE_URL="$STEVE_URL" nohup pnpm --filter @birdeye/joni dev > CURRENTLY_EXECUTING/joni.dev.log 2>&1 &
 JONI_PID=$!
 echo "[dev-up] Joni PID: $JONI_PID"
 for i in {1..15}; do

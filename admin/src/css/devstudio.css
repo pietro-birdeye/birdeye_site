@@ -4,6 +4,7 @@
    3. Page scaffolds (typography grid, component previews)
    4. Utilities */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
 @import '../../../harmony/tokens/harmony-foundation-tokens.css';
 @import '../../../harmony/tokens/harmony-color-tokens.css';
 @import '../../../harmony/tokens/harmony-typography.css';

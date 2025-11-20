@@ -67,6 +67,8 @@ message
 checkmark.message
 bubble
 bubble.left.and.bubble.right
+phone
+phone.fill
 gear
 gearshape
 gearshape.2
@@ -89,6 +91,7 @@ selection.pin.in.out
 desktopcomputer
 macbook.and.ipod
 iphone
+car.rear
 tachometer
 face.smiling
 xmark.triangle.circle.square
@@ -112,6 +115,7 @@ waveform.path.ecg
 line.3.horizontal.decrease.circle
 character.circle
 textformat.size.larger
+textformat.characters.dottedunderline
 bold
 italic
 underline

@@ -7,12 +7,15 @@
   --harmony-button-height: 3.125rem;
   --harmony-button-border-width: 1px;
   --harmony-button-border-radius: var(--control-radius-md, 0.375rem);
+  --harmony-button-size-xs: 1.25rem;
+  --harmony-button-padding-sm: var(--space-2, 0.5rem);
   --harmony-button-padding-md: var(--space-3, 0.75rem);
   --harmony-button-padding-lg: var(--space-3, 0.75rem);
   --harmony-button-padding-xl: var(--space-4, 1rem);
   --harmony-button-padding-2xl: var(--space-5, 1.25rem);
   --harmony-button-padding-3xl: var(--space-5, 1.25rem);
   --harmony-button-padding-4xl: var(--space-6, 1.5rem);
+  --harmony-button-size-sm: 1.5rem;
   --harmony-button-size-md: 2rem;
   --harmony-button-size-lg: 2.4rem;
   --harmony-button-size-xl: 2.8rem;
@@ -64,6 +67,13 @@
 
 .diet-btn-ictxt > * { pointer-events: none; }
 
+.diet-btn-ictxt[data-size="sm"] {
+  --btn-height: var(--harmony-button-size-sm);
+  --btn-radius: var(--control-radius-2xs);
+  gap: var(--space-0, 0.125rem);
+  padding-inline: var(--harmony-button-padding-sm);
+}
+
 .diet-btn-ictxt[data-size="md"] {
   --btn-height: var(--harmony-button-size-md);
   --btn-radius: var(--control-radius-2xs);
@@ -106,22 +116,32 @@
   padding-inline: var(--harmony-button-padding-4xl);
 }
 
+.diet-btn-ictxt[data-size="sm"] .diet-btn-ictxt__label,
+.diet-btn-txt[data-size="sm"] .diet-btn-txt__label {
+  font-size: var(--fs-13);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+}
+
 .diet-btn-ictxt[data-size="md"] .diet-btn-ictxt__label,
 .diet-btn-txt[data-size="md"] .diet-btn-txt__label {
-  font: 500 var(--fs-14)/var(--lh-tight) var(--font-ui);
-  letter-spacing: -0.005em;
+  font-size: var(--fs-14);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
 }
 
 .diet-btn-ictxt[data-size="lg"] .diet-btn-ictxt__label,
 .diet-btn-txt[data-size="lg"] .diet-btn-txt__label {
-  font: 500 var(--fs-16)/var(--lh-tight) var(--font-ui);
-  letter-spacing: -0.005em;
+  font-size: var(--fs-16);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
 }
 
 .diet-btn-ictxt[data-size="xl"] .diet-btn-ictxt__label,
 .diet-btn-txt[data-size="xl"] .diet-btn-txt__label {
-  font: 500 var(--fs-18)/var(--lh-tight) var(--font-ui);
-  letter-spacing: -0.005em;
+  font-size: var(--fs-18);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
 }
 
 .diet-btn-ictxt[data-size="2xl"] .diet-btn-ictxt__label,
@@ -130,8 +150,9 @@
 .diet-btn-txt[data-size="3xl"] .diet-btn-txt__label,
 .diet-btn-ictxt[data-size="4xl"] .diet-btn-ictxt__label,
 .diet-btn-txt[data-size="4xl"] .diet-btn-txt__label {
-  font: 500 var(--fs-20)/var(--lh-tight) var(--font-ui);
-  letter-spacing: -0.005em;
+  font-size: var(--fs-20);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
 }
 
 .diet-btn-ictxt__icon {
@@ -276,6 +297,12 @@
 
 .diet-btn-txt > * { pointer-events: none; }
 
+.diet-btn-txt[data-size="sm"] {
+  --btn-height: var(--harmony-button-size-sm);
+  --btn-radius: var(--control-radius-2xs);
+  padding-inline: var(--harmony-button-padding-sm);
+}
+
 .diet-btn-txt[data-size="md"] {
   --btn-height: var(--harmony-button-size-md);
   --btn-radius: var(--control-radius-2xs);
@@ -319,8 +346,7 @@
   align-items: center;
   white-space: nowrap;
   padding-inline: var(--space-0);
-  font: 500 var(--fs-32)/var(--lh-tight) var(--font-ui);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .diet-btn-txt:hover:not(:disabled):not([aria-disabled="true"]) {
@@ -420,6 +446,16 @@
 
 .diet-btn-ic > * { pointer-events: none; }
 
+.diet-btn-ic[data-size="xs"] {
+  --btn-height: var(--harmony-button-size-xs);
+  --btn-radius: var(--control-radius-2xs);
+}
+
+.diet-btn-ic[data-size="sm"] {
+  --btn-height: var(--harmony-button-size-sm);
+  --btn-radius: var(--control-radius-2xs);
+}
+
 .diet-btn-ic[data-size="md"] {
   --btn-height: var(--harmony-button-size-md);
   --btn-radius: var(--control-radius-2xs);
@@ -461,6 +497,16 @@
   inline-size: 100%;
   block-size: 100%;
   display: block;
+}
+
+.diet-btn-ic[data-size="xs"] .diet-btn-ic__icon {
+  inline-size: var(--icon-size-12, 0.75rem);
+  block-size: var(--icon-size-12, 0.75rem);
+}
+
+.diet-btn-ic[data-size="sm"] .diet-btn-ic__icon {
+  inline-size: var(--icon-size-16, 1rem);
+  block-size: var(--icon-size-16, 1rem);
 }
 
 .diet-btn-ic[data-size="md"] .diet-btn-ic__icon {
