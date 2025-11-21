@@ -21,7 +21,7 @@ const navTemplate = `
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    <span class="nav-label body-l">Platform</span>
+                    <span class="nav-label body-s">Platform</span>
                   </button>
                   <div class="DropdownContent mega-panel" aria-label="Platform menu"></div>
                 </div>
@@ -34,14 +34,14 @@ const navTemplate = `
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    <span class="nav-label body-l">Solutions</span>
+                    <span class="nav-label body-s">Solutions</span>
                   </button>
                   <div class="DropdownContent mega-panel" aria-label="Solutions menu"></div>
                 </div>
               </li>
               <li class="NavItem">
                 <a class="diet-nav-btn NavLink" href="#">
-                  <span class="nav-label body-l">Partners</span>
+                  <span class="nav-label body-s">Partners</span>
                 </a>
               </li>
               <li class="NavItem">
@@ -52,14 +52,14 @@ const navTemplate = `
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    <span class="nav-label body-l">Resources</span>
+                    <span class="nav-label body-s">Resources</span>
                   </button>
                   <div class="DropdownContent mega-panel" aria-label="Resources menu"></div>
                 </div>
               </li>
               <li class="NavItem">
                 <a class="diet-nav-btn NavLink" href="#">
-                  <span class="nav-label body-l">Pricing</span>
+                  <span class="nav-label body-s">Pricing</span>
                 </a>
               </li>
             </ul>
