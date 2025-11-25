@@ -8,6 +8,9 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "lottie-web": "^5.12.2"
+  },
   "devDependencies": {
     "typescript": "^5.9.3",
     "vite": "^7.1.7"

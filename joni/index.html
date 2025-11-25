@@ -93,8 +93,15 @@
             <article class="brand-card" role="listitem">
               <a class="brand-card__link" href="#" aria-label="Square Register"></a>
               <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card1.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card1.png" alt="Square Register" />
+                <div class="brand-card__svg brand-card__svg--one-platform" aria-hidden="true">
+                  <svg id="onePlatformSvg" viewBox="0 0 200 200" role="presentation">
+                    <circle class="initial-shape" cx="150" cy="70" r="20" />
+                    <rect class="initial-shape" x="135" y="130" width="30" height="30" />
+                    <path class="initial-shape" d="M50 70L75 115L25 115L50 70Z" />
+                    <rect class="initial-shape" x="70" y="40" width="60" height="60" />
+                    <circle class="final-shape" cx="100" cy="100" r="40" />
+                  </svg>
+                </div>
               </div>
               <div class="brand-card__content">
                 <div class="brand-card__title-row">
@@ -109,8 +116,23 @@
             <article class="brand-card" role="listitem">
               <a class="brand-card__link" href="#" aria-label="Square Handheld"></a>
               <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card2.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card2.png" alt="Square Handheld" />
+                <div class="brand-card__svg brand-card__svg--unified" aria-hidden="true">
+                  <svg id="unifiedDataSvg" viewBox="0 0 200 200" role="presentation">
+                    <circle class="initial-shape" cx="155" cy="100" r="8" />
+                    <circle class="initial-shape" cx="148" cy="73" r="8" />
+                    <circle class="initial-shape" cx="128" cy="53" r="8" />
+                    <circle class="initial-shape" cx="100" cy="45" r="8" />
+                    <circle class="initial-shape" cx="72" cy="53" r="8" />
+                    <circle class="initial-shape" cx="52" cy="73" r="8" />
+                    <circle class="initial-shape" cx="45" cy="100" r="8" />
+                    <circle class="initial-shape" cx="52" cy="127" r="8" />
+                    <circle class="initial-shape" cx="72" cy="147" r="8" />
+                    <circle class="initial-shape" cx="100" cy="155" r="8" />
+                    <circle class="initial-shape" cx="128" cy="147" r="8" />
+                    <circle class="initial-shape" cx="148" cy="127" r="8" />
+                    <circle class="final-shape" cx="100" cy="100" r="40" />
+                  </svg>
+                </div>
               </div>
               <div class="brand-card__content">
                 <div class="brand-card__title-row">
@@ -125,8 +147,32 @@
             <article class="brand-card" role="listitem">
               <a class="brand-card__link" href="#" aria-label="Square Terminal"></a>
               <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card3.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card3.png" alt="Square Terminal" />
+                <div class="brand-card__svg brand-card__svg--custom" aria-hidden="true">
+                  <svg id="customAiSvg" viewBox="0 0 200 200" role="presentation">
+                    <!-- Column 1: circles -->
+                    <circle class="initial-shape" cx="50" cy="60" r="7" />
+                    <circle class="initial-shape" cx="50" cy="90" r="7" />
+                    <circle class="initial-shape" cx="50" cy="120" r="7" />
+                    <circle class="initial-shape" cx="50" cy="150" r="7" />
+                    <!-- Column 2: triangles (centred on x=85) -->
+                    <path class="initial-shape" d="M85 48 L95 68 L75 68 Z" />
+                    <path class="initial-shape" d="M85 78 L95 98 L75 98 Z" />
+                    <path class="initial-shape" d="M85 108 L95 128 L75 128 Z" />
+                    <path class="initial-shape" d="M85 138 L95 158 L75 158 Z" />
+                    <!-- Column 3: squares (side 14, centred on x=120) -->
+                    <rect class="initial-shape" x="113" y="53" width="14" height="14" />
+                    <rect class="initial-shape" x="113" y="83" width="14" height="14" />
+                    <rect class="initial-shape" x="113" y="113" width="14" height="14" />
+                    <rect class="initial-shape" x="113" y="143" width="14" height="14" />
+                    <!-- Column 4: pentagons (centred on x=155, y aligned to 60/90/120/150) -->
+                    <path class="initial-shape" d="M155 50 L165 56 L161 68 L149 68 L145 56 Z" />
+                    <path class="initial-shape" d="M155 80 L165 86 L161 98 L149 98 L145 86 Z" />
+                    <path class="initial-shape" d="M155 110 L165 116 L161 128 L149 128 L145 116 Z" />
+                    <path class="initial-shape" d="M155 140 L165 146 L161 158 L149 158 L145 146 Z" />
+                    <!-- Final merged shape -->
+                    <circle class="final-shape" cx="100" cy="100" r="40" />
+                  </svg>
+                </div>
               </div>
               <div class="brand-card__content">
                 <div class="brand-card__title-row">
@@ -330,42 +376,89 @@
         <div class="grid split-block">
           <div class="split-block__content">
             <div class="largecallout">
-              <h2 class="display-h1">See your whole business click into place</h2>
+              <span class="split-block__eyebrow body-s">Point of sale</span>
+              <h2 class="display-h1">AI Agents built to deliver positive outcomes</h2>
             </div>
             <div class="split-block__list">
-              <button class="split-block__item is-active" type="button" data-split-img="pos.png">
-                <div class="split-block__item-title heading-5">Take payments</div>
-                <div class="split-block__item-desc body-m">
-                  Sell anything in person and online with a point of sale platform that works for whatever you sell.
+              <button class="split-block__item is-active" type="button" aria-expanded="true" data-split-img="01.jpg">
+                <div class="split-block__item-head">
+                  <div class="split-block__item-title heading-5">Watch your brand rank #1 on AI and Google Search</div>
+                  <span class="split-block__item-toggle" aria-hidden="true">−</span>
+                </div>
+                <div class="split-block__panel">
+                  <div class="split-block__item-desc body-m">
+                    Sell anything in person and online with a point of sale platform that works for whatever you sell.
+                  </div>
+                  <a class="split-block__cta body-m" href="#">
+                    Learn more
+                    <span class="split-block__cta-icon" data-icon="arrow.up.right"></span>
+                  </a>
                 </div>
               </button>
-              <button class="split-block__item" type="button" data-split-img="team.png">
-                <div class="split-block__item-title heading-5">Manage your team</div>
-                <div class="split-block__item-desc body-m">
-                  Run payroll, schedule shifts, and take care of admin — so your team can focus on performing their best.
+              <button class="split-block__item" type="button" aria-expanded="false" data-split-img="team.png">
+                <div class="split-block__item-head">
+                  <div class="split-block__item-title heading-5">Get a flawless reputation managed 24/7</div>
+                  <span class="split-block__item-toggle" aria-hidden="true">+</span>
+                </div>
+                <div class="split-block__panel">
+                  <div class="split-block__item-desc body-m">
+                    Run payroll, schedule shifts, and take care of admin — so your team can focus on performing their best.
+                  </div>
+                  <a class="split-block__cta body-m" href="#">
+                    Learn more
+                    <span class="split-block__cta-icon" data-icon="arrow.up.right"></span>
+                  </a>
                 </div>
               </button>
-              <button class="split-block__item" type="button" data-split-img="customers.png">
-                <div class="split-block__item-title heading-5">Grow your customer base</div>
-                <div class="split-block__item-desc body-m">
-                  Set up the right marketing campaigns and loyalty program to welcome new customers and keep them coming back.
+              <button class="split-block__item" type="button" aria-expanded="false" data-split-img="customers.png">
+                <div class="split-block__item-head">
+                  <div class="split-block__item-title heading-5">Automate content and boost brand growth</div>
+                  <span class="split-block__item-toggle" aria-hidden="true">+</span>
+                </div>
+                <div class="split-block__panel">
+                  <div class="split-block__item-desc body-m">
+                    Set up the right marketing campaigns and loyalty program to welcome new customers and keep them coming back.
+                  </div>
+                  <a class="split-block__cta body-m" href="#">
+                    Learn more
+                    <span class="split-block__cta-icon" data-icon="arrow.up.right"></span>
+                  </a>
                 </div>
               </button>
-              <button class="split-block__item" type="button" data-split-img="banking.png">
-                <div class="split-block__item-title heading-5">Control your cash flow²</div>
-                <div class="split-block__item-desc body-m">
-                  Bring your revenue under one roof. Instantly access your funds and get quicker access to loans.
+              <button class="split-block__item" type="button" aria-expanded="false" data-split-img="banking.png">
+                <div class="split-block__item-head">
+                  <div class="split-block__item-title heading-5">Take action on customer insights</div>
+                  <span class="split-block__item-toggle" aria-hidden="true">+</span>
+                </div>
+                <div class="split-block__panel">
+                  <div class="split-block__item-desc body-m">
+                    Bring your revenue under one roof. Instantly access your funds and get quicker access to loans.
+                  </div>
+                  <a class="split-block__cta body-m" href="#">
+                    Learn more
+                    <span class="split-block__cta-icon" data-icon="arrow.up.right"></span>
+                  </a>
                 </div>
               </button>
-              <button class="split-block__item" type="button" data-split-img="apps.png">
-                <div class="split-block__item-title heading-5">Connect your favorite apps</div>
-                <div class="split-block__item-desc body-m">
-                  Manage your entire business without jumping between tools by connecting hundreds of apps.
+              <button class="split-block__item" type="button" aria-expanded="false" data-split-img="apps.png">
+                <div class="split-block__item-head">
+                  <div class="split-block__item-title heading-5">Measure your performance by location</div>
+                  <span class="split-block__item-toggle" aria-hidden="true">+</span>
+                </div>
+                <div class="split-block__panel">
+                  <div class="split-block__item-desc body-m">
+                    Manage your entire business without jumping between tools by connecting hundreds of apps.
+                  </div>
+                  <a class="split-block__cta body-m" href="#">
+                    Learn more
+                    <span class="split-block__cta-icon" data-icon="arrow.up.right"></span>
+                  </a>
                 </div>
               </button>
             </div>
           </div>
           <div class="split-block__visual">
+            <div class="split-block__lottie" data-split-lottie></div>
             <img data-split-hero alt="Point of sale visual" />
             <div class="split-block__overlay"></div>
           </div>

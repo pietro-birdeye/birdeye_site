@@ -1,6 +1,7 @@
 import { ensureSteveComponentStylesheet, ensureSteveTokensStylesheet, steveOrigin } from './utils/steve';
 import { hydrateIcons } from './utils/icons';
 import { mountGlobalNav } from './components/globalNav';
+import type { AnimationItem } from 'lottie-web';
 
 ensureSteveTokensStylesheet();
 ensureSteveComponentStylesheet('button');
@@ -22,8 +23,18 @@ const brandPrev = document.querySelector<HTMLButtonElement>('[data-brand-prev]')
 const brandNext = document.querySelector<HTMLButtonElement>('[data-brand-next]');
 const splitItems = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-split-img]'));
 const splitHero = document.querySelector<HTMLImageElement>('[data-split-hero]');
+const splitLottie = document.querySelector<HTMLElement>('[data-split-lottie]');
 const industryImages = Array.from(document.querySelectorAll<HTMLImageElement>('[data-industry-img]'));
 const industryBg = document.querySelector<HTMLElement>('[data-industry-bg]');
+let splitLottiePlayer: AnimationItem | null = null;
+let lottieLibPromise: Promise<typeof import('lottie-web')> | null = null;
+
+const loadLottieLib = () => {
+  if (!lottieLibPromise) {
+    lottieLibPromise = import('lottie-web');
+  }
+  return lottieLibPromise;
+};
 
 if (g2Logo) {
   g2Logo.src = `${g2Base}/g2logo.svg`;
@@ -105,19 +116,51 @@ if (brandNext && brandRail) {
 // Split block image swapping
 if (splitHero && splitItems.length) {
   const setActive = (btn: HTMLButtonElement) => {
-    splitItems.forEach((b) => b.classList.remove('is-active'));
-    btn.classList.add('is-active');
+    splitItems.forEach((b) => {
+      const toggle = b.querySelector<HTMLElement>('.split-block__item-toggle');
+      b.classList.toggle('is-active', b === btn);
+      b.setAttribute('aria-expanded', b === btn ? 'true' : 'false');
+      if (toggle) {
+        toggle.textContent = b === btn ? '−' : '+';
+      }
+    });
     const file = btn.dataset.splitImg;
     if (file) {
       splitHero.src = `${steveOrigin()}/v1/split-block/${file}`;
       splitHero.decoding = 'async';
       splitHero.loading = 'lazy';
     }
+
+    if (splitLottie) {
+      const lottieSrc = `${steveOrigin()}/v1/split-block/Animations/Listings.json`;
+      loadLottieLib()
+        .then((lottie) => {
+          if (splitLottiePlayer) {
+            splitLottiePlayer.destroy();
+          }
+          splitLottiePlayer = lottie.loadAnimation({
+            container: splitLottie,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: lottieSrc,
+          });
+        })
+        .catch(() => {
+          // ignore if lottie fails
+        });
+    }
   };
 
   splitItems.forEach((btn) => {
     btn.addEventListener('click', () => setActive(btn));
     btn.addEventListener('focus', () => setActive(btn));
+    btn.addEventListener('keydown', (evt) => {
+      if (evt.key === 'Enter' || evt.key === ' ') {
+        evt.preventDefault();
+        setActive(btn);
+      }
+    });
   });
 
   setActive(splitItems[0]);
