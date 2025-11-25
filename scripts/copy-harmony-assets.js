@@ -46,6 +46,15 @@ function main() {
   fs.mkdirSync(dstHarmony, { recursive: true });
   copyRecursiveSync(src, dstHarmony);
 
+  // Ensure tokens are available at /v1/harmony/tokens/tokens.css (expected by consumers)
+  const tokensSrc = path.join(src, 'tokens.css');
+  const tokensDst = path.join(dstHarmony, 'tokens', 'tokens.css');
+  if (fs.existsSync(tokensSrc)) {
+    const tokensDir = path.dirname(tokensDst);
+    if (!fs.existsSync(tokensDir)) fs.mkdirSync(tokensDir, { recursive: true });
+    fs.copyFileSync(tokensSrc, tokensDst);
+  }
+
   // Keep consumer-facing SVG icon CDN (steve/public/v1/icons/svg) in sync with Harmony dist icons.
   const distIconsDir = path.join(src, 'icons');
   if (fs.existsSync(distIconsDir)) {

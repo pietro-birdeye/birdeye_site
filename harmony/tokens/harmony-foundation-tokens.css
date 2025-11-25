@@ -60,6 +60,8 @@
   --control-radius-2xl: 1.8rem;
   --control-radius-3xl: 2.2rem;
   --control-radius-4xl: 2.6rem;
+  --control-radius-5xl: 3rem;
+  --control-radius-6xl: 3.4rem;
 
   /* Icon sizing */
   --icon-size-12: 0.75rem;

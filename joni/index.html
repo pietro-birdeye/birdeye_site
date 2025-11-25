@@ -85,31 +85,106 @@
       </div>
     </div>
 
+    <!-- Main values section (duplicate of brand carousel for future customization) -->
+    <div class="section-name" data-section-name="Main values">
+      <div class="stage">
+        <div class="grid grid-vertical brand-carousel" style="padding-top: var(--space-12, 3.5rem); padding-bottom: var(--space-12, 3.5rem);">
+          <div class="main-values-grid" role="list">
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Register"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card1.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card1.png" alt="Square Register" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">One platform</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">Replace your fragmented stack with a single enterprise platform.</p>
+                </div>
+              </div>
+            </article>
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Handheld"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card2.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card2.png" alt="Square Handheld" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">Unified data</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">Unify customer data across every location and signal.</p>
+                </div>
+              </div>
+            </article>
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Terminal"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card3.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card3.png" alt="Square Terminal" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">Custom AI</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">Agents trained on your brand and industry to drive outcomes.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- WIP: product-block section -->
 
 
     <div class="section-name" data-section-name="Product block">
-      <div class="stage">
-        <div class="grid grid-vertical" style="background: var(--color-system-pink-4, #f7d7e1);">
-          <div class="largecallout" style="padding-top: var(--space-12, 3.5rem); padding-bottom: var(--space-8, 2rem);">
-            <h1 class="display-hero">Multi-location Marketing is hard. That's why we built ✨ AI Agents.</h1>
-            <button class="diet-btn-txt" data-size="4xl" data-variant="line1">See all Products</button>
+      <div class="stage" style="padding-top: var(--space-14, 4.5rem); padding-bottom: var(--space-14, 4.5rem); background: var(--color-system-brown-5, color-mix(in oklab, var(--color-system-brown), white 90%));">
+        <div class="grid grid-vertical" style="background: transparent;">
+          <div class="largecallout" style="padding-bottom: var(--space-8, 2rem);">
+            <h1 class="display-hero display-hero--stacked">
+              <span class="display-hero__line">Multi-location Marketing is hard.</span>
+              <span class="display-hero__line">
+                That's why we built&nbsp;<span class="display-hero__icon" data-icon="sparkles" style="inline-size: 1em; block-size: 1em;"></span> AI Agents.
+              </span>
+            </h1>
+            <button class="diet-btn-ictxt" data-size="lg" data-variant="line1">
+              <span class="diet-btn-ictxt__label">See all Products</span>
+              <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+            </button>
           </div>
           <div class="cardrow">
             <div class="card01">
             <h3 class="heading-1">Listings</h3>
               <p>Listings AI Agents build presence across platforms, boosting visibility, traffic, and customer growth.</p>
-              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Listings Optimization Agent</button>
+              <button class="diet-btn-ictxt" data-size="lg" data-variant="secondary">
+                <span class="diet-btn-ictxt__label">Listings Optimization Agent</span>
+                <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+              </button>
             </div>
             <div class="card01">
             <h3 class="heading-1">Reviews</h3>
               <p>Reviews AI Agents turn reputation into revenue by automating requests, responses, and review marketing.</p>
-              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Review Response Agent</button>
+              <button class="diet-btn-ictxt" data-size="lg" data-variant="secondary">
+                <span class="diet-btn-ictxt__label">Review Response Agent</span>
+                <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+              </button>
             </div>
             <div class="card01">
             <h3 class="heading-1">Social</h3>
               <p>Social AI Agents analyze trends, publish at peak times, and respond on-brand to every interaction.</p>
-              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Social Engagement Agent</button>
+              <button class="diet-btn-ictxt" data-size="lg" data-variant="secondary">
+                <span class="diet-btn-ictxt__label">Social Engagement Agent</span>
+                <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+              </button>
             </div>
           </div>
 
@@ -117,18 +192,285 @@
             <div class="card01">
             <h3 class="heading-1">Search</h3>
               <p>Search AI delivers visibility, insights, and execution to make your brand discoverable across AI platforms.</p>
-              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Search Optimization Agent</button>
+              <button class="diet-btn-ictxt" data-size="lg" data-variant="secondary">
+                <span class="diet-btn-ictxt__label">Search Optimization Agent</span>
+                <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+              </button>
             </div>
             <div class="card01">
             <h3 class="heading-1">Insights</h3>
               <p>Competitors AI identifies, benchmarks, and analyzes competitors with real-time insights to give your brand an edge.</p>
-              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Reporting Agent</button>
+              <button class="diet-btn-ictxt" data-size="lg" data-variant="secondary">
+                <span class="diet-btn-ictxt__label">Reporting Agent</span>
+                <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+              </button>
             </div>
             <div class="card01">
             <h3 class="heading-1">Marketing automation</h3>
               <p>Marketing automation makes review solicitation simple and allows business owners to reach out to their customers easily.</p>
-              <button class="diet-btn-txt" data-size="2xl" data-variant="line1">Segmentation Agent</button>
+              <button class="diet-btn-ictxt" data-size="lg" data-variant="secondary">
+                <span class="diet-btn-ictxt__label">Segmentation Agent</span>
+                <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand carousel section -->
+    <div class="section-name" data-section-name="Brand carousel">
+      <div class="stage" style="padding: 0;">
+        <div class="grid grid-vertical brand-carousel" style="padding-top: var(--space-12, 3.5rem);">
+          <div class="largecallout brand-carousel__header">
+            <h2 class="display-hero">Brand stories</h2>
+            <div class="brand-carousel__controls">
+              <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" data-brand-prev aria-label="Previous brand">
+                <span class="diet-btn-ic__icon" data-icon="arrow.left"></span>
+              </button>
+              <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" data-brand-next aria-label="Next brand">
+                <span class="diet-btn-ic__icon" data-icon="arrow.right"></span>
+              </button>
+            </div>
+          </div>
+          <div class="brand-carousel__rail" role="list" data-brand-rail style="padding-bottom: var(--space-12, 3.5rem);">
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Register"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card1.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card1.png" alt="Square Register" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">Square Register</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">The sleek, dual-screen system</p>
+                  <p class="body-s body-s--muted">$799 or $39/mo. over 24 months¹</p>
+                </div>
+              </div>
+            </article>
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Handheld"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card2.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card2.png" alt="Square Handheld" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">Square Handheld</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">The POS that moves with you</p>
+                  <p class="body-s body-s--muted">$399 or $37/mo. over 12 months¹</p>
+                </div>
+              </div>
+            </article>
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Terminal"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card3.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card3.png" alt="Square Terminal" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">Square Terminal</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">The receipt-printing POS</p>
+                  <p class="body-s body-s--muted">$299 or $27/mo. over 12 months¹</p>
+                </div>
+              </div>
+            </article>
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Stand"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card4.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card4.png" alt="Square Stand" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">Square Stand</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">The intuitive, swiveling iPad POS</p>
+                  <p class="body-s body-s--muted">$149 or $14/mo. over 12 months¹</p>
+                </div>
+              </div>
+            </article>
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Reader"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card5.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card5.png" alt="Square Reader" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">Square Reader</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">The portable reader for every tap and dip</p>
+                  <p class="body-s body-s--muted">$59</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Split block section -->
+    <div class="section-name" data-section-name="Split block">
+      <div class="stage" style="padding: 0;">
+        <div class="grid split-block">
+          <div class="split-block__content">
+            <div class="largecallout">
+              <h2 class="display-h1">See your whole business click into place</h2>
+            </div>
+            <div class="split-block__list">
+              <button class="split-block__item is-active" type="button" data-split-img="pos.png">
+                <div class="split-block__item-title heading-5">Take payments</div>
+                <div class="split-block__item-desc body-m">
+                  Sell anything in person and online with a point of sale platform that works for whatever you sell.
+                </div>
+              </button>
+              <button class="split-block__item" type="button" data-split-img="team.png">
+                <div class="split-block__item-title heading-5">Manage your team</div>
+                <div class="split-block__item-desc body-m">
+                  Run payroll, schedule shifts, and take care of admin — so your team can focus on performing their best.
+                </div>
+              </button>
+              <button class="split-block__item" type="button" data-split-img="customers.png">
+                <div class="split-block__item-title heading-5">Grow your customer base</div>
+                <div class="split-block__item-desc body-m">
+                  Set up the right marketing campaigns and loyalty program to welcome new customers and keep them coming back.
+                </div>
+              </button>
+              <button class="split-block__item" type="button" data-split-img="banking.png">
+                <div class="split-block__item-title heading-5">Control your cash flow²</div>
+                <div class="split-block__item-desc body-m">
+                  Bring your revenue under one roof. Instantly access your funds and get quicker access to loans.
+                </div>
+              </button>
+              <button class="split-block__item" type="button" data-split-img="apps.png">
+                <div class="split-block__item-title heading-5">Connect your favorite apps</div>
+                <div class="split-block__item-desc body-m">
+                  Manage your entire business without jumping between tools by connecting hundreds of apps.
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="split-block__visual">
+            <img data-split-hero alt="Point of sale visual" />
+            <div class="split-block__overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Industries block section -->
+    <div class="section-name" data-section-name="Industries block">
+      <div class="stage" style="padding-top: var(--space-12, 3.5rem); padding-bottom: var(--space-12, 3.5rem);">
+        <div class="grid grid-vertical industries-block">
+          <div class="largecallout brand-carousel__header">
+            <h2 class="display-hero">AI built for your industry and brand</h2>
+            <button class="diet-btn-ictxt" data-size="lg" data-variant="neutral" type="button">
+              <span class="diet-btn-ictxt__label">See all integrations</span>
+              <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+            </button>
+          </div>
+          <div class="industries-block__tabs" role="tablist" aria-label="Industry Selection">
+            <button class="industries-tab heading-5 is-active" type="button" aria-selected="true">Healthcare</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false">Real Estate</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false">Finance</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false">Self Storage</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false">Dental</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false">Restaurants</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false">Legal</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false">Auto</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false">Retail</button>
+          </div>
+          <div class="industries-block__photo" data-industry-bg="photo.png">
+            <figure class="industries-block__quote">
+              <img class="industries-block__quote-icon" data-industry-img="image.svg" alt="Five star rating" />
+              <blockquote class="body-l">
+                <span class="text-strong">The best review generation platform on the market! </span>
+                <span>It uses cutting-edge AI to analyze customer sentiments, allowing for precise and insightful feedback. A five-star solution all the way!</span>
+              </blockquote>
+              <figcaption class="industries-block__cite">
+                <div class="body-m">Ken Norquist</div>
+                <div class="body-s body-s--muted">Axia Women's Health</div>
+              </figcaption>
+            </figure>
+            <div class="industries-block__visual">
+              <img data-industry-img="frame-1410083112.svg" alt="Healthcare industry integrations visualization" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main values section (duplicate of brand carousel for future customization) -->
+    <div class="section-name" data-section-name="Main values">
+      <div class="stage">
+        <div class="grid grid-vertical brand-carousel" style="padding-top: var(--space-12, 3.5rem);">
+          <div class="main-values-grid" role="list">
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Register"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card1.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card1.png" alt="Square Register" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">Square Register</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">The sleek, dual-screen system</p>
+                  <p class="body-s body-s--muted">$799 or $39/mo. over 24 months¹</p>
+                </div>
+              </div>
+            </article>
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Handheld"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card2.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card2.png" alt="Square Handheld" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">Square Handheld</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">The POS that moves with you</p>
+                  <p class="body-s body-s--muted">$399 or $37/mo. over 12 months¹</p>
+                </div>
+              </div>
+            </article>
+            <article class="brand-card" role="listitem">
+              <a class="brand-card__link" href="#" aria-label="Square Terminal"></a>
+              <div class="brand-card__media">
+                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card3.mp4"></video>
+                <img class="brand-card__image" data-brand-img="card3.png" alt="Square Terminal" />
+              </div>
+              <div class="brand-card__content">
+                <div class="brand-card__title-row">
+                  <h3 class="heading-2">Square Terminal</h3>
+                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+                </div>
+                <div class="brand-card__text">
+                  <p class="body-m">The receipt-printing POS</p>
+                  <p class="body-s body-s--muted">$299 or $27/mo. over 12 months¹</p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </div>

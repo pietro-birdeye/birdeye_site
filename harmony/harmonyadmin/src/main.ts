@@ -1,5 +1,5 @@
 import '@harmony/tokens/tokens.css';
-import '@harmony/components/button.css';
+import '@harmony/components/button/button.css';
 
 import { showcasePages, showcaseIndex, navGroups, type NavItem } from './data/routes';
 import { getIcon } from './data/icons';

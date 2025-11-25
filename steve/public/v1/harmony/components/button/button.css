@@ -12,16 +12,10 @@
   --harmony-button-padding-md: var(--space-3, 0.75rem);
   --harmony-button-padding-lg: var(--space-3, 0.75rem);
   --harmony-button-padding-xl: var(--space-4, 1rem);
-  --harmony-button-padding-2xl: var(--space-5, 1.25rem);
-  --harmony-button-padding-3xl: var(--space-5, 1.25rem);
-  --harmony-button-padding-4xl: var(--space-6, 1.5rem);
   --harmony-button-size-sm: 1.5rem;
   --harmony-button-size-md: 2rem;
   --harmony-button-size-lg: 2.4rem;
   --harmony-button-size-xl: 2.8rem;
-  --harmony-button-size-2xl: 3.2rem;
-  --harmony-button-size-3xl: 3.6rem;
-  --harmony-button-size-4xl: 4rem;
   --harmony-button-gap: 0;
 }
 
@@ -77,43 +71,15 @@
 .diet-btn-ictxt[data-size="md"] {
   --btn-height: var(--harmony-button-size-md);
   --btn-radius: var(--control-radius-2xs);
-  gap: var(--space-0, 0.125rem);
+  gap: var(--space-2, 0.5rem);
   padding-inline: var(--harmony-button-padding-md);
 }
 
 .diet-btn-ictxt[data-size="lg"] {
   --btn-height: var(--harmony-button-size-lg);
   --btn-radius: var(--control-radius-2xs);
-  gap: var(--space-0, 0.125rem);
+  gap: var(--space-2, 0.5rem);
   padding-inline: var(--harmony-button-padding-lg);
-}
-
-.diet-btn-ictxt[data-size="xl"] {
-  --btn-height: var(--harmony-button-size-xl);
-  --btn-radius: var(--control-radius-xl);
-  gap: var(--space-0, 0.125rem);
-  padding-inline: var(--harmony-button-padding-xl);
-}
-
-.diet-btn-ictxt[data-size="2xl"] {
-  --btn-height: var(--harmony-button-size-2xl);
-  --btn-radius: var(--control-radius-2xl);
-  gap: var(--space-1, 0.25rem);
-  padding-inline: var(--harmony-button-padding-2xl);
-}
-
-.diet-btn-ictxt[data-size="3xl"] {
-  --btn-height: var(--harmony-button-size-3xl);
-  --btn-radius: var(--control-radius-3xl);
-  gap: var(--space-1, 0.25rem);
-  padding-inline: var(--harmony-button-padding-3xl);
-}
-
-.diet-btn-ictxt[data-size="4xl"] {
-  --btn-height: var(--harmony-button-size-4xl);
-  --btn-radius: var(--control-radius-4xl);
-  gap: var(--space-1, 0.25rem);
-  padding-inline: var(--harmony-button-padding-4xl);
 }
 
 .diet-btn-ictxt[data-size="sm"] .diet-btn-ictxt__label,
@@ -137,30 +103,13 @@
   letter-spacing: -0.02em;
 }
 
-.diet-btn-ictxt[data-size="xl"] .diet-btn-ictxt__label,
-.diet-btn-txt[data-size="xl"] .diet-btn-txt__label {
-  font-size: var(--fs-18);
-  line-height: var(--lh-tight);
-  letter-spacing: -0.02em;
-}
-
-.diet-btn-ictxt[data-size="2xl"] .diet-btn-ictxt__label,
-.diet-btn-txt[data-size="2xl"] .diet-btn-txt__label,
-.diet-btn-ictxt[data-size="3xl"] .diet-btn-ictxt__label,
-.diet-btn-txt[data-size="3xl"] .diet-btn-txt__label,
-.diet-btn-ictxt[data-size="4xl"] .diet-btn-ictxt__label,
-.diet-btn-txt[data-size="4xl"] .diet-btn-txt__label {
-  font-size: var(--fs-20);
-  line-height: var(--lh-tight);
-  letter-spacing: -0.02em;
-}
-
 .diet-btn-ictxt__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--btn-icon-color);
   flex: none;
+  transition: transform 180ms ease;
 }
 
 .diet-btn-ictxt__icon svg {
@@ -169,33 +118,25 @@
   block-size: 100%;
 }
 
+.diet-btn-ictxt:hover .diet-btn-ictxt__icon {
+  transform: rotate(45deg);
+}
+
 .diet-btn-ictxt[data-size="md"] .diet-btn-ictxt__icon,
 .diet-btn-ictxt[data-size="md"] .diet-btn-ictxt__icon svg {
-  inline-size: 1rem;
-  block-size: 1rem;
+  inline-size: 0.6rem;
+  block-size: 0.6rem;
 }
 
 .diet-btn-ictxt[data-size="lg"] .diet-btn-ictxt__icon,
-.diet-btn-ictxt[data-size="lg"] .diet-btn-ictxt__icon svg,
-.diet-btn-ictxt[data-size="xl"] .diet-btn-ictxt__icon,
-.diet-btn-ictxt[data-size="xl"] .diet-btn-ictxt__icon svg {
-  inline-size: 1.25rem;
-  block-size: 1.25rem;
+.diet-btn-ictxt[data-size="lg"] .diet-btn-ictxt__icon svg {
+  inline-size: 0.9rem;
+  block-size: 0.9rem;
 }
 
-.diet-btn-ictxt[data-size="2xl"] .diet-btn-ictxt__icon,
-.diet-btn-ictxt[data-size="2xl"] .diet-btn-ictxt__icon svg {
-  inline-size: 1.25rem;
-  block-size: 1.25rem;
-}
-
-.diet-btn-ictxt[data-size="3xl"] .diet-btn-ictxt__icon,
-.diet-btn-ictxt[data-size="3xl"] .diet-btn-ictxt__icon svg,
-.diet-btn-ictxt[data-size="4xl"] .diet-btn-ictxt__icon,
-.diet-btn-ictxt[data-size="4xl"] .diet-btn-ictxt__icon svg {
-  inline-size: 1.25rem;
-  block-size: 1.25rem;
-}
+.button-icon--hover { display: none !important; }
+.diet-btn-ictxt:hover .button-icon--default { display: none !important; }
+.diet-btn-ictxt:hover .button-icon--hover { display: inline-flex !important; }
 
 
 .diet-btn-ictxt:hover:not(:disabled):not([aria-disabled="true"]) {
@@ -313,31 +254,6 @@
   --btn-height: var(--harmony-button-size-lg);
   --btn-radius: var(--control-radius-2xs);
   padding-inline: var(--harmony-button-padding-lg);
-}
-
-.diet-btn-txt[data-size="xl"] {
-  --btn-height: var(--harmony-button-size-xl);
-  --btn-radius: var(--control-radius-xl);
-  padding-inline: var(--harmony-button-padding-xl);
-  /* label-xxl */
-}
-
-.diet-btn-txt[data-size="2xl"] {
-  --btn-height: var(--harmony-button-size-2xl);
-  --btn-radius: var(--control-radius-2xl);
-  padding-inline: var(--harmony-button-padding-2xl);
-}
-
-.diet-btn-txt[data-size="3xl"] {
-  --btn-height: var(--harmony-button-size-3xl);
-  --btn-radius: var(--control-radius-3xl);
-  padding-inline: var(--harmony-button-padding-3xl);
-}
-
-.diet-btn-txt[data-size="4xl"] {
-  --btn-height: var(--harmony-button-size-4xl);
-  --btn-radius: var(--control-radius-4xl);
-  padding-inline: var(--harmony-button-padding-4xl);
 }
 
 .diet-btn-ictxt__label,
@@ -466,26 +382,6 @@
   --btn-radius: var(--control-radius-2xs);
 }
 
-.diet-btn-ic[data-size="xl"] {
-  --btn-height: var(--harmony-button-size-xl);
-  --btn-radius: var(--control-radius-xl);
-}
-
-.diet-btn-ic[data-size="2xl"] {
-  --btn-height: var(--harmony-button-size-2xl);
-  --btn-radius: var(--control-radius-2xl);
-}
-
-.diet-btn-ic[data-size="3xl"] {
-  --btn-height: var(--harmony-button-size-3xl);
-  --btn-radius: var(--control-radius-3xl);
-}
-
-.diet-btn-ic[data-size="4xl"] {
-  --btn-height: var(--harmony-button-size-4xl);
-  --btn-radius: var(--control-radius-4xl);
-}
-
 .diet-btn-ic__icon {
   display: inline-flex;
   align-items: center;
@@ -514,17 +410,9 @@
   block-size: var(--icon-size-16, 1rem);
 }
 
-.diet-btn-ic[data-size="lg"] .diet-btn-ic__icon,
-.diet-btn-ic[data-size="xl"] .diet-btn-ic__icon {
+.diet-btn-ic[data-size="lg"] .diet-btn-ic__icon {
   inline-size: var(--icon-size-20, 1.25rem);
   block-size: var(--icon-size-20, 1.25rem);
-}
-
-.diet-btn-ic[data-size="2xl"] .diet-btn-ic__icon,
-.diet-btn-ic[data-size="3xl"] .diet-btn-ic__icon,
-.diet-btn-ic[data-size="4xl"] .diet-btn-ic__icon {
-  inline-size: var(--icon-size-24, 1.5rem);
-  block-size: var(--icon-size-24, 1.5rem);
 }
 
 .diet-btn-ic:hover:not(:disabled):not([aria-disabled="true"]) {

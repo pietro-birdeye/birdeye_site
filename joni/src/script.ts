@@ -1,8 +1,9 @@
-import { ensureSteveTokensStylesheet, steveOrigin } from './utils/steve';
+import { ensureSteveComponentStylesheet, ensureSteveTokensStylesheet, steveOrigin } from './utils/steve';
 import { hydrateIcons } from './utils/icons';
 import { mountGlobalNav } from './components/globalNav';
 
 ensureSteveTokensStylesheet();
+ensureSteveComponentStylesheet('button');
 document.documentElement.style.setProperty(
   '--stage-hero-bg-image',
   `url(${steveOrigin()}/v1/imgs/pink_bgr.jpg)`,
@@ -13,6 +14,16 @@ const g2Images = Array.from(document.querySelectorAll<HTMLImageElement>('[data-g
 const g2Wrapper = document.querySelector<HTMLElement>('.bblock-g2-hero');
 const g2Dots = Array.from(document.querySelectorAll<SVGCircleElement>('.g2-competitors circle'));
 const g2Logo = document.querySelector<HTMLImageElement>('[data-g2-logo]');
+const pageRoot = document.documentElement;
+const brandImages = Array.from(document.querySelectorAll<HTMLImageElement>('[data-brand-img]'));
+const brandVideos = Array.from(document.querySelectorAll<HTMLVideoElement>('.brand-card__video'));
+const brandRail = document.querySelector<HTMLElement>('[data-brand-rail]');
+const brandPrev = document.querySelector<HTMLButtonElement>('[data-brand-prev]');
+const brandNext = document.querySelector<HTMLButtonElement>('[data-brand-next]');
+const splitItems = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-split-img]'));
+const splitHero = document.querySelector<HTMLImageElement>('[data-split-hero]');
+const industryImages = Array.from(document.querySelectorAll<HTMLImageElement>('[data-industry-img]'));
+const industryBg = document.querySelector<HTMLElement>('[data-industry-bg]');
 
 if (g2Logo) {
   g2Logo.src = `${g2Base}/g2logo.svg`;
@@ -56,4 +67,77 @@ const mountPoint = document.querySelector<HTMLElement>('[data-global-nav]');
 if (mountPoint) {
   mountGlobalNav(mountPoint);
   hydrateIcons(mountPoint);
+}
+
+// Hydrate any page-level Harmony icons (e.g., display hero sparkles)
+hydrateIcons(pageRoot);
+
+brandImages.forEach((img) => {
+  const file = img.dataset.brandImg;
+  if (!file) return;
+  img.src = `${steveOrigin()}/v1/brand-carousel/${file}`;
+  img.decoding = 'async';
+  img.loading = 'lazy';
+});
+
+brandVideos.forEach((vid) => {
+  const src = vid.dataset.src;
+  if (!src) return;
+  vid.src = `${steveOrigin()}/v1/brand-carousel/${src}`;
+  vid.preload = 'none';
+});
+
+// Simple scroll controls for brand rail
+const scrollStep = () => (brandRail ? brandRail.clientWidth * 0.8 : 0);
+
+if (brandPrev && brandRail) {
+  brandPrev.addEventListener('click', () => {
+    brandRail.scrollBy({ left: -scrollStep(), behavior: 'smooth' });
+  });
+}
+
+if (brandNext && brandRail) {
+  brandNext.addEventListener('click', () => {
+    brandRail.scrollBy({ left: scrollStep(), behavior: 'smooth' });
+  });
+}
+
+// Split block image swapping
+if (splitHero && splitItems.length) {
+  const setActive = (btn: HTMLButtonElement) => {
+    splitItems.forEach((b) => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    const file = btn.dataset.splitImg;
+    if (file) {
+      splitHero.src = `${steveOrigin()}/v1/split-block/${file}`;
+      splitHero.decoding = 'async';
+      splitHero.loading = 'lazy';
+    }
+  };
+
+  splitItems.forEach((btn) => {
+    btn.addEventListener('click', () => setActive(btn));
+    btn.addEventListener('focus', () => setActive(btn));
+  });
+
+  setActive(splitItems[0]);
+}
+
+// Industries block asset hydration
+industryImages.forEach((img) => {
+  const file = img.dataset.industryImg;
+  if (!file) return;
+  img.src = `${steveOrigin()}/v1/industries/${file}`;
+  img.decoding = 'async';
+  img.loading = 'lazy';
+});
+
+if (industryBg) {
+  const file = industryBg.dataset.industryBg;
+  if (file) {
+    industryBg.style.backgroundImage = `url(${steveOrigin()}/v1/industries/${file})`;
+    industryBg.style.backgroundSize = 'cover';
+    industryBg.style.backgroundPosition = 'center';
+    industryBg.style.backgroundRepeat = 'no-repeat';
+  }
 }
