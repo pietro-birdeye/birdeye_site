@@ -133,7 +133,8 @@ body {
 
 .grid {
   width: 100%;
-  padding-inline: var(--space-4, 1rem);
+  /* Fluid gutters: grow smoothly with viewport while respecting tokenized min/max */
+  padding-inline: clamp(var(--space-4, 1rem), 4vw, var(--space-8, 2rem));
   max-width: 1600px;
   margin-inline: auto;
 }
