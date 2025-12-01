@@ -1,0 +1,646 @@
+.dental {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 80px 140px;
+  position: relative;
+  background-color: var(--canary-v2corebirdeye-white);
+}
+
+.dental .frame {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 96px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.dental .div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.dental .frame-2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.dental .text-wrapper {
+  position: relative;
+  flex: 1;
+  margin-top: -1.00px;
+  font-family: var(--typography-headers-h2-med-48px-font-family);
+  font-weight: var(--typography-headers-h2-med-48px-font-weight);
+  color: var(--canary-v2corebirdeye-black);
+  font-size: var(--typography-headers-h2-med-48px-font-size);
+  letter-spacing: var(--typography-headers-h2-med-48px-letter-spacing);
+  line-height: var(--typography-headers-h2-med-48px-line-height);
+  font-style: var(--typography-headers-h2-med-48px-font-style);
+}
+
+.dental .secondary-CTA {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 20px;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: var(--canary-v2neutralsdark-greysgrey-400);
+}
+
+.dental .see-all-industries {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: var(--typography-button-text-CTA-semibold-14-font-family);
+  font-weight: var(--typography-button-text-CTA-semibold-14-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-500);
+  font-size: var(--typography-button-text-CTA-semibold-14-font-size);
+  text-align: center;
+  letter-spacing: var(--typography-button-text-CTA-semibold-14-letter-spacing);
+  line-height: var(--typography-button-text-CTA-semibold-14-line-height);
+  white-space: nowrap;
+  font-style: var(--typography-button-text-CTA-semibold-14-font-style);
+}
+
+.dental .div-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.dental .p {
+  position: relative;
+  width: 984px;
+  margin-top: -1.00px;
+  font-family: var(--typography-body-reg-16px-font-family);
+  font-weight: var(--typography-body-reg-16px-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-600);
+  font-size: var(--typography-body-reg-16px-font-size);
+  letter-spacing: var(--typography-body-reg-16px-letter-spacing);
+  line-height: var(--typography-body-reg-16px-line-height);
+  font-style: var(--typography-body-reg-16px-font-style);
+}
+
+.dental .frame-3 {
+  display: flex;
+  flex-direction: column;
+  width: 1320px;
+  align-items: flex-end;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 20px;
+}
+
+.dental .segmented-control {
+  display: flex;
+  width: 1320px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 40px;
+}
+
+.dental .active {
+  background-color: var(--canary-v2supportingblueblue-100);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 15px 20px;
+  position: relative;
+  align-self: stretch;
+  flex: 0 0 auto;
+  border-radius: 8px;
+}
+
+.dental .healtcare {
+  font-weight: var(--components-seg-control-desktop-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-700);
+  letter-spacing: var(--components-seg-control-desktop-letter-spacing);
+  line-height: var(--components-seg-control-desktop-line-height);
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: var(--components-seg-control-desktop-font-family);
+  font-size: var(--components-seg-control-desktop-font-size);
+  white-space: nowrap;
+  font-style: var(--components-seg-control-desktop-font-style);
+}
+
+.dental .healtcare-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 15px 20px;
+  position: relative;
+  align-self: stretch;
+  flex: 0 0 auto;
+  border-radius: 8px;
+}
+
+.dental .healtcare-2 {
+  font-weight: var(--typography-mobile-subheaders-reg-16px-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-500);
+  letter-spacing: var(--typography-mobile-subheaders-reg-16px-letter-spacing);
+  line-height: var(--typography-mobile-subheaders-reg-16px-line-height);
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: var(--typography-mobile-subheaders-reg-16px-font-family);
+  font-size: var(--typography-mobile-subheaders-reg-16px-font-size);
+  white-space: nowrap;
+  font-style: var(--typography-mobile-subheaders-reg-16px-font-style);
+}
+
+.dental .photo {
+  display: flex;
+  height: 540px;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 20px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+  background-image: url(./img/photo.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.dental .frame-4 {
+  display: flex;
+  flex-direction: column;
+  width: 377px;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 30px;
+  position: relative;
+  background-color: var(--canary-v2corebirdeye-white);
+  border-radius: 20px;
+}
+
+.dental .image {
+  position: relative;
+  width: 27px;
+  height: 20px;
+  aspect-ratio: 1.34;
+}
+
+.dental .the-best-review {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: var(--canary-v2neutralsdark-greysgrey-600);
+  font-size: 26px;
+  line-height: 26px;
+}
+
+.dental .span {
+  letter-spacing: var(--typography-subheaders-reg-26px-120-letter-spacing);
+  line-height: var(--typography-subheaders-reg-26px-120-line-height);
+  font-family: var(--typography-subheaders-reg-26px-120-font-family);
+  font-style: var(--typography-subheaders-reg-26px-120-font-style);
+  font-weight: var(--typography-subheaders-reg-26px-120-font-weight);
+  font-size: var(--typography-subheaders-reg-26px-120-font-size);
+}
+
+.dental .text-wrapper-2 {
+  font-size: 22px;
+  letter-spacing: -0.19px;
+  line-height: 26.4px;
+}
+
+.dental .text-wrapper-3 {
+  font-size: var(--typography-body-reg-18px-font-size);
+  letter-spacing: var(--typography-body-reg-18px-letter-spacing);
+  line-height: var(--typography-body-reg-18px-line-height);
+  font-family: var(--typography-body-reg-18px-font-family);
+  font-style: var(--typography-body-reg-18px-font-style);
+  font-weight: var(--typography-body-reg-18px-font-weight);
+}
+
+.dental .name-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.dental .full-name {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: var(--typography-body-med-18px-font-family);
+  font-weight: var(--typography-body-med-18px-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-700);
+  font-size: var(--typography-body-med-18px-font-size);
+  letter-spacing: var(--typography-body-med-18px-letter-spacing);
+  line-height: var(--typography-body-med-18px-line-height);
+  white-space: nowrap;
+  font-style: var(--typography-body-med-18px-font-style);
+}
+
+.dental .title-company {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: var(--typography-body-reg-18px-font-family);
+  font-weight: var(--typography-body-reg-18px-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-500);
+  font-size: var(--typography-body-reg-18px-font-size);
+  letter-spacing: var(--typography-body-reg-18px-letter-spacing);
+  line-height: var(--typography-body-reg-18px-line-height);
+  white-space: nowrap;
+  font-style: var(--typography-body-reg-18px-font-style);
+}
+
+.dental .img {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+/* Inject original CSS code from globals.css and styleguide.css here */
+
+.dental {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 80px 140px;
+  position: relative;
+  background-color: var(--canary-v2corebirdeye-white);
+}
+
+.dental .frame {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 96px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.dental .div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.dental .frame-2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.dental .text-wrapper {
+  position: relative;
+  flex: 1;
+  margin-top: -1.00px;
+  font-family: var(--typography-headers-h2-med-48px-font-family);
+  font-weight: var(--typography-headers-h2-med-48px-font-weight);
+  color: var(--canary-v2corebirdeye-black);
+  font-size: var(--typography-headers-h2-med-48px-font-size);
+  letter-spacing: var(--typography-headers-h2-med-48px-letter-spacing);
+  line-height: var(--typography-headers-h2-med-48px-line-height);
+  font-style: var(--typography-headers-h2-med-48px-font-style);
+}
+
+.dental .secondary-CTA {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 20px;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: var(--canary-v2neutralsdark-greysgrey-400);
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.dental .secondary-CTA:hover {
+  background-color: rgba(113, 117, 128, 0.05);
+  border-color: var(--canary-v2neutralsdark-greysgrey-500);
+}
+
+.dental .secondary-CTA:focus {
+  outline: 2px solid var(--canary-v2supportingblueblue-100);
+  outline-offset: 2px;
+}
+
+.dental .see-all-industries {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: var(--typography-button-text-CTA-semibold-14-font-family);
+  font-weight: var(--typography-button-text-CTA-semibold-14-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-500);
+  font-size: var(--typography-button-text-CTA-semibold-14-font-size);
+  text-align: center;
+  letter-spacing: var(--typography-button-text-CTA-semibold-14-letter-spacing);
+  line-height: var(--typography-button-text-CTA-semibold-14-line-height);
+  white-space: nowrap;
+  font-style: var(--typography-button-text-CTA-semibold-14-font-style);
+}
+
+.dental .div-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.dental .p {
+  position: relative;
+  width: 984px;
+  margin-top: -1.00px;
+  font-family: var(--typography-body-reg-16px-font-family);
+  font-weight: var(--typography-body-reg-16px-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-600);
+  font-size: var(--typography-body-reg-16px-font-size);
+  letter-spacing: var(--typography-body-reg-16px-letter-spacing);
+  line-height: var(--typography-body-reg-16px-line-height);
+  font-style: var(--typography-body-reg-16px-font-style);
+}
+
+.dental .frame-3 {
+  display: flex;
+  flex-direction: column;
+  width: 1320px;
+  align-items: flex-end;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 20px;
+}
+
+.dental .segmented-control {
+  display: flex;
+  width: 1320px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 40px;
+}
+
+.dental .active {
+  background-color: var(--canary-v2supportingblueblue-100);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 15px 20px;
+  position: relative;
+  align-self: stretch;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dental .active:hover {
+  background-color: rgba(211, 217, 232, 0.8);
+}
+
+.dental .active:focus {
+  outline: 2px solid var(--canary-v2neutralsdark-greysgrey-700);
+  outline-offset: 2px;
+}
+
+.dental .healtcare {
+  font-weight: var(--components-seg-control-desktop-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-700);
+  letter-spacing: var(--components-seg-control-desktop-letter-spacing);
+  line-height: var(--components-seg-control-desktop-line-height);
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: var(--components-seg-control-desktop-font-family);
+  font-size: var(--components-seg-control-desktop-font-size);
+  white-space: nowrap;
+  font-style: var(--components-seg-control-desktop-font-style);
+}
+
+.dental .healtcare-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 15px 20px;
+  position: relative;
+  align-self: stretch;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dental .healtcare-wrapper:hover {
+  background-color: rgba(113, 117, 128, 0.05);
+}
+
+.dental .healtcare-wrapper:focus {
+  outline: 2px solid var(--canary-v2neutralsdark-greysgrey-700);
+  outline-offset: 2px;
+}
+
+.dental .healtcare-2 {
+  font-weight: var(--typography-mobile-subheaders-reg-16px-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-500);
+  letter-spacing: var(--typography-mobile-subheaders-reg-16px-letter-spacing);
+  line-height: var(--typography-mobile-subheaders-reg-16px-line-height);
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: var(--typography-mobile-subheaders-reg-16px-font-family);
+  font-size: var(--typography-mobile-subheaders-reg-16px-font-size);
+  white-space: nowrap;
+  font-style: var(--typography-mobile-subheaders-reg-16px-font-style);
+}
+
+.dental .photo {
+  display: flex;
+  height: 540px;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 20px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+  background-image: url(./img/photo.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.dental .frame-4 {
+  display: flex;
+  flex-direction: column;
+  width: 377px;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 30px;
+  position: relative;
+  background-color: var(--canary-v2corebirdeye-white);
+  border-radius: 20px;
+}
+
+.dental .image {
+  position: relative;
+  width: 27px;
+  height: 20px;
+  aspect-ratio: 1.34;
+}
+
+.dental .the-best-review {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: var(--canary-v2neutralsdark-greysgrey-600);
+  font-size: 26px;
+  line-height: 26px;
+}
+
+.dental .span {
+  letter-spacing: var(--typography-subheaders-reg-26px-120-letter-spacing);
+  line-height: var(--typography-subheaders-reg-26px-120-line-height);
+  font-family: var(--typography-subheaders-reg-26px-120-font-family);
+  font-style: var(--typography-subheaders-reg-26px-120-font-style);
+  font-weight: var(--typography-subheaders-reg-26px-120-font-weight);
+  font-size: var(--typography-subheaders-reg-26px-120-font-size);
+}
+
+.dental .text-wrapper-2 {
+  font-size: 22px;
+  letter-spacing: -0.19px;
+  line-height: 26.4px;
+}
+
+.dental .text-wrapper-3 {
+  font-size: var(--typography-body-reg-18px-font-size);
+  letter-spacing: var(--typography-body-reg-18px-letter-spacing);
+  line-height: var(--typography-body-reg-18px-line-height);
+  font-family: var(--typography-body-reg-18px-font-family);
+  font-style: var(--typography-body-reg-18px-font-style);
+  font-weight: var(--typography-body-reg-18px-font-weight);
+}
+
+.dental .name-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.dental .full-name {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: var(--typography-body-med-18px-font-family);
+  font-weight: var(--typography-body-med-18px-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-700);
+  font-size: var(--typography-body-med-18px-font-size);
+  letter-spacing: var(--typography-body-med-18px-letter-spacing);
+  line-height: var(--typography-body-med-18px-line-height);
+  white-space: nowrap;
+  font-style: var(--typography-body-med-18px-font-style);
+  font-style: normal;
+}
+
+.dental .title-company {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: var(--typography-body-reg-18px-font-family);
+  font-weight: var(--typography-body-reg-18px-font-weight);
+  color: var(--canary-v2neutralsdark-greysgrey-500);
+  font-size: var(--typography-body-reg-18px-font-size);
+  letter-spacing: var(--typography-body-reg-18px-letter-spacing);
+  line-height: var(--typography-body-reg-18px-line-height);
+  white-space: nowrap;
+  font-style: var(--typography-body-reg-18px-font-style);
+}
+
+.dental .img {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}

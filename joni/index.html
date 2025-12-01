@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joni Sandbox</title>
     <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/homepage.css" />
   </head>
   <body>
     <div class="section-name" data-section-name="Hero block">
@@ -92,7 +93,7 @@
           <div class="main-values-grid" role="list">
             <article class="brand-card" role="listitem">
               <a class="brand-card__link" href="#" aria-label="Square Register"></a>
-              <div class="brand-card__media">
+              <div class="brand-card__media" data-abstract-img="abstract01.jpg">
                 <div class="brand-card__svg brand-card__svg--one-platform" aria-hidden="true">
                   <svg id="onePlatformSvg" viewBox="0 0 200 200" role="presentation">
                     <circle class="initial-shape" cx="150" cy="70" r="20" />
@@ -115,7 +116,7 @@
             </article>
             <article class="brand-card" role="listitem">
               <a class="brand-card__link" href="#" aria-label="Square Handheld"></a>
-              <div class="brand-card__media">
+              <div class="brand-card__media" data-abstract-img="abstract02.jpg">
                 <div class="brand-card__svg brand-card__svg--unified" aria-hidden="true">
                   <svg id="unifiedDataSvg" viewBox="0 0 200 200" role="presentation">
                     <circle class="initial-shape" cx="155" cy="100" r="8" />
@@ -146,7 +147,7 @@
             </article>
             <article class="brand-card" role="listitem">
               <a class="brand-card__link" href="#" aria-label="Square Terminal"></a>
-              <div class="brand-card__media">
+              <div class="brand-card__media" data-abstract-img="abstract03.jpg">
                 <div class="brand-card__svg brand-card__svg--custom" aria-hidden="true">
                   <svg id="customAiSvg" viewBox="0 0 200 200" role="presentation">
                     <!-- Column 1: circles -->
@@ -195,8 +196,8 @@
     <div class="section-name" data-section-name="Product block">
       <div class="stage" style="padding-top: var(--space-14, 4.5rem); padding-bottom: var(--space-14, 4.5rem); background: var(--color-system-brown-5, color-mix(in oklab, var(--color-system-brown), white 90%));">
         <div class="grid grid-vertical" style="background: transparent;">
-          <div class="largecallout" style="padding-bottom: var(--space-8, 2rem);">
-            <h1 class="display-hero display-hero--stacked">
+          <div class="header" style="padding-bottom: var(--space-8, 2rem);">
+            <h1 class="display-h2 display-hero--stacked">
               <span class="display-hero__line">Multi-location Marketing is hard.</span>
               <span class="display-hero__line">
                 That's why we built&nbsp;<span class="display-hero__icon" data-icon="sparkles" style="inline-size: 1em; block-size: 1em;"></span> AI Agents.
@@ -268,100 +269,113 @@
     <div class="section-name" data-section-name="Brand carousel">
       <div class="stage" style="padding: 0;">
         <div class="grid grid-vertical brand-carousel" style="padding-top: var(--space-12, 3.5rem);">
-          <div class="largecallout brand-carousel__header">
-            <h2 class="display-hero">Brand stories</h2>
-            <div class="brand-carousel__controls">
-              <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" data-brand-prev aria-label="Previous brand">
-                <span class="diet-btn-ic__icon" data-icon="arrow.left"></span>
-              </button>
-              <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" data-brand-next aria-label="Next brand">
-                <span class="diet-btn-ic__icon" data-icon="arrow.right"></span>
-              </button>
+          <div class="header">
+            <div class="header__row">
+              <h2 class="display-h2">Brand stories</h2>
+              <div class="brand-carousel__controls">
+                <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" data-brand-prev aria-label="Previous brand">
+                  <span class="diet-btn-ic__icon" data-icon="arrow.left"></span>
+                </button>
+                <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" data-brand-next aria-label="Next brand">
+                  <span class="diet-btn-ic__icon" data-icon="arrow.right"></span>
+                </button>
+              </div>
             </div>
           </div>
           <div class="brand-carousel__rail" role="list" data-brand-rail style="padding-bottom: var(--space-12, 3.5rem);">
             <article class="brand-card" role="listitem">
-              <a class="brand-card__link" href="#" aria-label="Square Register"></a>
+              <a class="brand-card__link" href="#" aria-label="Wyndham brand story"></a>
               <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card1.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card1.png" alt="Square Register" />
+                <img
+                  class="brand-card__image brand-card__image--default"
+                  data-brand-img="Imgs/WYNDHAM.png"
+                  alt="Wyndham brand visual"
+                />
+                <img
+                  class="brand-card__image brand-card__image--hover"
+                  data-brand-hover="Imgs/WYNDHAM_Hover.png"
+                  alt=""
+                  aria-hidden="true"
+                />
               </div>
               <div class="brand-card__content">
                 <div class="brand-card__title-row">
-                  <h3 class="heading-2">Square Register</h3>
+                  <div class="brand-card__logo-wrap">
+                    <img class="brand-card__logo" data-brand-logo="Logos/WYNDHAM_LOGO.svg" alt="Wyndham logo" />
+                  </div>
                   <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-                </div>
-                <div class="brand-card__text">
-                  <p class="body-m">The sleek, dual-screen system</p>
-                  <p class="body-s body-s--muted">$799 or $39/mo. over 24 months¹</p>
                 </div>
               </div>
             </article>
             <article class="brand-card" role="listitem">
-              <a class="brand-card__link" href="#" aria-label="Square Handheld"></a>
+              <a class="brand-card__link" href="#" aria-label="Smile brand story"></a>
               <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card2.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card2.png" alt="Square Handheld" />
+                <img
+                  class="brand-card__image brand-card__image--default"
+                  data-brand-img="Imgs/SMILE.png"
+                  alt="Smile brand visual"
+                />
+                <img
+                  class="brand-card__image brand-card__image--hover"
+                  data-brand-hover="Imgs/SMILE_Hover.png"
+                  alt=""
+                  aria-hidden="true"
+                />
               </div>
               <div class="brand-card__content">
                 <div class="brand-card__title-row">
-                  <h3 class="heading-2">Square Handheld</h3>
+                  <div class="brand-card__logo-wrap">
+                    <img class="brand-card__logo" data-brand-logo="Logos/SMILE_LOGO.svg" alt="Smile logo" />
+                  </div>
                   <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-                </div>
-                <div class="brand-card__text">
-                  <p class="body-m">The POS that moves with you</p>
-                  <p class="body-s body-s--muted">$399 or $37/mo. over 12 months¹</p>
                 </div>
               </div>
             </article>
             <article class="brand-card" role="listitem">
-              <a class="brand-card__link" href="#" aria-label="Square Terminal"></a>
+              <a class="brand-card__link" href="#" aria-label="HR brand story"></a>
               <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card3.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card3.png" alt="Square Terminal" />
+                <img
+                  class="brand-card__image brand-card__image--default"
+                  data-brand-img="Imgs/HR.png"
+                  alt="HR brand visual"
+                />
+                <img
+                  class="brand-card__image brand-card__image--hover"
+                  data-brand-hover="Imgs/HR_Hover.png"
+                  alt=""
+                  aria-hidden="true"
+                />
               </div>
               <div class="brand-card__content">
                 <div class="brand-card__title-row">
-                  <h3 class="heading-2">Square Terminal</h3>
+                  <div class="brand-card__logo-wrap">
+                    <img class="brand-card__logo" data-brand-logo="Logos/HR_LOGO.svg" alt="HR logo" />
+                  </div>
                   <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-                </div>
-                <div class="brand-card__text">
-                  <p class="body-m">The receipt-printing POS</p>
-                  <p class="body-s body-s--muted">$299 or $27/mo. over 12 months¹</p>
                 </div>
               </div>
             </article>
             <article class="brand-card" role="listitem">
-              <a class="brand-card__link" href="#" aria-label="Square Stand"></a>
+              <a class="brand-card__link" href="#" aria-label="David brand story"></a>
               <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card4.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card4.png" alt="Square Stand" />
+                <img
+                  class="brand-card__image brand-card__image--default"
+                  data-brand-img="Imgs/DAVID.png"
+                  alt="David brand visual"
+                />
+                <img
+                  class="brand-card__image brand-card__image--hover"
+                  data-brand-hover="Imgs/David_Hover.png"
+                  alt=""
+                  aria-hidden="true"
+                />
               </div>
               <div class="brand-card__content">
                 <div class="brand-card__title-row">
-                  <h3 class="heading-2">Square Stand</h3>
+                  <div class="brand-card__logo-wrap">
+                    <img class="brand-card__logo" data-brand-logo="Logos/David_LOGO.svg" alt="David logo" />
+                  </div>
                   <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-                </div>
-                <div class="brand-card__text">
-                  <p class="body-m">The intuitive, swiveling iPad POS</p>
-                  <p class="body-s body-s--muted">$149 or $14/mo. over 12 months¹</p>
-                </div>
-              </div>
-            </article>
-            <article class="brand-card" role="listitem">
-              <a class="brand-card__link" href="#" aria-label="Square Reader"></a>
-              <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card5.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card5.png" alt="Square Reader" />
-              </div>
-              <div class="brand-card__content">
-                <div class="brand-card__title-row">
-                  <h3 class="heading-2">Square Reader</h3>
-                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-                </div>
-                <div class="brand-card__text">
-                  <p class="body-m">The portable reader for every tap and dip</p>
-                  <p class="body-s body-s--muted">$59</p>
                 </div>
               </div>
             </article>
@@ -375,9 +389,9 @@
       <div class="stage" style="padding: 0;">
         <div class="grid split-block">
           <div class="split-block__content">
-            <div class="largecallout">
+            <div class="header">
               <span class="split-block__eyebrow body-s">Point of sale</span>
-              <h2 class="display-h1">AI Agents built to deliver positive outcomes</h2>
+              <h2 class="display-h2">AI Agents built to deliver positive outcomes</h2>
             </div>
             <div class="split-block__list">
               <button class="split-block__item is-active" type="button" aria-expanded="true" data-split-img="01.jpg">
@@ -470,99 +484,217 @@
     <div class="section-name" data-section-name="Industries block">
       <div class="stage" style="padding-top: var(--space-12, 3.5rem); padding-bottom: var(--space-12, 3.5rem);">
         <div class="grid grid-vertical industries-block">
-          <div class="largecallout brand-carousel__header">
-            <h2 class="display-hero">AI built for your industry and brand</h2>
-            <button class="diet-btn-ictxt" data-size="lg" data-variant="neutral" type="button">
-              <span class="diet-btn-ictxt__label">See all integrations</span>
+          <div class="header">
+            <div class="header__row">
+              <h2 class="display-h2">AI built for your industry and brand</h2>
+              <button class="diet-btn-ictxt" data-size="lg" data-variant="neutral" type="button">
+                <span class="diet-btn-ictxt__label">See all integrations</span>
+                <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+              </button>
+            </div>
+          </div>
+          <div class="industries-block__tabs" role="tablist" aria-label="Industry Selection">
+            <button class="industries-tab heading-5 is-active" type="button" aria-selected="true" data-industry="healthcare">Healthcare</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="realestate">Real Estate</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="finance">Finance</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="self-storage">Self Storage</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="dental">Dental</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="restaurants">Restaurants</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="legal">Legal</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="auto">Auto</button>
+            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="retail">Retail</button>
+          </div>
+          <div class="industries-block__photo" data-industry-bg="industries_photos/healthcare.jpg">
+            <figure class="industries-block__quote">
+              <blockquote class="heading-3" data-industry-quote></blockquote>
+              <p class="body-m" data-industry-quote-sub></p>
+            <figcaption class="industries-block__cite">
+              <div class="body-xl" data-industry-name></div>
+              <div class="body-xxl body-s--muted" data-industry-company></div>
+            </figcaption>
+          </figure>
+          <div class="industries-block__visual" data-industry-lottie></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Stack section -->
+    <div class="section-name" data-section-name="AI stack">
+      <div class="stage stage-aistack">
+        <div class="grid grid-vertical">
+          <div class="header">
+            <h2 class="display-h2 display-hero--stacked">
+              <span class="display-hero__line">
+                Say hello to BirdAI <span class="display-hero__icon" data-icon="sparkles" style="inline-size: 1em; block-size: 1em;"></span>
+              </span>
+            </h2>
+            <button class="diet-btn-ictxt" data-size="lg" data-variant="line1" type="button">
+              <span class="diet-btn-ictxt__label">Learn more about BirdAI</span>
               <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
             </button>
           </div>
-          <div class="industries-block__tabs" role="tablist" aria-label="Industry Selection">
-            <button class="industries-tab heading-5 is-active" type="button" aria-selected="true">Healthcare</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false">Real Estate</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false">Finance</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false">Self Storage</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false">Dental</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false">Restaurants</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false">Legal</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false">Auto</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false">Retail</button>
-          </div>
-          <div class="industries-block__photo" data-industry-bg="photo.png">
-            <figure class="industries-block__quote">
-              <img class="industries-block__quote-icon" data-industry-img="image.svg" alt="Five star rating" />
-              <blockquote class="body-l">
-                <span class="text-strong">The best review generation platform on the market! </span>
-                <span>It uses cutting-edge AI to analyze customer sentiments, allowing for precise and insightful feedback. A five-star solution all the way!</span>
-              </blockquote>
-              <figcaption class="industries-block__cite">
-                <div class="body-m">Ken Norquist</div>
-                <div class="body-s body-s--muted">Axia Women's Health</div>
-              </figcaption>
-            </figure>
-            <div class="industries-block__visual">
-              <img data-industry-img="frame-1410083112.svg" alt="Healthcare industry integrations visualization" />
+
+          <div class="aistack-stacks">
+            <div class="aistack-block aistack-block--outcomes" data-expanded="false">
+              <div class="aistack-block__title">
+                <h3 class="heading-2">Outcomes</h3>
+                <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+              </div>
+              <div class="aistack-row">
+                <div class="aistack-card body-l">Build Presence</div>
+                <div class="aistack-card body-l">Manage Reputation</div>
+                <div class="aistack-card body-l">Elevate Brand</div>
+                <div class="aistack-card body-l">Improve CX</div>
+                <div class="aistack-card body-l">Accelerate Growth</div>
+              </div>
+            </div>
+
+            <div class="aistack-block aistack-block--agents" data-expanded="false">
+              <div class="aistack-block__title">
+                <h3 class="heading-2">Agents</h3>
+                <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+              </div>
+              <div class="aistack-row">
+                <div class="aistack-card">
+                  <div class="aistack-card__head">
+                    <span class="heading-5">Listings AI</span>
+                    <span class="aistack-sparkle" data-icon="sparkles"></span>
+                  </div>
+                  <div class="aistack-card__actions">
+                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
+                      <span class="diet-btn-ictxt__label">Listings Optimization Agent</span>
+                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="aistack-card">
+                  <div class="aistack-card__head">
+                    <span class="heading-5">Reviews AI</span>
+                    <span class="aistack-sparkle" data-icon="sparkles"></span>
+                  </div>
+                  <div class="aistack-card__actions">
+                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
+                      <span class="diet-btn-ictxt__label">Review Generation Agent</span>
+                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+                    </button>
+                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
+                      <span class="diet-btn-ictxt__label">Review Response Agent</span>
+                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="aistack-card">
+                  <div class="aistack-card__head">
+                    <span class="heading-5">Social AI</span>
+                    <span class="aistack-sparkle" data-icon="sparkles"></span>
+                  </div>
+                  <div class="aistack-card__actions">
+                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
+                      <span class="diet-btn-ictxt__label">Social Publishing Agent</span>
+                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+                    </button>
+                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
+                      <span class="diet-btn-ictxt__label">Social Engagement Agent</span>
+                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="aistack-card">
+                  <div class="aistack-card__head">
+                    <span class="heading-5">Reports AI</span>
+                    <span class="aistack-sparkle" data-icon="sparkles"></span>
+                  </div>
+                  <div class="aistack-card__actions">
+                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
+                      <span class="diet-btn-ictxt__label">Reporting Agent</span>
+                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="aistack-card">
+                  <div class="aistack-card__head">
+                    <span class="heading-5">Messaging AI</span>
+                    <span class="aistack-sparkle" data-icon="sparkles"></span>
+                  </div>
+                  <div class="aistack-card__actions">
+                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
+                      <span class="diet-btn-ictxt__label">Lead Generation Agent</span>
+                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+                    </button>
+                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
+                      <span class="diet-btn-ictxt__label">Template Design Agent</span>
+                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+                    </button>
+                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
+                      <span class="diet-btn-ictxt__label">Contact Segmentation Agent</span>
+                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="aistack-block aistack-block--models" data-expanded="false">
+              <div class="aistack-block__title">
+                <h3 class="heading-2">Models</h3>
+                <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
+              </div>
+              <div class="aistack-row">
+                <div class="aistack-pill body-m">Brand Voice</div>
+                <div class="aistack-pill body-m">Brand Governance</div>
+                <div class="aistack-pill body-m">Brand Knowledge</div>
+                <div class="aistack-pill body-m">Brand Security</div>
+              </div>
+              <div class="aistack-row">
+                <div class="aistack-pill body-m">Industry Benchmarks</div>
+                <div class="aistack-pill body-m">Industry Trends</div>
+                <div class="aistack-pill body-m">Industry Categories</div>
+                <div class="aistack-pill body-m">Industry Compliance</div>
+              </div>
+              <div class="aistack-row">
+                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/anthropic.png" alt="Anthropic" /></div>
+                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/gemini.png" alt="Gemini" /></div>
+                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/logos_openai.png" alt="OpenAI" /></div>
+                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/stability.png" alt="Stability AI" /></div>
+                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/llama.png" alt="LLaMA" /></div>
+                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/mistral.png" alt="Mistral AI" /></div>
+                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/deepseek.png" alt="DeepSeek" /></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Main values section (duplicate of brand carousel for future customization) -->
-    <div class="section-name" data-section-name="Main values">
-      <div class="stage">
-        <div class="grid grid-vertical brand-carousel" style="padding-top: var(--space-12, 3.5rem);">
-          <div class="main-values-grid" role="list">
-            <article class="brand-card" role="listitem">
-              <a class="brand-card__link" href="#" aria-label="Square Register"></a>
-              <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card1.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card1.png" alt="Square Register" />
+    <!-- Harmony carousel stub -->
+    <div class="section-name" data-section-name="Harmony carousel">
+      <div class="stage" style="padding-top: var(--space-12, 3.5rem); padding-bottom: var(--space-12, 3.5rem);">
+        <div class="grid grid-vertical harmony-carousel">
+          <div class="header">
+            <div class="header__row">
+              <h2 class="display-h2">Harmony carousel</h2>
+              <div class="harmony-carousel__controls">
+                <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" aria-label="Previous">
+                  <span class="diet-btn-ic__icon" data-icon="arrow.left"></span>
+                </button>
+                <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" aria-label="Next">
+                  <span class="diet-btn-ic__icon" data-icon="arrow.right"></span>
+                </button>
               </div>
-              <div class="brand-card__content">
-                <div class="brand-card__title-row">
-                  <h3 class="heading-2">Square Register</h3>
-                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-                </div>
-                <div class="brand-card__text">
-                  <p class="body-m">The sleek, dual-screen system</p>
-                  <p class="body-s body-s--muted">$799 or $39/mo. over 24 months¹</p>
-                </div>
-              </div>
+            </div>
+          </div>
+          <div class="harmony-carousel__rail" role="list">
+            <article class="harmony-carousel__card" role="listitem">
+              <p class="harmony-carousel__placeholder body-m">Empty card slot</p>
             </article>
-            <article class="brand-card" role="listitem">
-              <a class="brand-card__link" href="#" aria-label="Square Handheld"></a>
-              <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card2.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card2.png" alt="Square Handheld" />
-              </div>
-              <div class="brand-card__content">
-                <div class="brand-card__title-row">
-                  <h3 class="heading-2">Square Handheld</h3>
-                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-                </div>
-                <div class="brand-card__text">
-                  <p class="body-m">The POS that moves with you</p>
-                  <p class="body-s body-s--muted">$399 or $37/mo. over 12 months¹</p>
-                </div>
-              </div>
+            <article class="harmony-carousel__card" role="listitem">
+              <p class="harmony-carousel__placeholder body-m">Empty card slot</p>
             </article>
-            <article class="brand-card" role="listitem">
-              <a class="brand-card__link" href="#" aria-label="Square Terminal"></a>
-              <div class="brand-card__media">
-                <video class="brand-card__video" muted playsinline loop preload="none" data-src="card3.mp4"></video>
-                <img class="brand-card__image" data-brand-img="card3.png" alt="Square Terminal" />
-              </div>
-              <div class="brand-card__content">
-                <div class="brand-card__title-row">
-                  <h3 class="heading-2">Square Terminal</h3>
-                  <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-                </div>
-                <div class="brand-card__text">
-                  <p class="body-m">The receipt-printing POS</p>
-                  <p class="body-s body-s--muted">$299 or $27/mo. over 12 months¹</p>
-                </div>
-              </div>
+            <article class="harmony-carousel__card" role="listitem">
+              <p class="harmony-carousel__placeholder body-m">Empty card slot</p>
+            </article>
+            <article class="harmony-carousel__card" role="listitem">
+              <p class="harmony-carousel__placeholder body-m">Empty card slot</p>
             </article>
           </div>
         </div>

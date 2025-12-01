@@ -1,0 +1,62 @@
+/* Harmony global components */
+
+/* Harmony carousel shell */
+.harmony-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+}
+
+.harmony-carousel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3, 0.75rem);
+  flex-wrap: wrap;
+}
+
+.harmony-carousel__controls {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+}
+
+.harmony-carousel__rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 1fr);
+  gap: var(--space-4, 1rem);
+  overflow-x: auto;
+  overflow-y: visible;
+  align-items: stretch;
+  padding-top: var(--space-2, 0.5rem);
+  padding-bottom: var(--space-4, 1rem);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.harmony-carousel__rail::-webkit-scrollbar {
+  display: none;
+}
+
+.harmony-carousel__rail > * {
+  scroll-snap-align: start;
+}
+
+.harmony-carousel__card {
+  background: var(--role-surface-bg, #ffffff);
+  border: 1px solid color-mix(in oklab, var(--role-border, rgba(10, 10, 12, 0.12)), transparent 40%);
+  border-radius: var(--control-radius-xl, 1.5rem);
+  padding: var(--space-5, 1.25rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  box-shadow: 0 12px 32px rgba(10, 10, 12, 0.05);
+}
+
+.harmony-carousel__placeholder {
+  color: var(--color-system-gray-2, #8e8e93);
+  margin: 0;
+  text-align: center;
+}

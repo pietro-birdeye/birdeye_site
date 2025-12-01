@@ -25,6 +25,7 @@ function copyRecursiveSync(source, destination) {
 
 function main() {
   const src = path.resolve(__dirname, '..', 'harmony', 'dist');
+  const tokensSourceDir = path.resolve(__dirname, '..', 'harmony', 'tokens');
   const dstHarmony = path.resolve(__dirname, '..', 'steve', 'public', 'v1', 'harmony');
   const dstIconsRoot = path.resolve(__dirname, '..', 'steve', 'public', 'v1', 'icons');
 
@@ -53,6 +54,22 @@ function main() {
     const tokensDir = path.dirname(tokensDst);
     if (!fs.existsSync(tokensDir)) fs.mkdirSync(tokensDir, { recursive: true });
     fs.copyFileSync(tokensSrc, tokensDst);
+  }
+
+  // Copy token partials (foundation/color/typography) so imports in tokens.css resolve on the CDN.
+  const tokenPartials = [
+    'harmony-foundation-tokens.css',
+    'harmony-color-tokens.css',
+    'harmony-typography.css',
+  ];
+  for (const partial of tokenPartials) {
+    const srcPartial = path.join(tokensSourceDir, partial);
+    const dstPartial = path.join(dstHarmony, 'tokens', partial);
+    if (fs.existsSync(srcPartial)) {
+      const dstDir = path.dirname(dstPartial);
+      if (!fs.existsSync(dstDir)) fs.mkdirSync(dstDir, { recursive: true });
+      fs.copyFileSync(srcPartial, dstPartial);
+    }
   }
 
   // Keep consumer-facing SVG icon CDN (steve/public/v1/icons/svg) in sync with Harmony dist icons.
