@@ -68,6 +68,20 @@ p, .body { font: 300 1rem/var(--lh-tight) var(--font-ui); }
 .body-small,
 .body-large,
 p {
+  letter-spacing: -0.06em;
+}
+
+.body,
+.body-xxs,
+.body-xs,
+.body-s,
+.body-m,
+.body-l,
+.body-xl,
+.body-xxl,
+.body-small,
+.body-large,
+p {
   letter-spacing: -0.03em;
 }
 

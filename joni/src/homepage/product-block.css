@@ -1,0 +1,27 @@
+/* Product block cards */
+.cardrow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-8, 2rem);
+}
+
+.card01 {
+  padding-block: var(--space-8, 2rem);
+  padding-inline: var(--space-10, 2.5rem);
+  border-radius: var(--control-radius-lg, 1.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: var(--color-system-white, #ffffff);
+}
+
+.card01 h3 {
+  margin: 0;
+}
+
+.card01 .diet-btn-txt {
+  align-self: flex-start;
+  width: auto;
+  white-space: normal;
+}

@@ -80,6 +80,55 @@ When building split blocks, always name the two halves as block **A** and block 
 
 **Why:** Consistent A/B naming makes content ordering, responsive stacking, and documentation clear across all variants.
 
+## CSS Organization
+
+### Global CSS (`style.css`)
+
+**Location:** `/joni/src/style.css`
+
+This file contains styles shared across all pages:
+
+- **Harmony imports** - Tokens, components, typography from the design system
+- **Global resets** - Box-sizing, body styles, root variables
+- **Layout system** - `.stage`, `.grid`, `.container`
+- **Navigation** - Site header, nav, mega menus, dropdowns
+- **Reusable utilities** - `.grid-horizontal`, `.grid-vertical`
+- **Form patterns** - Floating label inputs, form groups
+- **Typography resets** - Heading styles (h1-h6)
+
+**Use global CSS for:**
+- Layout structures used on multiple pages
+- Navigation and header components
+- Reusable utility classes
+- Common patterns repeated across pages
+
+### Per-Page CSS (e.g., `homepage.css`)
+
+**Location:** `/joni/src/homepage.css`
+
+Each page can have its own CSS file for page-specific styles:
+
+- **Page-specific sections** - Unique hero layouts, custom stages
+- **Page-specific components** - One-off elements that only appear on this page
+- **Custom animations** - Keyframes and animations unique to the page
+- **Custom colors/styles** - Overrides or extensions of global styles
+
+**Use per-page CSS for:**
+- Styles that only apply to one page
+- Page-specific animations and interactions
+- Custom section layouts
+- One-off visual treatments
+
+### Pattern
+
+```html
+<!-- In index.html -->
+<link rel="stylesheet" href="./src/style.css">        <!-- Global -->
+<link rel="stylesheet" href="./src/homepage.css">    <!-- Page-specific -->
+```
+
+Import global CSS first, then layer page-specific styles on top.
+
 ## Integration
 
 Joni consumes:

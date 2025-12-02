@@ -6,6 +6,7 @@
     <title>Joni Sandbox</title>
     <link rel="stylesheet" href="/src/style.css" />
     <link rel="stylesheet" href="/src/homepage.css" />
+    <link rel="stylesheet" href="http://localhost:4000/v1/components/footer/footer.css" />
   </head>
   <body>
     <div class="section-name" data-section-name="Hero block">
@@ -89,7 +90,7 @@
     <!-- Main values section (duplicate of brand carousel for future customization) -->
     <div class="section-name" data-section-name="Main values">
       <div class="stage">
-        <div class="grid grid-vertical brand-carousel" style="padding-top: var(--space-12, 3.5rem); padding-bottom: var(--space-12, 3.5rem);">
+        <div class="grid grid-vertical brand-carousel">
           <div class="main-values-grid" role="list">
             <article class="brand-card" role="listitem">
               <a class="brand-card__link" href="#" aria-label="Square Register"></a>
@@ -194,9 +195,9 @@
 
 
     <div class="section-name" data-section-name="Product block">
-      <div class="stage" style="padding-top: var(--space-14, 4.5rem); padding-bottom: var(--space-14, 4.5rem); background: var(--color-system-brown-5, color-mix(in oklab, var(--color-system-brown), white 90%));">
+      <div class="stage" style="background: var(--color-system-brown-5, color-mix(in oklab, var(--color-system-brown), white 90%));">
         <div class="grid grid-vertical" style="background: transparent;">
-          <div class="header" style="padding-bottom: var(--space-8, 2rem);">
+          <div class="header">
             <h1 class="display-h2 display-hero--stacked">
               <span class="display-hero__line">Multi-location Marketing is hard.</span>
               <span class="display-hero__line">
@@ -267,8 +268,8 @@
 
     <!-- Brand carousel section -->
     <div class="section-name" data-section-name="Brand carousel">
-      <div class="stage" style="padding: 0;">
-        <div class="grid grid-vertical brand-carousel" style="padding-top: var(--space-12, 3.5rem);">
+      <div class="stage">
+        <div class="grid grid-vertical brand-carousel">
           <div class="header">
             <div class="header__row">
               <h2 class="display-h2">Brand stories</h2>
@@ -282,7 +283,7 @@
               </div>
             </div>
           </div>
-          <div class="brand-carousel__rail" role="list" data-brand-rail style="padding-bottom: var(--space-12, 3.5rem);">
+          <div class="brand-carousel__rail" role="list" data-brand-rail>
             <article class="brand-card" role="listitem">
               <a class="brand-card__link" href="#" aria-label="Wyndham brand story"></a>
               <div class="brand-card__media">
@@ -481,226 +482,205 @@
     </div>
 
     <!-- Industries block section -->
-    <div class="section-name" data-section-name="Industries block">
-      <div class="stage" style="padding-top: var(--space-12, 3.5rem); padding-bottom: var(--space-12, 3.5rem);">
-        <div class="grid grid-vertical industries-block">
-          <div class="header">
-            <div class="header__row">
-              <h2 class="display-h2">AI built for your industry and brand</h2>
-              <button class="diet-btn-ictxt" data-size="lg" data-variant="neutral" type="button">
-                <span class="diet-btn-ictxt__label">See all integrations</span>
-                <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-              </button>
-            </div>
-          </div>
-          <div class="industries-block__tabs" role="tablist" aria-label="Industry Selection">
-            <button class="industries-tab heading-5 is-active" type="button" aria-selected="true" data-industry="healthcare">Healthcare</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="realestate">Real Estate</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="finance">Finance</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="self-storage">Self Storage</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="dental">Dental</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="restaurants">Restaurants</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="legal">Legal</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="auto">Auto</button>
-            <button class="industries-tab heading-5" type="button" aria-selected="false" data-industry="retail">Retail</button>
-          </div>
-          <div class="industries-block__photo" data-industry-bg="industries_photos/healthcare.jpg">
-            <figure class="industries-block__quote">
-              <blockquote class="heading-3" data-industry-quote></blockquote>
-              <p class="body-m" data-industry-quote-sub></p>
-            <figcaption class="industries-block__cite">
-              <div class="body-xl" data-industry-name></div>
-              <div class="body-xxl body-s--muted" data-industry-company></div>
-            </figcaption>
-          </figure>
-          <div class="industries-block__visual" data-industry-lottie></div>
-        </div>
-      </div>
-    </div>
+    <div data-industries></div>
 
     <!-- AI Stack section -->
-    <div class="section-name" data-section-name="AI stack">
-      <div class="stage stage-aistack">
-        <div class="grid grid-vertical">
-          <div class="header">
-            <h2 class="display-h2 display-hero--stacked">
-              <span class="display-hero__line">
-                Say hello to BirdAI <span class="display-hero__icon" data-icon="sparkles" style="inline-size: 1em; block-size: 1em;"></span>
-              </span>
-            </h2>
-            <button class="diet-btn-ictxt" data-size="lg" data-variant="line1" type="button">
-              <span class="diet-btn-ictxt__label">Learn more about BirdAI</span>
-              <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-            </button>
-          </div>
-
-          <div class="aistack-stacks">
-            <div class="aistack-block aistack-block--outcomes" data-expanded="false">
-              <div class="aistack-block__title">
-                <h3 class="heading-2">Outcomes</h3>
-                <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-              </div>
-              <div class="aistack-row">
-                <div class="aistack-card body-l">Build Presence</div>
-                <div class="aistack-card body-l">Manage Reputation</div>
-                <div class="aistack-card body-l">Elevate Brand</div>
-                <div class="aistack-card body-l">Improve CX</div>
-                <div class="aistack-card body-l">Accelerate Growth</div>
-              </div>
-            </div>
-
-            <div class="aistack-block aistack-block--agents" data-expanded="false">
-              <div class="aistack-block__title">
-                <h3 class="heading-2">Agents</h3>
-                <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-              </div>
-              <div class="aistack-row">
-                <div class="aistack-card">
-                  <div class="aistack-card__head">
-                    <span class="heading-5">Listings AI</span>
-                    <span class="aistack-sparkle" data-icon="sparkles"></span>
-                  </div>
-                  <div class="aistack-card__actions">
-                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
-                      <span class="diet-btn-ictxt__label">Listings Optimization Agent</span>
-                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-                    </button>
-                  </div>
-                </div>
-                <div class="aistack-card">
-                  <div class="aistack-card__head">
-                    <span class="heading-5">Reviews AI</span>
-                    <span class="aistack-sparkle" data-icon="sparkles"></span>
-                  </div>
-                  <div class="aistack-card__actions">
-                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
-                      <span class="diet-btn-ictxt__label">Review Generation Agent</span>
-                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-                    </button>
-                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
-                      <span class="diet-btn-ictxt__label">Review Response Agent</span>
-                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-                    </button>
-                  </div>
-                </div>
-                <div class="aistack-card">
-                  <div class="aistack-card__head">
-                    <span class="heading-5">Social AI</span>
-                    <span class="aistack-sparkle" data-icon="sparkles"></span>
-                  </div>
-                  <div class="aistack-card__actions">
-                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
-                      <span class="diet-btn-ictxt__label">Social Publishing Agent</span>
-                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-                    </button>
-                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
-                      <span class="diet-btn-ictxt__label">Social Engagement Agent</span>
-                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-                    </button>
-                  </div>
-                </div>
-                <div class="aistack-card">
-                  <div class="aistack-card__head">
-                    <span class="heading-5">Reports AI</span>
-                    <span class="aistack-sparkle" data-icon="sparkles"></span>
-                  </div>
-                  <div class="aistack-card__actions">
-                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
-                      <span class="diet-btn-ictxt__label">Reporting Agent</span>
-                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-                    </button>
-                  </div>
-                </div>
-                <div class="aistack-card">
-                  <div class="aistack-card__head">
-                    <span class="heading-5">Messaging AI</span>
-                    <span class="aistack-sparkle" data-icon="sparkles"></span>
-                  </div>
-                  <div class="aistack-card__actions">
-                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
-                      <span class="diet-btn-ictxt__label">Lead Generation Agent</span>
-                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-                    </button>
-                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
-                      <span class="diet-btn-ictxt__label">Template Design Agent</span>
-                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-                    </button>
-                    <button class="diet-btn-ictxt" data-size="md" data-variant="secondary" type="button">
-                      <span class="diet-btn-ictxt__label">Contact Segmentation Agent</span>
-                      <span class="diet-btn-ictxt__icon" data-icon="arrow.up.right"></span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="aistack-block aistack-block--models" data-expanded="false">
-              <div class="aistack-block__title">
-                <h3 class="heading-2">Models</h3>
-                <span class="brand-card__arrow" data-icon="arrow.up.right"></span>
-              </div>
-              <div class="aistack-row">
-                <div class="aistack-pill body-m">Brand Voice</div>
-                <div class="aistack-pill body-m">Brand Governance</div>
-                <div class="aistack-pill body-m">Brand Knowledge</div>
-                <div class="aistack-pill body-m">Brand Security</div>
-              </div>
-              <div class="aistack-row">
-                <div class="aistack-pill body-m">Industry Benchmarks</div>
-                <div class="aistack-pill body-m">Industry Trends</div>
-                <div class="aistack-pill body-m">Industry Categories</div>
-                <div class="aistack-pill body-m">Industry Compliance</div>
-              </div>
-              <div class="aistack-row">
-                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/anthropic.png" alt="Anthropic" /></div>
-                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/gemini.png" alt="Gemini" /></div>
-                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/logos_openai.png" alt="OpenAI" /></div>
-                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/stability.png" alt="Stability AI" /></div>
-                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/llama.png" alt="LLaMA" /></div>
-                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/mistral.png" alt="Mistral AI" /></div>
-                <div class="aistack-pill"><img data-ai-logo="AI_Stack_Block/deepseek.png" alt="DeepSeek" /></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div data-ai-stack></div>
 
     <!-- Harmony carousel stub -->
-    <div class="section-name" data-section-name="Harmony carousel">
-      <div class="stage" style="padding-top: var(--space-12, 3.5rem); padding-bottom: var(--space-12, 3.5rem);">
-        <div class="grid grid-vertical harmony-carousel">
+    <div class="section-name" data-section-name="Customer results">
+      <div class="stage">
+        <div class="grid grid-vertical harmony-carousel customer-results">
           <div class="header">
             <div class="header__row">
-              <h2 class="display-h2">Harmony carousel</h2>
+              <h2 class="display-h2">Customer results</h2>
               <div class="harmony-carousel__controls">
-                <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" aria-label="Previous">
+                <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" aria-label="Previous" data-harmony-prev>
                   <span class="diet-btn-ic__icon" data-icon="arrow.left"></span>
                 </button>
-                <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" aria-label="Next">
+                <button class="diet-btn-ic" data-size="lg" data-variant="secondary" type="button" aria-label="Next" data-harmony-next>
                   <span class="diet-btn-ic__icon" data-icon="arrow.right"></span>
                 </button>
               </div>
             </div>
           </div>
-          <div class="harmony-carousel__rail" role="list">
-            <article class="harmony-carousel__card" role="listitem">
-              <p class="harmony-carousel__placeholder body-m">Empty card slot</p>
+          <div class="harmony-carousel__rail customer-results__rail" role="list">
+            <article
+              class="harmony-carousel__card customer-result-card"
+              role="link"
+              tabindex="0"
+              aria-label="Valley Veterinary Care case study"
+              data-href="https://www.birdeye.com/resources/case-studies/valley-veterinary-care/"
+            >
+              <div class="customer-result-card__band">
+                <div class="customer-result-card__logo-wrap">
+                  <img
+                    class="customer-result-card__logo"
+                    data-customer-logo="valley-veterinary.png"
+                    alt="Valley Veterinary Care"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="customer-result-card__stat">
+                  <div class="customer-result-card__value heading-1">400%</div>
+                  <div class="customer-result-card__label heading-5">increase in social publishing</div>
+                </div>
+                <span class="customer-result-card__arrow" data-icon="arrow.up.right" aria-hidden="true"></span>
+              </div>
+              <p class="customer-result-card__quote body-xl">
+                <span class="customer-result-card__highlight">Birdeye Social allows us to post across locations while still connecting with our communities.</span>
+                We can post in bulk while keeping the voice of the practice without the tediousness of posting individually to each account.
+              </p>
+              <div class="customer-result-card__meta">
+                <div class="customer-result-card__name heading-6">Meghan S. Bingham</div>
+                <div class="customer-result-card__title body-s">CVPM Senior Operations Manager, Valley Veterinary Care</div>
+              </div>
             </article>
-            <article class="harmony-carousel__card" role="listitem">
-              <p class="harmony-carousel__placeholder body-m">Empty card slot</p>
+
+            <article
+              class="harmony-carousel__card customer-result-card"
+              role="link"
+              tabindex="0"
+              aria-label="Superior Storage case study"
+              data-href="https://www.birdeye.com/resources/case-studies/superior-storage/"
+            >
+              <div class="customer-result-card__band">
+                <div class="customer-result-card__logo-wrap">
+                  <img
+                    class="customer-result-card__logo"
+                    data-customer-logo="superior-storage.png"
+                    alt="Superior Storage"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="customer-result-card__stat">
+                  <div class="customer-result-card__value heading-1">86%</div>
+                  <div class="customer-result-card__label heading-5">increase in direction requests</div>
+                </div>
+                <span class="customer-result-card__arrow" data-icon="arrow.up.right" aria-hidden="true"></span>
+              </div>
+              <p class="customer-result-card__quote body-xl">
+                <span class="customer-result-card__highlight">Birdeye does the hard work, making our jobs easier, and provides top-notch service to better your business.</span>
+              </p>
+              <div class="customer-result-card__meta">
+                <div class="customer-result-card__name heading-6">Brandon Wipperfurth</div>
+                <div class="customer-result-card__title body-s">Director of Marketing, Superior Storage</div>
+              </div>
             </article>
-            <article class="harmony-carousel__card" role="listitem">
-              <p class="harmony-carousel__placeholder body-m">Empty card slot</p>
+
+            <article
+              class="harmony-carousel__card customer-result-card"
+              role="link"
+              tabindex="0"
+              aria-label="Pacifica Senior Living case study"
+              data-href="https://www.birdeye.com/resources/case-studies/pacifica-senior-living/"
+            >
+              <div class="customer-result-card__band">
+                <div class="customer-result-card__logo-wrap">
+                  <img
+                    class="customer-result-card__logo"
+                    data-customer-logo="pacifica.png"
+                    alt="Pacifica Senior Living"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="customer-result-card__stat">
+                  <div class="customer-result-card__value heading-1">25%</div>
+                  <div class="customer-result-card__label heading-5">increase in digital interactions</div>
+                </div>
+                <span class="customer-result-card__arrow" data-icon="arrow.up.right" aria-hidden="true"></span>
+              </div>
+              <p class="customer-result-card__quote body-xl">
+                <span class="customer-result-card__highlight">Having a platform where everything is monitored in one place makes such a difference and has streamlined our approach to social media.</span>
+                This has such a huge impact on our processes and the amount of manpower it takes to keep up.
+              </p>
+              <div class="customer-result-card__meta">
+                <div class="customer-result-card__name heading-6">Carly Dodd</div>
+                <div class="customer-result-card__title body-s">Content Manager, Pacifica Senior Living</div>
+              </div>
             </article>
-            <article class="harmony-carousel__card" role="listitem">
-              <p class="harmony-carousel__placeholder body-m">Empty card slot</p>
+
+            <article
+              class="harmony-carousel__card customer-result-card"
+              role="link"
+              tabindex="0"
+              aria-label="American Pacific Mortgage case study"
+              data-href="https://www.birdeye.com/resources/case-studies/american-pacific-mortgage/"
+            >
+              <div class="customer-result-card__band">
+                <div class="customer-result-card__logo-wrap">
+                  <img
+                    class="customer-result-card__logo"
+                    data-customer-logo="american-pacific.png"
+                    alt="American Pacific Mortgage"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="customer-result-card__stat">
+                  <div class="customer-result-card__value heading-1">131k</div>
+                  <div class="customer-result-card__label heading-5">reviews with a 4.9 star rating</div>
+                </div>
+                <span class="customer-result-card__arrow" data-icon="arrow.up.right" aria-hidden="true"></span>
+              </div>
+              <p class="customer-result-card__quote body-xl">
+                We love Birdeye. We've been a client for years and really value our partnership as well as what the platform can do.
+                <span class="customer-result-card__highlight">It's foundational to have something easy to automate review requests, monitor incoming feedback, and organize it in a way that works for us.</span>
+              </p>
+              <div class="customer-result-card__meta">
+                <div class="customer-result-card__name heading-6">Melissa Wright</div>
+                <div class="customer-result-card__title body-s">Chief Sales &amp; Marketing Officer, American Pacific Mortgage</div>
+              </div>
+            </article>
+
+            <article
+              class="harmony-carousel__card customer-result-card"
+              role="link"
+              tabindex="0"
+              aria-label="Fairlawn Real Estate case study"
+              data-href="https://www.birdeye.com/resources/case-studies/fairlawn-real-estate/"
+            >
+              <div class="customer-result-card__band">
+                <div class="customer-result-card__logo-wrap">
+                  <img
+                    class="customer-result-card__logo"
+                    data-customer-logo="fairlawn.png"
+                    alt="Fairlawn Real Estate"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="customer-result-card__stat">
+                  <div class="customer-result-card__value heading-1">1.6k</div>
+                  <div class="customer-result-card__label heading-5">new reviews across all sources</div>
+                </div>
+                <span class="customer-result-card__arrow" data-icon="arrow.up.right" aria-hidden="true"></span>
+              </div>
+              <p class="customer-result-card__quote body-xl">
+                <span class="customer-result-card__highlight">Using Birdeye AI to respond to reviews has saved us so much time while ensuring we maintain a professional and personal connection with our residents.</span>
+                It’s helped us consistently deliver high-quality communication across the board.
+              </p>
+              <div class="customer-result-card__meta">
+                <div class="customer-result-card__name heading-6">Allison Ross</div>
+                <div class="customer-result-card__title body-s">Senior Marketing Specialist, Fairlawn Real Estate</div>
+              </div>
             </article>
           </div>
         </div>
       </div>
     </div>
 
+
+    <div class="section-name" data-section-name="Footer">
+      <div class="stage">
+        <div class="grid">
+          <div data-footer></div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/script.ts"></script>
   </body>
 </html>
