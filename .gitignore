@@ -11,6 +11,7 @@ node_modules/
 dist/
 coverage/
 out/
+.cache/
 .turbo/
 .next/
 .vercel/
@@ -26,3 +27,7 @@ tsconfig.tsbuildinfo
 # Git metadata stored outside worktree
 gitmeta/
 TMP_OLDREPO/
+
+# Local scratch / imports we don't track
+CurrentlyExecuting/
+CURRENTLY_EXECUTING/
