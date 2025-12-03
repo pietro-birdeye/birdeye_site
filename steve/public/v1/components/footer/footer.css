@@ -58,14 +58,14 @@
 
 .be-footer__nav {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-8, 2rem);
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  gap: var(--space-6, 1.5rem);
 }
 
 .be-footer__column {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4, 1rem);
+  gap: var(--space-3, 0.75rem);
 }
 
 .be-footer__heading {
@@ -74,7 +74,7 @@
 
 .be-footer__links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: var(--space-4, 1rem);
 }
 
@@ -85,7 +85,7 @@
 .be-footer__subcol {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3, 0.75rem);
+  gap: var(--space-2, 0.5rem);
 }
 
 .be-footer__subheading {
@@ -101,7 +101,7 @@
 }
 
 .be-footer__list--grid {
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .be-footer__secondary {

@@ -35,14 +35,17 @@
 }
 
 .customer-results .harmony-carousel__rail {
+  --cr-pad: clamp(var(--space-4, 1rem), 4vw, var(--space-8, 2rem));
   display: flex;
   gap: var(--space-6, 1.5rem);
-  overflow-x: visible;
-  overflow-y: visible;
-  padding-top: var(--space-4, 1rem);
-  padding-bottom: var(--space-4, 1rem);
-  padding: var(--space-2, 0.5rem) 0;
-  padding-inline-end: var(--space-4, 1rem);
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-inline: var(--cr-pad);
+  padding-block: var(--space-4, 1rem);
+  scroll-padding-inline: var(--cr-pad);
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }

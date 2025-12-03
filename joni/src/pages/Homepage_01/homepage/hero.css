@@ -1,0 +1,132 @@
+/* Hero + G2 block */
+.stage-hero {
+  background-color: var(--color-system-white, #ffffff);
+  background-image: none;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stage-hero > * {
+  margin-block: 0;
+}
+
+.stage-hero .grid {
+  height: auto;
+  padding-bottom: 60px;
+}
+
+.ablock,
+.bblock {
+  min-height: 240px;
+  border-radius: var(--control-radius-lg, 1rem);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-4, 1rem);
+}
+
+.ablock {
+  background: var(--color-system-blue);
+  color: var(--color-system-white);
+}
+
+.bblock {
+  background: var(--color-system-gray-4-step4, #eaeaec);
+  color: var(--color-system-black);
+  align-items: stretch;
+  padding-inline: 20px;
+  padding-block: 20px;
+  height: auto;
+}
+
+.bblock-g2-hero {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  aspect-ratio: 1;
+  height: auto;
+  isolation: isolate;
+  flex: 1 1 auto;
+  display: block;
+}
+
+.g2-title {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  margin-bottom: 0;
+  color: var(--color-system-black, #0a0a0a);
+}
+
+.g2-title .g2-logo {
+  inline-size: 24px;
+  block-size: 24px;
+  object-fit: contain;
+}
+
+.g2-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  animation-play-state: paused;
+}
+
+.g2-base {
+  animation: g2-base-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.g2-competitors {
+  animation: g2-competitors-in 0.9s cubic-bezier(0.25, 0.9, 0.3, 1.05) forwards;
+  animation-delay: 0.6s;
+}
+
+.g2-badge {
+  animation: g2-badge-in 0.8s cubic-bezier(0.25, 0.9, 0.3, 1.05) forwards;
+  animation-delay: 1.2s;
+}
+
+.g2-animating .g2-layer {
+  animation-play-state: running;
+}
+
+@keyframes g2-base-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes g2-competitors-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes g2-badge-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

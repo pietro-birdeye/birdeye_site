@@ -1,0 +1,19 @@
+/* Homepage-specific styles (import map for maintainability)
+ * - shared.css: common patterns (hero typography, CTA helpers)
+ * - hero.css: hero + G2 block
+ * - product-block.css: product grid/cards
+ * - brand-carousel.css: brand cards + carousel/main-values grid
+ * - industries.css: industries tabs, quotes, lottie container
+ * - split-block.css: split section visuals/interactions
+ * - ai-stack.css: AI stack accordion rows
+ * - customer-results.css: harmony carousel overrides + result cards
+ */
+@import './homepage/shared.css';
+@import './homepage/hero.css';
+@import './sections/main-values/main-values.css';
+@import './sections/product-block/product-block.css';
+@import './sections/brand-carousel/brand-carousel.css';
+@import './sections/split-block/split-block.css';
+@import './sections/ai-stack/ai-stack.css';
+@import './sections/industries/industries.css';
+@import './sections/customer-results/customer-results.css';

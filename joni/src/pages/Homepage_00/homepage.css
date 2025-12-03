@@ -10,9 +10,10 @@
  */
 @import './homepage/shared.css';
 @import './homepage/hero.css';
-@import './homepage/product-block.css';
-@import './homepage/brand-carousel.css';
-@import './homepage/split-block.css';
-@import './pages/homepage/sections/ai-stack/ai-stack.css';
-@import './pages/homepage/sections/industries/industries.css';
-@import './homepage/customer-results.css';
+@import './sections/main-values/main-values.css';
+@import './sections/product-block/product-block.css';
+@import './sections/brand-carousel/brand-carousel.css';
+@import './sections/split-block/split-block.css';
+@import './sections/ai-stack/ai-stack.css';
+@import './sections/industries/industries.css';
+@import './sections/customer-results/customer-results.css';
