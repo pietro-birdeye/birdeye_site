@@ -1,3 +1,5 @@
+import { hydrateIcons } from '../../utils/icons';
+
 type VariantLink = {
   label: string;
   url: string;
@@ -68,4 +70,3 @@ export const initVariantSwitcher = () => {
     if (event.key === 'Escape') closePanel();
   });
 };
-import { hydrateIcons } from '../utils/icons';

@@ -170,6 +170,15 @@
   display: block;
   filter: brightness(0.65);
   z-index: 1;
+  transition: opacity 240ms ease;
+}
+
+.split-block__visual img.is-loading {
+  opacity: 0.4;
+}
+
+.split-block__visual img.is-fading {
+  opacity: 0;
 }
 
 .split-block__overlay {

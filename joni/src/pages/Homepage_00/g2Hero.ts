@@ -1,4 +1,4 @@
-import { steveOrigin } from '../utils/steve';
+import { steveOrigin } from '../../utils/steve';
 
 const setDotDelays = (dots: SVGCircleElement[]) => {
   dots.forEach((dot, index) => {
@@ -46,7 +46,6 @@ export const initG2Hero = () => {
     img.addEventListener('error', settle, { once: true });
   });
 
-  // Fallback: if loads hang, start animation after 1s
   setTimeout(() => {
     if (wrapper && !wrapper.classList.contains('g2-animating')) {
       setDotDelays(dots);

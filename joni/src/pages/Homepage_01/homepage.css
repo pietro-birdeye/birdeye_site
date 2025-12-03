@@ -8,8 +8,7 @@
  * - ai-stack.css: AI stack accordion rows
  * - customer-results.css: harmony carousel overrides + result cards
  */
-@import './homepage/shared.css';
-@import './homepage/hero.css';
+@import './sections/hero/hero.css';
 @import './sections/main-values/main-values.css';
 @import './sections/product-block/product-block.css';
 @import './sections/brand-carousel/brand-carousel.css';

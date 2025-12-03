@@ -5,6 +5,23 @@
   gap: var(--space-8, 2rem);
 }
 
+.product-block__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: var(--space-4, 1rem);
+  width: 100%;
+}
+
+.product-block__header h1 {
+  margin: 0;
+}
+
+.product-block__header .diet-btn-ictxt {
+  justify-self: end;
+  align-self: end;
+}
+
 .card01 {
   padding-block: var(--space-8, 2rem);
   padding-inline: var(--space-10, 2.5rem);

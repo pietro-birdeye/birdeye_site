@@ -2,16 +2,11 @@
 .harmony-carousel__rail {
   display: flex;
   gap: var(--space-6, 1.5rem);
-  overflow-x: auto;
-  padding: var(--space-2, 0.5rem) 0;
-  margin-inline-end: calc(-1 * (50vw - 50%));
-  padding-inline-end: var(--space-4, 1rem);
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.harmony-carousel__rail::-webkit-scrollbar {
-  display: none;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+  transform: translateX(0);
+  transition: transform var(--motion-duration-emph, 340ms) var(--motion-ease-emph-decel, cubic-bezier(0.05, 0.7, 0.1, 1));
 }
 
 .harmony-carousel__card {
@@ -38,20 +33,23 @@
   --cr-pad: clamp(var(--space-4, 1rem), 4vw, var(--space-8, 2rem));
   display: flex;
   gap: var(--space-6, 1.5rem);
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: visible;
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding-inline: var(--cr-pad);
-  padding-block: var(--space-4, 1rem);
-  scroll-padding-inline: var(--cr-pad);
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  padding: 0;
 }
 
-.customer-results .harmony-carousel__rail::-webkit-scrollbar {
-  display: none;
+.customer-results__viewport {
+  --cr-pad: clamp(var(--space-4, 1rem), 4vw, var(--space-8, 2rem));
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  overflow: hidden;
+  padding-inline: var(--cr-pad);
+  padding-block: var(--space-4, 1rem);
+  box-sizing: border-box;
 }
 
 .customer-results .harmony-carousel__card {

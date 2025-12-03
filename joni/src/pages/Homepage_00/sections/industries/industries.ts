@@ -223,6 +223,13 @@ export const initIndustries = () => {
 
     updateOverflow();
     requestAnimationFrame(updateOverflow);
+    if (typeof ResizeObserver !== 'undefined') {
+      const resizeObserver = new ResizeObserver(() => updateOverflow());
+      resizeObserver.observe(tabsContainer);
+    }
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(updateOverflow).catch(() => {});
+    }
     window.addEventListener('resize', updateOverflow);
     window.addEventListener('load', updateOverflow);
   }
