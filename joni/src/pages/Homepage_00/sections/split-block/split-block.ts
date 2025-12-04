@@ -3,12 +3,11 @@ import { loadLottieLib, type AnimationItem } from '../../../../utils/lottie';
 
 export const initSplitBlock = () => {
   const splitItems = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-split-img]'));
-  const splitHero = document.querySelector<HTMLImageElement>('[data-split-hero]');
   const splitLottie = document.querySelector<HTMLElement>('[data-split-lottie]');
+  const splitStage = document.querySelector<HTMLElement>('.stage-split');
   let splitLottiePlayer: AnimationItem | null = null;
   let autoTimer: number | null = null;
   const AUTO_MS = 6000;
-  const heroBase = splitHero ? splitHero.dataset.activeSrc ?? '' : '';
 
   const restartProgress = (btn: HTMLButtonElement) => {
     const progress = btn.querySelector<HTMLElement>('.split-block__progress');
@@ -26,30 +25,14 @@ export const initSplitBlock = () => {
     }
   };
 
-  if (!splitHero || !splitItems.length) return;
+  if (!splitItems.length) return;
 
   const setHeroImage = (file: string | undefined | null) => {
-    if (!splitHero || !file) return;
+    if (!splitStage || !file) return;
     const nextSrc = `${steveOrigin()}/v1/split-block/${file}`;
-    if (splitHero.dataset.activeSrc === nextSrc) return;
-    splitHero.dataset.activeSrc = nextSrc;
-    splitHero.classList.add('is-loading');
-    const preload = new Image();
-    preload.decoding = 'async';
-    preload.loading = 'eager';
-    preload.src = nextSrc;
-    const apply = () => {
-      splitHero.src = nextSrc;
-      splitHero.classList.remove('is-loading');
-    };
-    preload.addEventListener('load', apply, { once: true });
-    preload.addEventListener(
-      'error',
-      () => {
-        splitHero.classList.remove('is-loading');
-      },
-      { once: true },
-    );
+    if (splitStage.dataset.activeBg === nextSrc) return;
+    splitStage.dataset.activeBg = nextSrc;
+    splitStage.style.backgroundImage = `url(${nextSrc})`;
   };
 
   const preloadImages = () => {
@@ -63,6 +46,7 @@ export const initSplitBlock = () => {
 
   const setActive = (btn: HTMLButtonElement) => {
     clearTimer();
+    const btnIndex = splitItems.indexOf(btn);
     splitItems.forEach((b) => {
       const toggle = b.querySelector<HTMLElement>('.split-block__item-toggle');
       b.classList.toggle('is-active', b === btn);
@@ -75,7 +59,10 @@ export const initSplitBlock = () => {
     setHeroImage(btn.dataset.splitImg);
 
     if (splitLottie) {
-      const lottieSrc = `${steveOrigin()}/v1/split-block/Animations/Listings.json`;
+      const lottieFile =
+        btn.dataset.splitLottie ||
+        (btnIndex === 1 ? 'Animations/Outcomes 2.json' : 'Animations/Outcomes 1.json');
+      const lottieSrc = `${steveOrigin()}/v1/split-block/${lottieFile}`;
       loadLottieLib()
         .then((lottie) => {
           if (splitLottiePlayer) {
@@ -114,7 +101,6 @@ export const initSplitBlock = () => {
   };
 
   preloadImages();
-  setHeroImage(splitItems[0]?.dataset.splitImg ?? heroBase);
   setActive(splitItems[0]);
   startAuto(splitItems[0]);
 };

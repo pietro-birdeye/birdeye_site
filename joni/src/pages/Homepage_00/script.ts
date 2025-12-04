@@ -8,16 +8,16 @@ import { hydrateIcons } from '../../utils/icons';
 import { initHeader } from './header';
 import { initFooter } from './footer';
 import { initBrandCarouselSection } from './sections/brand-carousel/brand-carousel';
+import { initProductBlock } from './sections/product-block/product-block';
 import { initSplitBlock } from './sections/split-block/split-block';
 import { initAIStack } from './sections/ai-stack/ai-stack';
-import { initProductBlock } from './sections/product-block/product-block';
 import { initCustomerResultsSection } from './sections/customer-results/customer-results';
 import { initVariantSwitcher } from '../../components/variant-switcher/variantSwitcher';
 import { initHeroSection } from './sections/hero/hero';
 import '../../components/variant-switcher/variant-switcher.css';
 import aiStackTemplate from './sections/ai-stack/ai-stack.html?raw';
-import productBlockTemplate from './sections/product-block/product-block.html?raw';
 import brandCarouselTemplate from './sections/brand-carousel/brand-carousel.html?raw';
+import productBlockTemplate from './sections/product-block/product-block.html?raw';
 import splitBlockTemplate from './sections/split-block/split-block.html?raw';
 import customerResultsTemplate from './sections/customer-results/customer-results.html?raw';
 import industriesTemplate from './sections/industries/industries.html?raw';
@@ -46,8 +46,8 @@ const pageRoot = document.documentElement;
 const heroMount = document.querySelector<HTMLElement>('[data-hero]');
 const navMount = document.querySelector<HTMLElement>('[data-global-nav]');
 const footerMount = document.querySelector<HTMLElement>('[data-footer]');
-const productBlockMount = document.querySelector<HTMLElement>('[data-product-block]');
 const brandCarouselMount = document.querySelector<HTMLElement>('[data-brand-carousel]');
+const productBlockMount = document.querySelector<HTMLElement>('[data-product-block]');
 const splitBlockMount = document.querySelector<HTMLElement>('[data-split-block]');
 const customerResultsMount = document.querySelector<HTMLElement>('[data-customer-results]');
 const aiStackMount = document.querySelector<HTMLElement>('[data-ai-stack]');
@@ -63,18 +63,18 @@ if (heroMount) {
 initHeroSection();
 initFooter(footerMount);
 
-if (productBlockMount) {
-  productBlockMount.innerHTML = productBlockTemplate;
-  hydrateIcons(productBlockMount);
-  ensureInlineArrow(productBlockMount);
-  initProductBlock();
-}
-
 if (brandCarouselMount) {
   brandCarouselMount.innerHTML = brandCarouselTemplate;
   hydrateIcons(brandCarouselMount);
   ensureInlineArrow(brandCarouselMount);
   initBrandCarouselSection();
+}
+
+if (productBlockMount) {
+  productBlockMount.innerHTML = productBlockTemplate;
+  hydrateIcons(productBlockMount);
+  ensureInlineArrow(productBlockMount);
+  initProductBlock();
 }
 
 if (splitBlockMount) {

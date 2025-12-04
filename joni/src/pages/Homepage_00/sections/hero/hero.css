@@ -201,13 +201,14 @@
 }
 
 .HeroCTAs .diet-btn-txt {
-  flex: 0 0 auto;
+  flex: 1 1 0;
+  min-width: 0;
   justify-content: center;
   white-space: normal;
 }
 
 .emailFormWrapper {
-  width: 400px;
+  width: 300px;
   max-width: 100%;
   display: flex;
   flex-direction: column;

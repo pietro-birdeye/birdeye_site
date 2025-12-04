@@ -258,7 +258,7 @@ h6,
 
 .input-group .input:focus ~ .user-label,
 .input-group .input:valid ~ .user-label {
-  transform: translateY(-55%) scale(0.85);
+  transform: translate(calc(-1 * var(--space-5, 1.25rem)), -55%) scale(0.85);
   background-color: var(--color-system-white, #ffffff);
   padding: 0 0.25em;
   color: var(--color-system-blue, #007aff);

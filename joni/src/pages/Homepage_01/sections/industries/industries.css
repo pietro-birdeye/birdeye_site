@@ -154,6 +154,11 @@
   margin: 0;
   flex: 1;
   display: block;
+  line-height: 1.1;
+}
+
+.industries-block__quote p {
+  line-height: 1.25;
 }
 
 .industries-block__cite {
@@ -190,7 +195,7 @@
   align-items: center;
   justify-content: center;
   overflow: visible;
-  transform: translateX(-20%) scale(1.2);
+  transform: scale(1.25);
   transform-origin: center;
 }
 
@@ -198,8 +203,4 @@
 .industries-block__visual canvas {
   width: 100%;
   height: 100%;
-}
-
-.quote-highlight {
-  color: var(--color-system-purple, #6b4eff);
 }

@@ -14,7 +14,7 @@ const INDUSTRY_ASSETS: Record<string, IndustryContent> = {
     bg: 'industries_photos/healthcare.jpg',
     overlay: 'industries_photos/Industries_graphic/healthcare.svg',
     quote:
-      '<span class="quote-highlight">The best review generation platform on the market!</span> It uses cutting-edge AI to analyze customer sentiments, allowing for precise and insightful feedback. A five-star solution all the way!',
+      '<span class="quote-highlight">The best review generation platform on the market!</span><br><br>It uses cutting-edge AI to analyze customer sentiments, allowing for precise and insightful feedback. A five-star solution all the way!',
     name: 'Ken Norquist',
     company: "Axia Women's Health",
   },
@@ -22,7 +22,7 @@ const INDUSTRY_ASSETS: Record<string, IndustryContent> = {
     bg: 'industries_photos/realestate.jpg',
     overlay: 'lottie/real_estate_desktop_v2.json',
     quote:
-      '<span class="quote-highlight">Birdeye’s AI-powered tools have streamlined operations.</span> From improving responses to addressing trends proactively, we’ve seen a noticeable difference in efficiency and resident satisfaction.',
+      '<span class="quote-highlight">Birdeye’s AI-powered tools have streamlined operations.</span><br><br>From improving responses to addressing trends proactively, we’ve seen a noticeable difference in efficiency and resident satisfaction.',
     name: 'Allison Ross',
     company: 'Fairlawn Real Estate',
   },
@@ -30,7 +30,7 @@ const INDUSTRY_ASSETS: Record<string, IndustryContent> = {
     bg: 'industries_photos/finance.jpg',
     overlay: 'lottie/finance_desktop_v3.json',
     quote:
-      '<span class="quote-highlight">Surveys have been a game-changer in delighting our customers.</span> Understanding feedback allows us to correct any issues before they escalate.',
+      '<span class="quote-highlight">Surveys have been a game-changer in delighting our customers.</span><br><br>Understanding feedback allows us to correct any issues before they escalate.',
     name: 'Jeff Smith',
     company: 'Guaranteed Rate',
   },
@@ -38,7 +38,7 @@ const INDUSTRY_ASSETS: Record<string, IndustryContent> = {
     bg: 'industries_photos/self-storage.jpg',
     overlay: 'lottie/self-storage-desktop.json',
     quote:
-      'Before Birdeye, our average monthly Google review count had been 25 reviews across all locations. <span class="quote-highlight">After implementing Birdeye, we saw an immediate difference of 45–50 new reviews each month.</span>',
+      'Before Birdeye, our average monthly Google review count had been 25 reviews across all locations.<br><br><span class="quote-highlight">After implementing Birdeye, we saw an immediate difference of 45–50 new reviews each month.</span>',
     name: 'Brian Wipperfurth',
     company: 'Superior Storage',
   },
@@ -46,7 +46,7 @@ const INDUSTRY_ASSETS: Record<string, IndustryContent> = {
     bg: 'industries_photos/dental.jpg',
     overlay: 'lottie/dental_desktop_v2.json',
     quote:
-      '<span class="quote-highlight">Birdeye is a game changer for patient experience.</span> We can message all our patients using one central inbox.',
+      '<span class="quote-highlight">Birdeye is a game changer for patient experience.</span><br><br>We can message all our patients using one central inbox.',
     name: 'Brandon Dowdy-Ernst',
     company: 'Smile Workshop',
   },
@@ -54,7 +54,7 @@ const INDUSTRY_ASSETS: Record<string, IndustryContent> = {
     bg: 'industries_photos/restaurants.jpg',
     overlay: 'lottie/restaurants-desktop.json',
     quote:
-      '<span class="quote-highlight">Birdeye’s AI tools allow us to scale effortlessly.</span> Whether we’re at 72 diners or 172, the platform grows with us and continues to deliver exactly what we need.',
+      '<span class="quote-highlight">Birdeye’s AI tools allow us to scale effortlessly.</span><br><br>Whether we’re at 72 diners or 172, the platform grows with us and continues to deliver exactly what we need.',
     name: 'Denise D’Amico Johnson',
     company: 'Black Bear Diner',
   },
