@@ -13,11 +13,10 @@ import { initAIStack } from './sections/ai-stack/ai-stack';
 import { initMainValues } from './sections/main-values/main-values';
 import { initProductBlock } from './sections/product-block/product-block';
 import { initCustomerResultsSection } from './sections/customer-results/customer-results';
-import { initVariantSwitcher } from './variantSwitcher';
+import { initVariantSwitcher } from '../../components/variant-switcher/variantSwitcher';
 import { initHeroSection } from './sections/hero/hero';
-import './variant-switcher.css';
+import '../../components/variant-switcher/variant-switcher.css';
 import aiStackTemplate from './sections/ai-stack/ai-stack.html?raw';
-import mainValuesTemplate from './sections/main-values/main-values.html?raw';
 import productBlockTemplate from './sections/product-block/product-block.html?raw';
 import brandCarouselTemplate from './sections/brand-carousel/brand-carousel.html?raw';
 import splitBlockTemplate from './sections/split-block/split-block.html?raw';
@@ -101,7 +100,6 @@ const pageRoot = document.documentElement;
 const heroMount = document.querySelector<HTMLElement>('[data-hero]');
 const navMount = document.querySelector<HTMLElement>('[data-global-nav]');
 const footerMount = document.querySelector<HTMLElement>('[data-footer]');
-const mainValuesMount = document.querySelector<HTMLElement>('[data-main-values]');
 const productBlockMount = document.querySelector<HTMLElement>('[data-product-block]');
 const brandCarouselMount = document.querySelector<HTMLElement>('[data-brand-carousel]');
 const splitBlockMount = document.querySelector<HTMLElement>('[data-split-block]');
@@ -114,6 +112,7 @@ if (heroMount) {
 }
 initHeroBackgroundVideo();
 initHeroSection();
+initMainValues();
 const navController = initHeader(navMount);
 const heroSection = document.querySelector<HTMLElement>('.stage-hero');
 if (navController && heroSection) {
@@ -125,13 +124,6 @@ if (navController && heroSection) {
   });
 }
 initFooter(footerMount);
-
-if (mainValuesMount) {
-  mainValuesMount.innerHTML = mainValuesTemplate;
-  hydrateIcons(mainValuesMount);
-  ensureInlineArrow(mainValuesMount);
-  initMainValues();
-}
 
 if (productBlockMount) {
   productBlockMount.innerHTML = productBlockTemplate;

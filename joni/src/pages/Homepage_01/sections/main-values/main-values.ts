@@ -5,6 +5,7 @@ export const initMainValues = () => {
     document.querySelector<HTMLElement>('[data-section-name="Main values"]') ?? document;
 
   const cards = Array.from(scope.querySelectorAll<HTMLElement>('.main-values-grid .brand-card'));
+  const isHeroContext = scope.classList.contains('hero-main-values');
 
   cards.forEach((card, index) => {
     const initial = card.querySelector<HTMLElement>('[data-main-value-img]');
@@ -14,8 +15,9 @@ export const initMainValues = () => {
     const url = `${steveOrigin()}/v1/imgs/mainvalues/${file}`;
     initial.style.setProperty('--initial-mask', `url(${url})`);
 
-    const color =
-      index === 0
+    const color = isHeroContext
+      ? 'var(--color-system-white)'
+      : index === 0
         ? 'var(--color-system-orange-1)'
         : index === 1
           ? 'var(--color-system-mint-1)'

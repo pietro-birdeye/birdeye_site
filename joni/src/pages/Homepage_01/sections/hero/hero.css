@@ -8,6 +8,7 @@
   padding-top: var(--space-4, 1rem);
   margin-top: -56px;
   padding-top: calc(56px + var(--space-4, 1rem));
+  padding-bottom: var(--space-10, 2.5rem);
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -27,6 +28,43 @@
 }
 
 .logo-slider {
+}
+
+.hero-main-values {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: var(--space-16, 4rem);
+  padding-bottom: 0;
+}
+
+.hero-main-values .grid {
+  padding-inline: clamp(var(--space-4, 1rem), 4vw, var(--space-9, 2.25rem));
+}
+
+.hero-main-values .brand-card {
+  background: transparent;
+  border: 1px solid var(--color-system-white, #ffffff);
+  color: var(--color-system-white, #ffffff);
+  box-shadow: 12px 14px 40px color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 90%);
+}
+
+.hero-main-values .brand-card:hover .brand-card__media[data-abstract-img]::after {
+  opacity: 0.75;
+}
+
+.hero-main-values .brand-card__title-row h3,
+.hero-main-values .brand-card__text,
+.hero-main-values .brand-card__text p {
+  color: var(--color-system-white, #ffffff);
+}
+
+.hero-main-values .brand-card__arrow {
+  color: var(--color-system-white, #ffffff);
+}
+
+.hero-main-values .brand-card__media {
+  background: transparent;
 }
 
 .stage-hero__bg {

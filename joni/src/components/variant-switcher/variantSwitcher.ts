@@ -1,11 +1,11 @@
 import { hydrateIcons } from '../../utils/icons';
 
-type VariantLink = {
+export type VariantLink = {
   label: string;
   url: string;
 };
 
-const VARIANTS: VariantLink[] = [
+const DEFAULT_VARIANTS: VariantLink[] = [
   { label: 'Homepage (current)', url: '/' },
   { label: 'Homepage_00', url: '/Homepage_00/' },
   { label: 'Homepage_01', url: '/Homepage_01/' },
@@ -21,8 +21,8 @@ const createVariantItem = (variant: VariantLink) => {
   return link;
 };
 
-export const initVariantSwitcher = () => {
-  if (!VARIANTS.length) return;
+export const initVariantSwitcher = (variants: VariantLink[] = DEFAULT_VARIANTS) => {
+  if (!variants.length) return;
 
   const root = document.createElement('div');
   root.className = 'variant-switcher';
@@ -47,7 +47,7 @@ export const initVariantSwitcher = () => {
 
   const list = document.createElement('div');
   list.className = 'variant-switcher__list';
-  VARIANTS.forEach((v) => list.appendChild(createVariantItem(v)));
+  variants.forEach((variant) => list.appendChild(createVariantItem(variant)));
 
   panel.appendChild(title);
   panel.appendChild(list);

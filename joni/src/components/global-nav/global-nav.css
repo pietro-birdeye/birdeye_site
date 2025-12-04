@@ -218,3 +218,9 @@
   color: var(--nav-text);
   border-color: color-mix(in oklab, var(--nav-text), transparent 70%);
 }
+
+.site-header[data-nav-theme='dark'] .cta-wrapper .diet-btn-txt[data-variant='line1'] {
+  --btn-border-color: var(--color-system-white, #ffffff);
+  border-color: var(--btn-border-color);
+  color: var(--color-system-white, #ffffff);
+}
