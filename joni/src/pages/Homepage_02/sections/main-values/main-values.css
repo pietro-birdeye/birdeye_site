@@ -1,0 +1,69 @@
+@import '../brand-carousel/brand-carousel.css';
+
+.main-values-grid .brand-card__svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.brand-card__initial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  inline-size: 70%;
+  block-size: 70%;
+  background: var(--initial-color, var(--color-system-black));
+  -webkit-mask-image: var(--initial-mask);
+  mask-image: var(--initial-mask);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center;
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+
+.brand-card:hover .brand-card__initial {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.main-values-grid .brand-card__svg svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  inline-size: 60%;
+  block-size: 60%;
+  transform: translate(-50%, -50%) scale(1.2);
+  transform-origin: center;
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.main-values-grid .brand-card__svg .final-shape {
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+.main-values-grid .brand-card:hover .brand-card__svg .final-shape {
+  transform: scale(1.2);
+}
+
+.brand-card__svg--one-platform .brand-card__initial {
+  inline-size: 63%;
+  block-size: 63%;
+}
+
+.brand-card__svg--unified .brand-card__initial {
+  inline-size: 56%;
+  block-size: 56%;
+}
+
+.brand-card__svg--custom .brand-card__initial {
+  inline-size: 56%;
+  block-size: 56%;
+}

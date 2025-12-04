@@ -2,7 +2,9 @@
 .stage-hero {
   background-color: var(--color-system-white, #ffffff);
   background-image: none;
-  padding-top: 0;
+  padding-top: var(--space-4, 1rem);
+  margin-top: -56px;
+  padding-top: calc(56px + var(--space-4, 1rem));
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -14,7 +16,7 @@
 
 .stage-hero .grid {
   height: auto;
-  padding-bottom: 60px;
+  padding-bottom: var(--space-2, 0.5rem);
 }
 
 .ablock,

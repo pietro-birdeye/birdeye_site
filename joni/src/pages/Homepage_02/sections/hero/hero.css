@@ -27,6 +27,51 @@
 }
 
 .logo-slider {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 72px;
+  overflow: hidden;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 90%),
+    color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 92%)
+  );
+}
+
+.logo-slider__track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12, 3rem);
+  min-width: max-content;
+  flex: none;
+  padding-inline: var(--space-4, 1rem);
+  animation: logo-marquee 36s linear infinite;
+}
+
+.logo-slider__track:nth-of-type(2) {
+  animation-delay: -18s;
+}
+
+.logo-slider img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.08) saturate(1.05);
+  opacity: 1;
+  display: block;
+}
+
+@keyframes logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .stage-hero__bg {

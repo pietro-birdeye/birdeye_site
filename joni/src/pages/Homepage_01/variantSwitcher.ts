@@ -9,6 +9,7 @@ const VARIANTS: VariantLink[] = [
   { label: 'Homepage (current)', url: '/' },
   { label: 'Homepage_00', url: '/Homepage_00/' },
   { label: 'Homepage_01', url: '/Homepage_01/' },
+  { label: 'Homepage_02', url: '/Homepage_02/' },
 ];
 
 const createVariantItem = (variant: VariantLink) => {
