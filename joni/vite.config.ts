@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { defineConfig, loadEnv } from 'vite';
 import path from 'node:path';
 
@@ -8,6 +9,21 @@ export default defineConfig(({ mode }) => {
   if (!steveUrl) {
     throw new Error('STEVE_URL (or VITE_STEVE_URL) is required for Joni builds');
   }
+
+  const rootDir = __dirname;
+  const homepageInputs = fs
+    .readdirSync(rootDir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && entry.name.startsWith('Homepage_'))
+    .map((entry) => {
+      const htmlPath = path.resolve(rootDir, entry.name, 'index.html');
+      return fs.existsSync(htmlPath) ? [entry.name, htmlPath] : null;
+    })
+    .filter(Boolean) as [string, string][];
+
+  const input = {
+    main: path.resolve(rootDir, 'index.html'),
+    ...Object.fromEntries(homepageInputs),
+  };
 
   return {
     define: {
@@ -21,6 +37,11 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@harmony': path.resolve(__dirname, '../harmony'),
+      },
+    },
+    build: {
+      rollupOptions: {
+        input,
       },
     },
   };
