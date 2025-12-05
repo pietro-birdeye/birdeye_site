@@ -1,3 +1,5 @@
+import { steveOrigin } from '../../utils/steve';
+
 export const initHorizontalSlider = () => {
   const sliders = Array.from(document.querySelectorAll<HTMLElement>('[data-horizontal-slider]'));
   if (!sliders.length) return;
@@ -10,6 +12,34 @@ export const initHorizontalSlider = () => {
     if (!track || !scroller || !track.children.length) return;
 
     const slides = Array.from(track.children) as HTMLElement[];
+
+    // Hydrate customer logos if present
+    const customerLogos = Array.from(track.querySelectorAll<HTMLImageElement>('[data-customer-logo]'));
+    customerLogos.forEach((img) => {
+      const file = img.dataset.customerLogo;
+      if (!file) return;
+      img.src = `${steveOrigin()}/v1/logos/customer-results/${file}`;
+      img.decoding = 'async';
+      img.loading = 'lazy';
+    });
+
+    // Wire navigation for cards with hrefs
+    const linkCards = Array.from(track.querySelectorAll<HTMLElement>('[data-href]'));
+    linkCards.forEach((card) => {
+      const href = card.dataset.href;
+      if (!href) return;
+      const navigate = () => {
+        window.location.href = href;
+      };
+      card.addEventListener('click', navigate);
+      card.addEventListener('keydown', (evt) => {
+        if (evt.key === 'Enter' || evt.key === ' ') {
+          evt.preventDefault();
+          navigate();
+        }
+      });
+    });
+
     let currentIndex = 0;
 
     const getStep = () => {
