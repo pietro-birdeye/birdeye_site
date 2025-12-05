@@ -15,3 +15,4 @@
 @import './sections/ai-stack/ai-stack.css';
 @import './sections/industries/industries.css';
 @import './sections/new-carousel/new-carousel.css';
+@import '../../components/horizontal-slider/horizontal-slider.css';
