@@ -6,7 +6,6 @@
  * - industries.css: industries tabs, quotes, lottie container
  * - split-block.css: split section visuals/interactions
  * - ai-stack.css: AI stack accordion rows
- * - customer-results.css: harmony carousel overrides + result cards
  */
 @import './sections/hero/hero.css';
 @import './sections/main-values/main-values.css';
@@ -15,4 +14,3 @@
 @import './sections/split-block/split-block.css';
 @import './sections/ai-stack/ai-stack.css';
 @import './sections/industries/industries.css';
-@import './sections/customer-results/customer-results.css';

@@ -20,7 +20,7 @@
   margin-block: 0;
 }
 
-.stage-hero .grid {
+.stage-hero .block {
   height: auto;
   padding-bottom: var(--space-2, 0.5rem);
   position: relative;
@@ -38,7 +38,7 @@
   padding-bottom: 0;
 }
 
-.hero-main-values .grid {
+.hero-main-values .block {
   padding-inline: clamp(var(--space-4, 1rem), 4vw, var(--space-9, 2.25rem));
 }
 

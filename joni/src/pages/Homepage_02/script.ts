@@ -12,7 +12,6 @@ import { initSplitBlock } from './sections/split-block/split-block';
 import { initAIStack } from './sections/ai-stack/ai-stack';
 import { initMainValues } from './sections/main-values/main-values';
 import { initProductBlock } from './sections/product-block/product-block';
-import { initCustomerResultsSection } from './sections/customer-results/customer-results';
 import { initVariantSwitcher } from '../../components/variant-switcher/variantSwitcher';
 import { initHeroSection } from './sections/hero/hero';
 import '../../components/variant-switcher/variant-switcher.css';
@@ -21,7 +20,6 @@ import mainValuesTemplate from './sections/main-values/main-values.html?raw';
 import productBlockTemplate from './sections/product-block/product-block.html?raw';
 import brandCarouselTemplate from './sections/brand-carousel/brand-carousel.html?raw';
 import splitBlockTemplate from './sections/split-block/split-block.html?raw';
-import customerResultsTemplate from './sections/customer-results/customer-results.html?raw';
 import industriesTemplate from './sections/industries/industries.html?raw';
 import heroTemplate from './sections/hero/hero.html?raw';
 import { initIndustries } from './sections/industries/industries';
@@ -105,7 +103,6 @@ const mainValuesMount = document.querySelector<HTMLElement>('[data-main-values]'
 const productBlockMount = document.querySelector<HTMLElement>('[data-product-block]');
 const brandCarouselMount = document.querySelector<HTMLElement>('[data-brand-carousel]');
 const splitBlockMount = document.querySelector<HTMLElement>('[data-split-block]');
-const customerResultsMount = document.querySelector<HTMLElement>('[data-customer-results]');
 const aiStackMount = document.querySelector<HTMLElement>('[data-ai-stack]');
 const industriesMount = document.querySelector<HTMLElement>('[data-industries]');
 
@@ -152,13 +149,6 @@ if (splitBlockMount) {
   hydrateIcons(splitBlockMount);
   ensureInlineArrow(splitBlockMount);
   initSplitBlock();
-}
-
-if (customerResultsMount) {
-  customerResultsMount.innerHTML = customerResultsTemplate;
-  hydrateIcons(customerResultsMount);
-  ensureInlineArrow(customerResultsMount);
-  initCustomerResultsSection();
 }
 
 if (industriesMount) {

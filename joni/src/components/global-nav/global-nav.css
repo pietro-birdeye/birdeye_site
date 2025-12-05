@@ -50,7 +50,7 @@
   align-items: center;
 }
 
-.site-header .stage .grid {
+.site-header .stage .block {
   padding-inline: var(--space-6, 1.5rem);
   max-width: 1600px;
   margin-inline: auto;

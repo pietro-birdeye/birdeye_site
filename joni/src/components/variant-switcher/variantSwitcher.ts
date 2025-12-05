@@ -6,7 +6,6 @@ export type VariantLink = {
 };
 
 const DEFAULT_VARIANTS: VariantLink[] = [
-  { label: 'Homepage (current)', url: '/' },
   { label: 'Homepage_00', url: '/Homepage_00/' },
   { label: 'Homepage_01', url: '/Homepage_01/' },
   { label: 'Homepage_02', url: '/Homepage_02/' },
@@ -41,15 +40,10 @@ export const initVariantSwitcher = (variants: VariantLink[] = DEFAULT_VARIANTS) 
   const panel = document.createElement('div');
   panel.className = 'variant-switcher__panel';
 
-  const title = document.createElement('div');
-  title.className = 'variant-switcher__title heading-6';
-  title.textContent = 'Page Variants';
-
   const list = document.createElement('div');
   list.className = 'variant-switcher__list';
   variants.forEach((variant) => list.appendChild(createVariantItem(variant)));
 
-  panel.appendChild(title);
   panel.appendChild(list);
   root.appendChild(panel);
   root.appendChild(button);

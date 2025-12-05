@@ -1,96 +1,82 @@
-/* Harmony carousel + customer results */
-.harmony-carousel__rail {
-  display: flex;
-  gap: var(--space-6, 1.5rem);
-  overflow: visible;
-  padding: 0;
-  margin: 0;
-  transform: translateX(0);
-  transition: transform var(--motion-duration-emph, 340ms) var(--motion-ease-emph-decel, cubic-bezier(0.05, 0.7, 0.1, 1));
-}
-
-.harmony-carousel__card {
-  position: relative;
-  min-width: min(420px, 90vw);
-  flex: 0 0 auto;
-  background: var(--color-system-white, #ffffff);
-  border: 1px solid color-mix(in oklab, var(--role-border, rgba(10, 10, 12, 0.1)), transparent 60%);
-  border-radius: var(--control-radius-xl, 1.5rem);
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  scroll-snap-align: start;
-  box-shadow: 12px 14px 40px rgba(10, 10, 12, 0.06);
-  overflow: visible;
-}
-
-.customer-results {
-  gap: var(--space-6, 1.5rem);
-}
-
-.customer-results .harmony-carousel__rail {
-  --cr-pad: clamp(var(--space-4, 1rem), 4vw, var(--space-8, 2rem));
-  display: flex;
-  gap: var(--space-6, 1.5rem);
-  overflow: visible;
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.customer-results__viewport {
-  --cr-pad: clamp(var(--space-4, 1rem), 4vw, var(--space-8, 2rem));
-  position: relative;
-  left: 50%;
+/* Full-bleed carousel mirroring provided source */
+.new-carousel {
   width: 100vw;
-  transform: translateX(-50%);
-  overflow: hidden;
-  padding-inline: var(--cr-pad);
-  padding-block: var(--space-4, 1rem);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0;
   box-sizing: border-box;
 }
 
-.customer-results .harmony-carousel__card {
+.new-carousel__viewport {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.new-carousel .brand-carousel__header {
+  padding-inline: clamp(var(--space-5, 1.25rem), 5vw, var(--space-10, 2.5rem));
+  margin-bottom: var(--space-8, 2rem);
+}
+
+.new-carousel__scroller {
+  overflow-x: auto;
+  overflow-y: visible;
+  padding-left: max(1rem, calc((100vw - 80rem) / 2));
+  padding-right: max(1rem, calc((100vw - 80rem) / 2));
+  padding-top: var(--space-3, 0.75rem);
+  padding-bottom: var(--space-3, 0.75rem);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+
+.new-carousel__scroller:active {
+  cursor: grabbing;
+}
+
+.new-carousel__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.new-carousel__track {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: var(--space-1, 0.25rem);
+  padding-bottom: max(var(--space-1, 0.25rem), 1rem);
+}
+
+.new-carousel__card {
+  flex: 0 0 480px;
+  min-height: 580px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: var(--space-4, 1rem);
+  background: var(--color-system-white, #ffffff);
+  border-radius: var(--control-radius-xl, 1.5rem);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
   padding: 0;
-  margin: 0;
-  min-height: auto;
-  width: min(480px, 90vw);
-  max-width: 480px;
-  min-width: min(480px, 90vw);
-  flex: 0 0 auto;
+  transition: transform 200ms ease;
 }
 
-.customer-results__eyebrow {
-  margin: 0;
-  color: var(--color-system-gray-1, #3a3a3c);
+.new-carousel__card-body {
+  padding: 0;
+  min-height: 580px;
 }
 
+/* Customer result card styling (moved from retired customer-results section) */
 .customer-result-card {
   padding: 0;
   gap: 0;
   border: 1px solid color-mix(in oklab, var(--role-border, rgba(10, 10, 12, 0.14)), transparent 50%);
   background: var(--color-system-white, #ffffff);
   box-shadow: 0 18px 40px rgba(10, 10, 12, 0.06);
-  transition: box-shadow 220ms ease, transform 220ms ease, border-color 200ms ease;
+  transition: border-color 200ms ease, transform 200ms ease;
   cursor: pointer;
-  transform: translateY(0);
-}
-
-.customer-result-card[data-state='focus'] {
-  box-shadow: 0 22px 48px rgba(10, 10, 12, 0.08);
-  border-color: transparent;
+  transform: scale(1);
 }
 
 .customer-result-card:hover {
-  transform: translateY(0);
-  box-shadow: 0 22px 48px rgba(10, 10, 12, 0.08);
-  border-color: transparent;
+  transform: scale(1.03);
 }
 
 .customer-result-card__band {
@@ -106,14 +92,6 @@
   transition: background-color 220ms ease, color 220ms ease;
   max-inline-size: 100%;
   inline-size: 100%;
-}
-
-.customer-result-card[data-state='focus'] .customer-result-card__band {
-  background: var(--color-system-mint-5, #c8f2dc);
-}
-
-.customer-result-card:hover .customer-result-card__band {
-  background: var(--color-system-blue-4, #c5dfff);
 }
 
 .customer-result-card__stat {
@@ -217,12 +195,32 @@
   color: var(--color-system-gray-2, #8e8e93);
 }
 
-.customer-result-card:hover .customer-result-card__band {
-  background: color-mix(in oklab, var(--color-system-blue, #1976d2), white 70%);
+@media (min-width: 768px) {
+  .new-carousel__controls--desktop {
+    display: inline-flex;
+  }
+
+  .new-carousel__controls--mobile {
+    display: none;
+  }
+
+  .new-carousel__header {
+    padding-inline: max(1rem, calc((100vw - 80rem) / 2));
+  }
+
+  .new-carousel__scroller {
+    padding-left: max(1rem, calc((100vw - 94rem) / 2));
+    padding-right: max(1rem, calc((100vw - 80rem) / 2));
+  }
 }
 
-.customer-result-card:hover .customer-result-card__arrow {
-  opacity: 1;
-  transform: translateY(0);
-  color: var(--color-system-black, #0a0a0a);
+@media (min-width: 1024px) {
+  .new-carousel__header {
+    padding-inline: max(1rem, calc((100vw - 80rem) / 2));
+  }
+
+  .new-carousel__scroller {
+    padding-left: max(1rem, calc((100vw - 94rem) / 2));
+    padding-right: max(1rem, calc((100vw - 80rem) / 2));
+  }
 }
