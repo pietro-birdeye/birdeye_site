@@ -6,7 +6,8 @@ export type VariantLink = {
 };
 
 const DEFAULT_VARIANTS: VariantLink[] = [
-  { label: 'Homepage_00', url: '/Homepage_00/' },
+  // Homepage_00 is served at the root index; no standalone /Homepage_00/ file in the build.
+  { label: 'Homepage_00', url: '/' },
   { label: 'Homepage_01', url: '/Homepage_01/' },
   { label: 'Homepage_02', url: '/Homepage_02/' },
   { label: 'Homepage_03', url: '/Homepage_03/' },
