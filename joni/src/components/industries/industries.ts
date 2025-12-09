@@ -118,11 +118,21 @@ export const initIndustries = () => {
     });
 
     if (industryBg && assets.bg) {
-      industryBg.style.backgroundImage = `url(${steveOrigin()}/v1/industries/${assets.bg})`;
-      industryBg.dataset.industryBg = assets.bg;
-      industryBg.style.backgroundSize = 'cover';
-      industryBg.style.backgroundPosition = 'center';
-      industryBg.style.backgroundRepeat = 'no-repeat';
+      const url = `${steveOrigin()}/v1/industries/${assets.bg}`;
+      const img = new Image();
+      img.decoding = 'async';
+      img.loading = 'eager';
+      img.src = url;
+      img.onload = () => {
+        industryBg.style.backgroundImage = `url(${url})`;
+        industryBg.dataset.industryBg = assets.bg;
+        industryBg.style.backgroundSize = 'cover';
+        industryBg.style.backgroundPosition = 'center';
+        industryBg.style.backgroundRepeat = 'no-repeat';
+      };
+      img.onerror = () => {
+        industryBg.style.backgroundImage = `url(${url})`;
+      };
     }
 
     if (industryLottieContainer && assets.overlay) {
