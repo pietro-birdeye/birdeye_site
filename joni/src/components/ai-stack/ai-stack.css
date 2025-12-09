@@ -112,7 +112,7 @@
 }
 .aistack-block__title,
 .aistack-block__title .brand-card__arrow {
-  transition: color 200ms ease;
+  transition: color 200ms ease, transform 200ms ease;
 }
 .aistack-block__title .brand-card__arrow {
   inline-size: 1.25rem;
@@ -122,11 +122,19 @@
   justify-content: center;
   opacity: 1;
 }
+.aistack-block__title .brand-card__arrow svg {
+  display: block;
+  transition: transform 200ms ease;
+}
 .aistack-block:hover .aistack-block__title,
 .aistack-block:hover .brand-card__arrow,
 .aistack-block:focus-within .aistack-block__title,
 .aistack-block:focus-within .brand-card__arrow {
   color: var(--color-system-white, #ffffff);
+}
+.aistack-block:hover .brand-card__arrow svg,
+.aistack-block:focus-within .brand-card__arrow svg {
+  transform: rotate(-90deg);
 }
 
 .aistack-block__content {

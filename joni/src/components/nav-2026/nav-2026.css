@@ -197,7 +197,7 @@ body.nav-2026-locked {
   pointer-events: none;
   transition: opacity 200ms var(--duration-base, ease), visibility 200ms var(--duration-base, ease);
   pointer-events: none;
-  padding-block: var(--space-12, 3rem);
+  padding-block: var(--space-6, 1.5rem);
 }
 
 .mega-panel.is-open {
@@ -381,6 +381,42 @@ body.nav-2026-locked {
 
 .mega-panel__links a:hover,
 .mega-panel__links a:focus-visible {
+  color: color-mix(in oklab, var(--nav-text), var(--color-system-blue, #007aff) 35%);
+}
+
+.mega-panel--solutions .mega-panel__inner {
+  grid-template-columns: 1fr;
+  gap: var(--space-6, 1.5rem);
+}
+
+.mega-panel--solutions {
+  padding-bottom: var(--space-12, 3rem);
+}
+
+.solutions-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.solutions-grid {
+  display: grid;
+  gap: var(--space-2, 0.5rem) var(--space-4, 1rem);
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+}
+
+.solutions-grid a {
+  color: var(--nav-text);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+.solutions-grid:hover a {
+  color: var(--color-system-gray-2, #8e8e93);
+}
+
+.solutions-grid a:hover,
+.solutions-grid a:focus-visible {
   color: color-mix(in oklab, var(--nav-text), var(--color-system-blue, #007aff) 35%);
 }
 
