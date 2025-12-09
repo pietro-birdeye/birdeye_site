@@ -1,0 +1,73 @@
+.stage-hero {
+  background-color: var(--color-system-white, #ffffff);
+  padding-top: var(--space-4, 1rem);
+  padding-bottom: 0;
+  margin-top: -56px;
+  padding-top: calc(56px + var(--space-4, 1rem));
+  overflow: hidden;
+}
+
+.stage-hero .block {
+  padding-inline: 0;
+}
+
+.hero-block {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-4, 1rem);
+}
+
+.hero-ablock,
+.hero-bblock {
+  min-height: 240px;
+  border-radius: var(--control-radius-lg, 1rem);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+}
+
+.hero-ablock {
+  background: transparent;
+  color: var(--color-system-black, #0a0a0a);
+  align-items: center;
+  text-align: center;
+}
+
+.hero-bblock {
+  background: transparent;
+  color: var(--color-system-black);
+  align-items: stretch;
+  padding: 0 var(--space-12, 3.5rem);
+  align-self: stretch;
+  width: 100%;
+}
+
+.hero-bblock__media {
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  padding: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-inline: auto;
+  max-height: 680px;
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated, 0 12px 36px rgba(14, 16, 24, 0.14));
+}
+
+.hero-bblock__media canvas {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  display: block;
+}
+
+.hero-bblock__media svg {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  display: block;
+}

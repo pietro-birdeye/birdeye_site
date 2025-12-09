@@ -8,7 +8,7 @@
  * - ai-stack.css: AI stack accordion rows
  */
 @import './sections/hero/hero.css';
-@import './sections/main-values/main-values.css';
+@import '../../components/main-values/main-values.css';
 @import './sections/product-block/product-block.css';
 @import './sections/brand-carousel/brand-carousel.css';
 @import './sections/split-block/split-block.css';

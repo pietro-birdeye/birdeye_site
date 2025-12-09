@@ -1,0 +1,155 @@
+[data-horizontal-slider-customers] .horizontal-slider__card {
+  flex: 0 0 540px;
+  min-height: 580px;
+}
+
+[data-horizontal-slider-customers] .horizontal-slider-card {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+[data-horizontal-slider-customers] .horizontal-slider-card__body {
+  height: 100%;
+}
+
+[data-horizontal-slider-customers] .customer-result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+  padding: 0;
+  background: var(--color-system-white, #ffffff);
+  border-radius: var(--control-radius-xl, 1.5rem);
+  border: 1px solid color-mix(in oklab, var(--role-border, rgba(10, 10, 12, 0.14)), transparent 50%);
+  box-shadow: 0 18px 40px rgba(10, 10, 12, 0.06);
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  cursor: pointer;
+  transform: scale(1);
+}
+
+[data-horizontal-slider-customers] .customer-result-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 44px rgba(10, 10, 12, 0.08);
+}
+
+[data-horizontal-slider-customers] .customer-result-card:hover .customer-result-card__arrow {
+  opacity: 1;
+}
+
+[data-horizontal-slider-customers] .customer-result-card__band {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10, 2.5rem);
+  align-items: stretch;
+  padding: var(--space-8, 2rem) var(--space-8, 2rem) var(--space-1, 0.25rem);
+  background: var(--color-system-orange-5, #fddcab);
+  border-radius: var(--control-radius-xl, 1.5rem) var(--control-radius-xl, 1.5rem) 0 0;
+  z-index: 2;
+  max-inline-size: 100%;
+  inline-size: 100%;
+}
+
+[data-horizontal-slider-customers] .customer-result-card__band-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3, 0.75rem);
+}
+
+[data-horizontal-slider-customers] .customer-result-card__stat {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+[data-horizontal-slider-customers] .customer-result-card__value {
+  margin: 0;
+  padding: 0;
+}
+
+[data-horizontal-slider-customers] .customer-result-card__label {
+  margin: 0;
+  padding: 0;
+  color: var(--color-system-black, #0a0a0a);
+}
+
+[data-horizontal-slider-customers] .customer-result-card__logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+[data-horizontal-slider-customers] .customer-result-card__logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 48px;
+  max-inline-size: 11rem;
+}
+
+[data-horizontal-slider-customers] .customer-result-card__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-system-black, #0a0a0a);
+  opacity: 0;
+  transition: opacity 160ms ease, color 180ms ease;
+}
+
+[data-horizontal-slider-customers] .customer-result-card__quote,
+[data-horizontal-slider-customers] .customer-result-card__meta {
+  padding: 0 var(--space-8, 2rem) var(--space-4, 1rem);
+}
+
+[data-horizontal-slider-customers] .customer-result-card__quote {
+  margin: 0;
+  padding-top: var(--space-6, 1.5rem);
+  padding-bottom: var(--space-4, 1rem);
+  color: var(--color-system-gray-1, #3a3a3c);
+}
+
+[data-horizontal-slider-customers] .customer-result-card__quote span {
+  color: inherit;
+}
+
+[data-horizontal-slider-customers] .customer-result-card__meta {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 0.25rem);
+  padding-bottom: var(--space-6, 1.5rem);
+}
+
+[data-horizontal-slider-customers] .customer-result-card__name {
+  margin: 0;
+}
+
+[data-horizontal-slider-customers] .customer-result-card__title {
+  margin: 0;
+  color: var(--color-system-gray-2, #8e8e93);
+}
+
+@media (max-width: 1024px) {
+  [data-horizontal-slider-customers] .horizontal-slider__card {
+    flex: 0 0 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  [data-horizontal-slider-customers] .horizontal-slider__card {
+    flex: 0 0 90vw;
+    min-height: auto;
+  }
+
+  [data-horizontal-slider-customers] .customer-result-card__band {
+    row-gap: var(--space-6, 1.5rem);
+  }
+}

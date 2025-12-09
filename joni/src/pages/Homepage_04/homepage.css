@@ -1,0 +1,22 @@
+/* Homepage-specific styles (import map for maintainability)
+ * - hero.css: hero + G2 block
+ */
+@import '../../components/horizontal-slider/horizontal-slider.css';
+@import '../../components/nav-2026/nav-2026.css';
+@import '../../components/product-block/product-block.css';
+@import '../../components/split-block/split-block.css';
+@import '../../components/g2-animation/g2-animation.css';
+@import '../../components/email-cta/email-cta.css';
+@import '../../components/industries/industries.css';
+@import '../../components/ai-stack/ai-stack.css';
+@import '../../components/main-values/main-values.css';
+@import '../../components/menu-scroll/menu-scroll.css';
+@import './sections/hero/hero.css';
+@import './sections/brand-cards/brand-cards.css';
+@import './sections/customer-cards/customer-cards.css';
+
+.page-homepage-04 .hero-block .bannerHeading,
+.page-homepage-04 .hero-block .bannerDescription,
+.page-homepage-04 .hero-ablock {
+  color: var(--color-system-white, #ffffff);
+}

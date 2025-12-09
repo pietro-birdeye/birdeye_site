@@ -8,23 +8,23 @@ import { hydrateIcons } from '../../utils/icons';
 import { initHeader } from './header';
 import { initFooter } from './footer';
 import { initBrandCarouselSection } from './sections/brand-carousel/brand-carousel';
-import { initSplitBlock } from './sections/split-block/split-block';
-import { initAIStack } from './sections/ai-stack/ai-stack';
+import { initSplitBlock } from '../../components/split-block/split-block';
+import { initAIStack } from '../../components/ai-stack/ai-stack';
 import { initMainValues } from './sections/main-values/main-values';
-import { initProductBlock } from './sections/product-block/product-block';
+import { initProductBlock } from '../../components/product-block/product-block';
 import { initVariantSwitcher } from '../../components/variant-switcher/variantSwitcher';
 import { initHeroSection } from './sections/hero/hero';
 import { initHorizontalSlider } from '../../components/horizontal-slider/horizontal-slider';
 import '../../components/variant-switcher/variant-switcher.css';
 import { initNewCarousel } from './sections/new-carousel/new-carousel';
-import aiStackTemplate from './sections/ai-stack/ai-stack.html?raw';
-import productBlockTemplate from './sections/product-block/product-block.html?raw';
+import aiStackTemplate from '../../components/ai-stack/ai-stack.html?raw';
+import productBlockTemplate from '../../components/product-block/product-block.html?raw';
 import brandCarouselTemplate from './sections/brand-carousel/brand-carousel.html?raw';
-import splitBlockTemplate from './sections/split-block/split-block.html?raw';
-import industriesTemplate from './sections/industries/industries.html?raw';
+import splitBlockTemplate from '../../components/split-block/split-block.html?raw';
+import industriesTemplate from '../../components/industries/industries.html?raw';
 import heroTemplate from './sections/hero/hero.html?raw';
 import newCarouselTemplate from './sections/new-carousel/new-carousel.html?raw';
-import { initIndustries } from './sections/industries/industries';
+import { initIndustries } from '../../components/industries/industries';
 
 const INLINE_ARROW = `<svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.5 3.5h-2v1.75h-5v2h5V9l2.5-2.5L10.5 4z"/><path d="M5 11.25h2v2h-2z"/><path d="M8 11.25h2v2H8z"/><path d="M11 11.25h2v2h-2z"/></svg>`;
 
@@ -49,9 +49,11 @@ const initHeroBackgroundVideo = () => {
   heroSection.style.setProperty('--stage-hero-bg-image', `url(${posterUrl})`);
   heroVideo.poster = posterUrl;
   heroVideo.src = videoUrl;
+  heroVideo.preload = 'metadata';
   heroVideo.muted = true;
   heroVideo.loop = true;
   heroVideo.playsInline = true;
+  heroVideo.autoplay = true;
 
   const showFallbackImage = () => {
     heroVideo.pause();
@@ -117,16 +119,7 @@ if (heroMount) {
 initHeroBackgroundVideo();
 initHeroSection();
 initMainValues();
-const navController = initHeader(navMount);
-const heroSection = document.querySelector<HTMLElement>('.stage-hero');
-if (navController && heroSection) {
-  navController.update({
-    switchAt: {
-      element: heroSection,
-      offset: 24,
-    },
-  });
-}
+initHeader(navMount);
 initFooter(footerMount);
 
 if (productBlockMount) {

@@ -1,0 +1,28 @@
+.emailFormWrapper {
+  width: 300px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+  align-items: stretch;
+}
+
+.HeroCTAs {
+  display: flex;
+  gap: var(--space-3, 0.75rem);
+  width: 100%;
+}
+
+.diet-btn-ictxt,
+.diet-btn-txt {
+  white-space: normal;
+  width: auto;
+  align-self: flex-start;
+}
+
+.HeroCTAs .diet-btn-txt {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+  white-space: normal;
+}

@@ -1,5 +1,25 @@
 import { steveOrigin } from '../../utils/steve';
 
+const hydrateBrandCard = (card: HTMLElement) => {
+  const defaultImg = card.querySelector<HTMLImageElement>('[data-brand-img]');
+  const hoverImg = card.querySelector<HTMLImageElement>('[data-brand-hover]');
+  const logoImg = card.querySelector<HTMLImageElement>('[data-brand-logo]');
+  const link = card.querySelector<HTMLAnchorElement>('.brand-card__link');
+
+  if (defaultImg?.dataset.brandImg) {
+    defaultImg.src = `${steveOrigin()}/v1/brand-carousel/${defaultImg.dataset.brandImg}`;
+  }
+  if (hoverImg?.dataset.brandHover) {
+    hoverImg.src = `${steveOrigin()}/v1/brand-carousel/${hoverImg.dataset.brandHover}`;
+  }
+  if (logoImg?.dataset.brandLogo) {
+    logoImg.src = `${steveOrigin()}/v1/brand-carousel/${logoImg.dataset.brandLogo}`;
+  }
+  if (link) {
+    link.href = '#';
+  }
+};
+
 export const initHorizontalSlider = () => {
   const sliders = Array.from(document.querySelectorAll<HTMLElement>('[data-horizontal-slider]'));
   if (!sliders.length) return;
@@ -12,6 +32,10 @@ export const initHorizontalSlider = () => {
     if (!track || !scroller || !track.children.length) return;
 
     const slides = Array.from(track.children) as HTMLElement[];
+
+    // Hydrate brand outcomes images if present
+    const brandCards = Array.from(track.querySelectorAll<HTMLElement>('.brandoutcomes_card'));
+    brandCards.forEach((card) => hydrateBrandCard(card));
 
     // Hydrate customer logos if present
     const customerLogos = Array.from(track.querySelectorAll<HTMLImageElement>('[data-customer-logo]'));
@@ -42,14 +66,8 @@ export const initHorizontalSlider = () => {
 
     let currentIndex = 0;
 
-    const getStep = () => {
-      const gapRaw = getComputedStyle(track).gap || getComputedStyle(track).columnGap || '0';
-      const gap = parseFloat(gapRaw) || 0;
-      const width = slides[0]?.getBoundingClientRect().width || 0;
-      return width + gap;
-    };
-
     const slidesCount = slides.length;
+    const getStep = () => scroller.scrollWidth / slidesCount;
 
     const updateButtons = () => {
       const { scrollLeft, scrollWidth, clientWidth } = scroller;
@@ -99,6 +117,7 @@ export const initHorizontalSlider = () => {
     scroller.addEventListener('mouseleave', onDragEnd);
     scroller.addEventListener('touchend', onDragEnd);
 
-    updateButtons();
+    // Defer initial button state until layout paints to avoid false disables
+    requestAnimationFrame(updateButtons);
   });
 };

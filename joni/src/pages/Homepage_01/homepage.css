@@ -9,10 +9,17 @@
  */
 @import './sections/hero/hero.css';
 @import './sections/main-values/main-values.css';
-@import './sections/product-block/product-block.css';
+@import '../../components/product-block/product-block.css';
 @import './sections/brand-carousel/brand-carousel.css';
-@import './sections/split-block/split-block.css';
-@import './sections/ai-stack/ai-stack.css';
-@import './sections/industries/industries.css';
+@import '../../components/split-block/split-block.css';
+@import '../../components/ai-stack/ai-stack.css';
+@import '../../components/industries/industries.css';
 @import './sections/new-carousel/new-carousel.css';
 @import '../../components/horizontal-slider/horizontal-slider.css';
+@import '../../components/nav-2026/nav-2026.css';
+
+/* Global section vertical rhythm (exclude hero/footer) */
+.section-padding {
+  padding-top: var(--space-12, 3.5rem);
+  padding-bottom: var(--space-12, 3.5rem);
+}

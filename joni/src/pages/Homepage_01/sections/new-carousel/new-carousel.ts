@@ -35,7 +35,7 @@ export const initNewCarousel = () => {
     if (!track || !track.children.length || !scroller) return;
 
     // Hydrate brand outcomes images
-    const brandCards = Array.from(track.querySelectorAll<HTMLElement>('.brandoutcomes_card'));
+    const brandCards = Array.from(track.querySelectorAll<HTMLElement>('.brand-card'));
     brandCards.forEach((card) => hydrateBrandCard(card));
 
     // Hydrate customer result logos

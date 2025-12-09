@@ -10,13 +10,13 @@ import { initFooter } from './footer';
 import { initBrandCarouselSection } from './sections/brand-carousel/brand-carousel';
 import { initSplitBlock } from './sections/split-block/split-block';
 import { initAIStack } from './sections/ai-stack/ai-stack';
-import { initMainValues } from './sections/main-values/main-values';
+import { initMainValues } from '../../components/main-values/main-values';
 import { initProductBlock } from './sections/product-block/product-block';
 import { initVariantSwitcher } from '../../components/variant-switcher/variantSwitcher';
 import { initHeroSection } from './sections/hero/hero';
 import '../../components/variant-switcher/variant-switcher.css';
 import aiStackTemplate from './sections/ai-stack/ai-stack.html?raw';
-import mainValuesTemplate from './sections/main-values/main-values.html?raw';
+import mainValuesTemplate from '../../components/main-values/main-values.html?raw';
 import productBlockTemplate from './sections/product-block/product-block.html?raw';
 import brandCarouselTemplate from './sections/brand-carousel/brand-carousel.html?raw';
 import splitBlockTemplate from './sections/split-block/split-block.html?raw';
@@ -47,9 +47,11 @@ const initHeroBackgroundVideo = () => {
   heroSection.style.setProperty('--stage-hero-bg-image', `url(${posterUrl})`);
   heroVideo.poster = posterUrl;
   heroVideo.src = videoUrl;
+  heroVideo.preload = 'metadata';
   heroVideo.muted = true;
   heroVideo.loop = true;
   heroVideo.playsInline = true;
+  heroVideo.autoplay = true;
 
   const showFallbackImage = () => {
     heroVideo.pause();

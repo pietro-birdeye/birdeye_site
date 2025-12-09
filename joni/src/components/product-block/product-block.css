@@ -1,0 +1,86 @@
+/* Product block cards */
+.display-hero--stacked {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-1, 0.25rem);
+}
+
+.display-hero__line {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+}
+
+.display-hero__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.5em;
+  block-size: 1.5em;
+  color: var(--color-system-purple, #af52de);
+}
+
+.display-hero__icon svg {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.display-hero {
+  margin: 0;
+  padding: 0;
+}
+
+.cardrow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-8, 2rem);
+}
+
+.product-block__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: var(--space-4, 1rem);
+  width: 100%;
+}
+
+.product-block__header h1 {
+  margin: 0;
+}
+
+.product-block__title .display-hero__icon {
+  inline-size: 1em;
+  block-size: 1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin-inline: 0.2em;
+  color: var(--color-system-purple, #6f3ff5);
+}
+
+.product-block__header .diet-btn-ictxt {
+  justify-self: end;
+  align-self: end;
+}
+
+.card01 {
+  padding-block: var(--space-8, 2rem);
+  padding-inline: var(--space-10, 2.5rem);
+  border-radius: var(--control-radius-lg, 1.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: var(--color-system-white, #ffffff);
+}
+
+.card01 h3 {
+  margin: 0;
+}
+
+.card01 .diet-btn-txt {
+  align-self: flex-start;
+  width: auto;
+  white-space: normal;
+}
