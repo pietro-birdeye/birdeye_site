@@ -4,7 +4,8 @@ import { loadLottieLib, type AnimationItem } from '../../utils/lottie';
 export const initSplitBlock = () => {
   const splitItems = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-split-img]'));
   const splitLottie = document.querySelector<HTMLElement>('[data-split-lottie]');
-  const splitStage = document.querySelector<HTMLElement>('.stage-split');
+  let splitImageActive = document.querySelector<HTMLImageElement>('[data-split-img-active]');
+  let splitImageBuffer = document.querySelector<HTMLImageElement>('[data-split-img-next]');
   let splitLottiePlayer: AnimationItem | null = null;
   let autoTimer: number | null = null;
   const AUTO_MS = 6000;
@@ -34,11 +35,39 @@ export const initSplitBlock = () => {
   if (!splitItems.length) return;
 
   const setHeroImage = (file: string | undefined | null) => {
-    if (!splitStage || !file) return;
+    if (!splitImageActive || !splitImageBuffer || !file) return;
     const nextSrc = `${steveOrigin()}/v1/split-block/${file}`;
-    if (splitStage.dataset.activeBg === nextSrc) return;
-    splitStage.dataset.activeBg = nextSrc;
-    splitStage.style.backgroundImage = `url(${nextSrc})`;
+    if (splitImageActive.dataset.src === nextSrc) return;
+
+    // If first render, set immediately to avoid blank flash.
+    if (!splitImageActive.dataset.src) {
+      splitImageActive.src = nextSrc;
+      splitImageActive.dataset.src = nextSrc;
+      splitImageActive.classList.add('is-active');
+      return;
+    }
+
+    const applySwap = () => {
+      if (!splitImageActive || !splitImageBuffer) return;
+      splitImageBuffer.src = nextSrc;
+      splitImageBuffer.dataset.src = nextSrc;
+      splitImageBuffer.classList.add('is-active');
+      splitImageActive.classList.remove('is-active');
+      [splitImageActive, splitImageBuffer] = [splitImageBuffer, splitImageActive];
+    };
+
+    const loader = new Image();
+    loader.decoding = 'async';
+    loader.loading = 'eager';
+    loader.src = nextSrc;
+    const onReady = () => applySwap();
+    loader.decode?.().then(onReady).catch(() => {
+      if (loader.complete) {
+        onReady();
+      } else {
+        loader.addEventListener('load', onReady, { once: true });
+      }
+    });
   };
 
   const preloadImages = () => {
