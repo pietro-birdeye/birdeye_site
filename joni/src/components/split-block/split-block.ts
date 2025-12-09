@@ -4,10 +4,10 @@ import { loadLottieLib, type AnimationItem } from '../../utils/lottie';
 export const initSplitBlock = () => {
   const splitItems = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-split-img]'));
   const splitLottie = document.querySelector<HTMLElement>('[data-split-lottie]');
-  let splitImageActive = document.querySelector<HTMLImageElement>('[data-split-img-active]');
-  let splitImageBuffer = document.querySelector<HTMLImageElement>('[data-split-img-next]');
+  const splitStage = document.querySelector<HTMLElement>('.stage-split');
   let splitLottiePlayer: AnimationItem | null = null;
   let autoTimer: number | null = null;
+  let pendingBg: string | null = null;
   const AUTO_MS = 6000;
   const DEFAULT_LOTTIES = [
     'Animations/Outcomes 1.json',
@@ -35,39 +35,40 @@ export const initSplitBlock = () => {
   if (!splitItems.length) return;
 
   const setHeroImage = (file: string | undefined | null) => {
-    if (!splitImageActive || !splitImageBuffer || !file) return;
+    if (!splitStage || !file) return;
     const nextSrc = `${steveOrigin()}/v1/split-block/${file}`;
-    if (splitImageActive.dataset.src === nextSrc) return;
+    if (splitStage.dataset.activeBg === nextSrc) return;
 
-    // If first render, set immediately to avoid blank flash.
-    if (!splitImageActive.dataset.src) {
-      splitImageActive.src = nextSrc;
-      splitImageActive.dataset.src = nextSrc;
-      splitImageActive.classList.add('is-active');
+    // First paint: set immediately so we have a base image.
+    if (!splitStage.dataset.activeBg) {
+      splitStage.dataset.activeBg = nextSrc;
+      splitStage.style.backgroundImage = `url(${nextSrc})`;
+      pendingBg = null;
       return;
     }
 
+    pendingBg = nextSrc;
+    const img = new Image();
+    img.decoding = 'async';
+    img.loading = 'eager';
+    img.src = nextSrc;
     const applySwap = () => {
-      if (!splitImageActive || !splitImageBuffer) return;
-      splitImageBuffer.src = nextSrc;
-      splitImageBuffer.dataset.src = nextSrc;
-      splitImageBuffer.classList.add('is-active');
-      splitImageActive.classList.remove('is-active');
-      [splitImageActive, splitImageBuffer] = [splitImageBuffer, splitImageActive];
+      // Drop stale swaps if user clicked ahead.
+      if (pendingBg !== nextSrc) return;
+      splitStage.dataset.activeBg = nextSrc;
+      splitStage.style.backgroundImage = `url(${nextSrc})`;
+      pendingBg = null;
     };
-
-    const loader = new Image();
-    loader.decoding = 'async';
-    loader.loading = 'eager';
-    loader.src = nextSrc;
-    const onReady = () => applySwap();
-    loader.decode?.().then(onReady).catch(() => {
-      if (loader.complete) {
-        onReady();
-      } else {
-        loader.addEventListener('load', onReady, { once: true });
-      }
-    });
+    img
+      .decode?.()
+      .then(applySwap)
+      .catch(() => {
+        if (img.complete) {
+          applySwap();
+        } else {
+          img.addEventListener('load', applySwap, { once: true });
+        }
+      });
   };
 
   const preloadImages = () => {

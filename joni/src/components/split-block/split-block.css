@@ -188,19 +188,8 @@
   margin: 0;
 }
 
-.split-block__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 220ms ease;
-  z-index: 1;
-}
-
-.split-block__img.is-active {
-  opacity: 1;
+.split-block__visual img {
+  display: none;
 }
 
 .split-block__overlay {
