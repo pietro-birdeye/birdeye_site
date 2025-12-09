@@ -8,6 +8,12 @@ export const initSplitBlock = () => {
   let splitLottiePlayer: AnimationItem | null = null;
   let autoTimer: number | null = null;
   const AUTO_MS = 6000;
+  const DEFAULT_LOTTIES = [
+    'Animations/Outcomes 1.json',
+    'Animations/Outcomes 2.json',
+    'Animations/03.json',
+    'Animations/04.json',
+  ];
 
   const restartProgress = (btn: HTMLButtonElement) => {
     const progress = btn.querySelector<HTMLElement>('.split-block__progress');
@@ -61,7 +67,8 @@ export const initSplitBlock = () => {
     if (splitLottie) {
       const lottieFile =
         btn.dataset.splitLottie ||
-        (btnIndex === 1 ? 'Animations/Outcomes 2.json' : 'Animations/Outcomes 1.json');
+        DEFAULT_LOTTIES[btnIndex] ||
+        DEFAULT_LOTTIES[0];
       const lottieSrc = `${steveOrigin()}/v1/split-block/${lottieFile}`;
       loadLottieLib()
         .then((lottie) => {
