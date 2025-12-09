@@ -212,7 +212,6 @@ export const mountNav2026 = (options: NavControllerOptions): NavController | nul
 
     const hoverEnterDelay = 0;
     const hoverLeaveDelay = 400;
-    const isHoverCapable = window.matchMedia('(any-hover: hover)').matches;
 
     dropdowns.forEach((root) => {
       const toggle = root.querySelector<HTMLButtonElement>('.DropdownToggle');
@@ -221,13 +220,11 @@ export const mountNav2026 = (options: NavControllerOptions): NavController | nul
       const dropdown: DropdownEls = { root, toggle, panel };
 
       const onEnter = () => {
-        if (!isHoverCapable) return;
         clearTimers();
         hoverTimer = window.setTimeout(() => openDropdownMenu(dropdown), hoverEnterDelay);
       };
 
       const onLeave = () => {
-        if (!isHoverCapable) return;
         clearTimers();
         leaveTimer = window.setTimeout(() => closeAll(), hoverLeaveDelay);
       };
