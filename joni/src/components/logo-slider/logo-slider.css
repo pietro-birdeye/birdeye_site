@@ -1,0 +1,44 @@
+.logo-slider {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--space-4, 1rem) 0;
+}
+
+.logo-slider__rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: var(--space-6, 1.5rem);
+  align-items: center;
+  overflow-x: auto;
+  padding: 0 var(--space-4, 1rem);
+  scrollbar-width: none;
+}
+
+.logo-slider__rail::-webkit-scrollbar {
+  display: none;
+}
+
+.logo-slider__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.82;
+  transition: opacity 160ms ease, filter 160ms ease;
+}
+
+.logo-slider__logo:hover,
+.logo-slider__logo:focus-visible {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.logo-slider__logo img {
+  max-height: 48px;
+  width: auto;
+  display: block;
+}

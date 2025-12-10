@@ -13,6 +13,7 @@ import { initAIStack } from '../../components/ai-stack/ai-stack';
 import { initMainValues } from './sections/main-values/main-values';
 import { initProductBlock } from '../../components/product-block/product-block';
 import { initVariantSwitcher } from '../../components/variant-switcher/variantSwitcher';
+import '../../components/logo-slider/logo-slider.css';
 import { initHeroSection } from './sections/hero/hero';
 import { initHorizontalSlider } from '../../components/horizontal-slider/horizontal-slider';
 import '../../components/variant-switcher/variant-switcher.css';
@@ -25,6 +26,8 @@ import industriesTemplate from '../../components/industries/industries.html?raw'
 import heroTemplate from './sections/hero/hero.html?raw';
 import newCarouselTemplate from './sections/new-carousel/new-carousel.html?raw';
 import { initIndustries } from '../../components/industries/industries';
+import logoSliderTemplate from '../../components/logo-slider/logo-slider.html?raw';
+import { initLogoSlider } from '../../components/logo-slider/logo-slider';
 
 const INLINE_ARROW = `<svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.5 3.5h-2v1.75h-5v2h5V9l2.5-2.5L10.5 4z"/><path d="M5 11.25h2v2h-2z"/><path d="M8 11.25h2v2H8z"/><path d="M11 11.25h2v2h-2z"/></svg>`;
 
@@ -112,6 +115,7 @@ const newCarouselMounts = Array.from(
   document.querySelectorAll<HTMLElement>('[data-new-carousel]:not(.new-carousel)'),
 );
 const horizontalSliderMount = document.querySelector<HTMLElement>('[data-horizontal-slider]');
+const logoSliderMount = document.querySelector<HTMLElement>('[data-logo-slider]');
 
 if (heroMount) {
   heroMount.innerHTML = heroTemplate;
@@ -167,6 +171,11 @@ newCarouselMounts.forEach((mount) => {
 });
 initNewCarousel();
 initHorizontalSlider();
+
+if (logoSliderMount) {
+  logoSliderMount.innerHTML = logoSliderTemplate;
+  initLogoSlider(logoSliderMount.querySelector<HTMLElement>('[data-logo-slider]'));
+}
 
 hydrateIcons(pageRoot);
 ensureInlineArrow(pageRoot);

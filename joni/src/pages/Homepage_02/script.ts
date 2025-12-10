@@ -7,7 +7,6 @@ import {
 import { hydrateIcons } from '../../utils/icons';
 import { initHeader } from './header';
 import { initFooter } from './footer';
-import { initBrandCarouselSection } from './sections/brand-carousel/brand-carousel';
 import { initSplitBlock } from './sections/split-block/split-block';
 import { initAIStack } from './sections/ai-stack/ai-stack';
 import { initMainValues } from '../../components/main-values/main-values';
@@ -18,7 +17,6 @@ import '../../components/variant-switcher/variant-switcher.css';
 import aiStackTemplate from './sections/ai-stack/ai-stack.html?raw';
 import mainValuesTemplate from '../../components/main-values/main-values.html?raw';
 import productBlockTemplate from './sections/product-block/product-block.html?raw';
-import brandCarouselTemplate from './sections/brand-carousel/brand-carousel.html?raw';
 import splitBlockTemplate from './sections/split-block/split-block.html?raw';
 import industriesTemplate from './sections/industries/industries.html?raw';
 import heroTemplate from './sections/hero/hero.html?raw';
@@ -103,7 +101,6 @@ const navMount = document.querySelector<HTMLElement>('[data-global-nav]');
 const footerMount = document.querySelector<HTMLElement>('[data-footer]');
 const mainValuesMount = document.querySelector<HTMLElement>('[data-main-values]');
 const productBlockMount = document.querySelector<HTMLElement>('[data-product-block]');
-const brandCarouselMount = document.querySelector<HTMLElement>('[data-brand-carousel]');
 const splitBlockMount = document.querySelector<HTMLElement>('[data-split-block]');
 const aiStackMount = document.querySelector<HTMLElement>('[data-ai-stack]');
 const industriesMount = document.querySelector<HTMLElement>('[data-industries]');
@@ -137,13 +134,6 @@ if (productBlockMount) {
   hydrateIcons(productBlockMount);
   ensureInlineArrow(productBlockMount);
   initProductBlock();
-}
-
-if (brandCarouselMount) {
-  brandCarouselMount.innerHTML = brandCarouselTemplate;
-  hydrateIcons(brandCarouselMount);
-  ensureInlineArrow(brandCarouselMount);
-  initBrandCarouselSection();
 }
 
 if (splitBlockMount) {
