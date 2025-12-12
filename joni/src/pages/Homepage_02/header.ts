@@ -1,11 +1,11 @@
-import { mountNav2026 } from '../../components/nav-2026/controller';
+import { mountNav2026_02 } from '../../components/nav-2026_02';
 
 export const initHeader = (mount: HTMLElement | null) =>
-  mountNav2026({
+  mountNav2026_02({
     mount,
-    theme: 'dark',
-    scrolledTheme: 'dark',
-    surface: 'transparent',
+    theme: 'light',
+    scrolledTheme: 'light',
+    surface: 'solid',
     scrolledSurface: 'solid',
     sticky: true,
     switchAt: 120,

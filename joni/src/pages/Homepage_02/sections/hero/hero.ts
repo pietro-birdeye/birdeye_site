@@ -101,7 +101,25 @@ const initG2Hero = () => {
   }
 };
 
+const initHeroWave = () => {
+  const wave = document.querySelector<HTMLElement>('[data-hero-wave]');
+  if (!wave) return;
+
+  const threshold = 60;
+  const toggleWave = () => {
+    if (window.scrollY > threshold) {
+      wave.classList.add('is-visible');
+    } else {
+      wave.classList.remove('is-visible');
+    }
+  };
+
+  toggleWave();
+  window.addEventListener('scroll', toggleWave, { passive: true });
+};
+
 export const initHeroSection = () => {
   hydrateIcons(document);
   initG2Hero();
+  initHeroWave();
 };

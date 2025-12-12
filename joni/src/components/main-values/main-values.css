@@ -197,24 +197,3 @@
 .main-values-grid .brand-card:hover .brand-card__svg .final-shape {
   transform: scale(1.2);
 }
-
-.brand-card__svg--one-platform .brand-card__initial {
-  inline-size: 63%;
-  block-size: 63%;
-}
-
-.brand-card__svg--unified .brand-card__initial {
-  inline-size: 56%;
-  block-size: 56%;
-}
-
-.brand-card__svg--custom .brand-card__initial {
-  inline-size: 56%;
-  block-size: 56%;
-}
-
-@media (max-width: 768px) {
-  .brand-card {
-    flex: 0 0 320px;
-  }
-}
