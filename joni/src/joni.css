@@ -25,7 +25,7 @@ body {
 
 .stage {
   width: 100%;
-  padding-block: var(--space-20, 6rem);
+  padding-block: var(--space-16);
 }
 
 .block {

@@ -1,5 +1,5 @@
-/* Hero + G2 block */
-.stage-hero {
+/* Shared soft gradient background for Hero + Product block */
+.homepage02-soft-bg {
   background-color: #f4f7ff;
   background-image:
     radial-gradient(60% 60% at 20% 20%, rgba(214, 231, 255, 0.9) 0%, rgba(214, 231, 255, 0) 55%),
@@ -8,6 +8,22 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage02-soft-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.1));
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hero + G2 block */
+.stage-hero {
   padding-top: var(--space-4, 1rem);
   margin-top: -56px;
   padding-top: calc(56px + var(--space-4, 1rem));
@@ -31,16 +47,6 @@
 
 .stage-hero__bg {
   display: none;
-}
-
-.stage-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.1));
-  opacity: 0.6;
-  z-index: 1;
-  pointer-events: none;
 }
 
 .hero-wave {

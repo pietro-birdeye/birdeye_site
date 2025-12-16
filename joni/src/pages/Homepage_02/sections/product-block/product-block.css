@@ -1,8 +1,21 @@
+.product-block__stage {
+  position: relative;
+  --product-card-min: clamp(200px, 16vw, 240px);
+  overflow: hidden;
+  padding-block: var(--space-20);
+  isolation: isolate;
+}
+
+.product-block__stage .block {
+  position: relative;
+  z-index: 2;
+}
+
 /* Product block cards */
 .cardrow {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--space-8, 2rem);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(var(--space-2, 0.5rem), 1vw, var(--space-3, 0.75rem));
 }
 
 .product-block__header {
@@ -20,25 +33,155 @@
 .product-block__header .diet-btn-ictxt {
   justify-self: end;
   align-self: end;
+  color: var(--color-system-black, #0a0a0a) !important;
+  border-color: var(--color-system-black, #0a0a0a) !important;
+  --btn-border-color: var(--color-system-black, #0a0a0a);
+  --btn-border-width: 1px;
+  --btn-color: var(--color-system-black, #0a0a0a);
+  --btn-hover-border-color: var(--color-system-black, #0a0a0a);
+  --btn-hover-border-width: 1px;
+  --btn-hover-color: var(--color-system-black, #0a0a0a);
+  --btn-icon-color: var(--color-system-black, #0a0a0a);
+  --btn-hover-bg: transparent;
+  --btn-clicked-bg: color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 92%);
 }
 
 .card01 {
   padding-block: var(--space-8, 2rem);
-  padding-inline: var(--space-10, 2.5rem);
-  border-radius: var(--control-radius-lg, 1.4rem);
+  padding-inline: var(--space-8, 2rem);
+  border-radius: var(--control-radius-md, 0.75rem);
   display: flex;
   flex-direction: column;
   gap: var(--space-4, 1rem);
+  height: 100%;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   background: var(--color-system-white, #ffffff);
 }
 
-.card01 h3 {
+.card01__header {
+  min-height: 68px; /* holds 1–2 heading lines */
+  max-height: 68px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card01__header h3 {
   margin: 0;
+}
+
+.card01__body {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card01__body p {
+  margin: 0;
+}
+
+.card01__cta {
+  margin-top: auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--space-1, 0.25rem);
+  transition: color 150ms ease;
 }
 
 .card01 .diet-btn-txt {
   align-self: flex-start;
   width: auto;
   white-space: normal;
+}
+
+.cardrow .diet-btn-ictxt {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  padding-inline: var(--space-4, 1rem);
+  white-space: normal;
+  text-align: left;
+}
+
+.cardrow .diet-btn-ictxt__label {
+  flex: 1 1 auto;
+  display: block;
+  text-align: left;
+}
+
+.cardrow .diet-btn-ictxt__icon {
+  margin-left: var(--space-2, 0.5rem);
+  flex-shrink: 0;
+}
+
+.card01__cta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card01__cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 16px;
+  block-size: 16px;
+  margin-left: var(--space-2, 0.5rem);
+  transition: transform 260ms var(--motion-ease-emph, ease);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.card01__cta-icon svg {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.card01__cta-bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2, 0.5rem);
+  font-size: var(--fs-14);
+  line-height: var(--lh-tight);
+  font-weight: 600;
+}
+
+.card01__cta-label {
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.card01__cta:hover .card01__cta-icon {
+  transform: rotate(45deg);
+}
+
+.product-wave {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: clamp(160px, 21vw, 256px);
+  opacity: 0;
+  transform: scaleY(0.05) translateY(20%);
+  transform-origin: bottom;
+  transition: transform 800ms var(--motion-ease-standard, ease), opacity 600ms ease;
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform, opacity;
+}
+
+.product-wave__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.product-wave.is-visible {
+  opacity: 1;
+  transform: scaleY(1) translateY(0);
 }

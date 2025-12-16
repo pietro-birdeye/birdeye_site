@@ -8,6 +8,7 @@ export const initSplitBlock = () => {
   let splitLottiePlayer: AnimationItem | null = null;
   let autoTimer: number | null = null;
   const AUTO_MS = 6000;
+  const staticBackground = `${steveOrigin()}/v1/split-block/06.png`;
 
   const restartProgress = (btn: HTMLButtonElement) => {
     const progress = btn.querySelector<HTMLElement>('.split-block__progress');
@@ -27,21 +28,20 @@ export const initSplitBlock = () => {
 
   if (!splitItems.length) return;
 
-  const setHeroImage = (file: string | undefined | null) => {
-    if (!splitStage || !file) return;
-    const nextSrc = `${steveOrigin()}/v1/split-block/${file}`;
-    if (splitStage.dataset.activeBg === nextSrc) return;
-    splitStage.dataset.activeBg = nextSrc;
-    splitStage.style.backgroundImage = `url(${nextSrc})`;
+  if (splitStage) {
+    splitStage.style.backgroundImage = `url(${staticBackground})`;
+  }
+
+  const setHeroImage = () => {
+    if (!splitStage) return;
+    if (splitStage.dataset.activeBg === staticBackground) return;
+    splitStage.dataset.activeBg = staticBackground;
+    splitStage.style.backgroundImage = `url(${staticBackground})`;
   };
 
   const preloadImages = () => {
-    splitItems.forEach((btn) => {
-      const file = btn.dataset.splitImg;
-      if (!file) return;
-      const img = new Image();
-      img.src = `${steveOrigin()}/v1/split-block/${file}`;
-    });
+    const img = new Image();
+    img.src = staticBackground;
   };
 
   const setActive = (btn: HTMLButtonElement) => {
@@ -56,7 +56,7 @@ export const initSplitBlock = () => {
       }
     });
     restartProgress(btn);
-    setHeroImage(btn.dataset.splitImg);
+    setHeroImage();
 
     if (splitLottie) {
       const lottieFile =
