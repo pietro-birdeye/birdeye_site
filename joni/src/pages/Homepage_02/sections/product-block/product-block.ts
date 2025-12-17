@@ -4,16 +4,17 @@ const initProductWave = () => {
 
   const stage = wave.closest<HTMLElement>('.product-block__stage');
 
+  if (!stage) return;
+
+  const TOP_TRIGGER_PX = 140; // when the stage top nears the viewport top
+  let isVisible = false;
+
   const toggleWave = () => {
-    const rect = stage?.getBoundingClientRect();
-    if (!rect) return;
-    const nearTop = rect.top <= 40; // when stage top reaches near viewport top
-    const stillVisible = rect.bottom > 0;
-    if (nearTop && stillVisible) {
-      wave.classList.add('is-visible');
-    } else {
-      wave.classList.remove('is-visible');
-    }
+    const rect = stage.getBoundingClientRect();
+    const shouldShow = rect.top <= TOP_TRIGGER_PX && rect.bottom > 0;
+    if (shouldShow === isVisible) return;
+    isVisible = shouldShow;
+    wave.classList.toggle('is-visible', shouldShow);
   };
 
   toggleWave();

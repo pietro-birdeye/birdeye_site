@@ -20,6 +20,7 @@ import productBlockTemplate from './sections/product-block/product-block.html?ra
 import splitBlockTemplate from './sections/split-block/split-block.html?raw';
 import industriesTemplate from './sections/industries/industries.html?raw';
 import heroTemplate from './sections/hero/hero.html?raw';
+import platformBlockTemplate from './sections/platform-block/platform-block.html?raw';
 import { initIndustries } from './sections/industries/industries';
 
 const INLINE_ARROW = `<svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.5 3.5h-2v1.75h-5v2h5V9l2.5-2.5L10.5 4z"/><path d="M5 11.25h2v2h-2z"/><path d="M8 11.25h2v2H8z"/><path d="M11 11.25h2v2h-2z"/></svg>`;
@@ -105,6 +106,20 @@ const splitBlockMount = document.querySelector<HTMLElement>('[data-split-block]'
 const aiStackMount = document.querySelector<HTMLElement>('[data-ai-stack]');
 const industriesMount = document.querySelector<HTMLElement>('[data-industries]');
 
+let platformBlockMount = document.querySelector<HTMLElement>('[data-platform-block]');
+if (!platformBlockMount) {
+  platformBlockMount = document.createElement('div');
+  platformBlockMount.setAttribute('data-platform-block', '');
+
+  if (productBlockMount) {
+    productBlockMount.insertAdjacentElement('beforebegin', platformBlockMount);
+  } else if (mainValuesMount) {
+    mainValuesMount.insertAdjacentElement('afterend', platformBlockMount);
+  } else {
+    document.body.appendChild(platformBlockMount);
+  }
+}
+
 if (heroMount) {
   heroMount.innerHTML = heroTemplate;
 }
@@ -135,6 +150,10 @@ if (productBlockMount) {
   ensureInlineArrow(productBlockMount);
   initProductBlock();
 }
+
+platformBlockMount.innerHTML = platformBlockTemplate;
+hydrateIcons(platformBlockMount);
+ensureInlineArrow(platformBlockMount);
 
 if (splitBlockMount) {
   splitBlockMount.innerHTML = splitBlockTemplate;
