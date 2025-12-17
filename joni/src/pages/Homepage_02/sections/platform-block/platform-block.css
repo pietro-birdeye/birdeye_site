@@ -209,7 +209,6 @@
   pointer-events: none;
   padding-top: var(--space-8, 2rem); /* roughly header height */
   color: var(--color-system-black, #212121);
-  position: relative;
 }
 
 .platformline img {
@@ -226,20 +225,6 @@
   transition: fill 200ms ease;
 }
 
-.platformline--sources .graph-line-dot {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  animation-name: none;
-  animation-duration: 1.6s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  animation-play-state: paused;
-  pointer-events: none;
-  offset-distance: 0%;
-  -webkit-offset-distance: 0%;
-}
-
 .platformsection:hover + .platformline--sources .graph-line-path {
   fill: url(#graph-wave-gradient);
 }
@@ -250,19 +235,6 @@
 
 .platformsection-3:hover + .platformline--agents .graph-line-path {
   fill: url(#graph-wave-gradient);
-}
-
-.platformsection:hover + .platformline--sources .graph-line-dot {
-  animation-name: platform-dot-run;
-  animation-play-state: running;
-  animation-iteration-count: 1;
-}
-
-@keyframes platform-dot-run {
-  to {
-    offset-distance: var(--dot-stop, 100%);
-    -webkit-offset-distance: var(--dot-stop, 100%);
-  }
 }
 
 .platfrom-wrapper .header-2 {

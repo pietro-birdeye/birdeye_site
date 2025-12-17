@@ -87,45 +87,6 @@ export const initPlatformBlock = () => {
           p.setAttribute('fill', 'currentColor');
         });
 
-        // Add animated dots for the sources connector (three pulses traveling toward the node)
-        if (lineName === '5Lines') {
-          const mainPath = svg.querySelector('path');
-          const d = mainPath?.getAttribute('d');
-          if (mainPath && d) {
-            if (!mainPath.id) {
-              mainPath.id = `graph-line-path-${lineName}-${Math.random().toString(36).slice(2, 8)}`;
-            }
-            const stops = [55, 78, 100]; // approx % along path to the node for top/mid/bottom
-            stops.forEach((stopPct, idx) => {
-              const dot = doc.createElementNS('http://www.w3.org/2000/svg', 'circle');
-              dot.classList.add('graph-line-dot');
-              dot.setAttribute('r', '3');
-              dot.setAttribute('fill', 'currentColor');
-              dot.setAttribute('transform-box', 'fill-box');
-              dot.setAttribute('transform-origin', 'center');
-              dot.style.setProperty('offset-path', `path('${d}')`);
-              dot.style.setProperty('-webkit-offset-path', `path('${d}')`);
-              dot.style.setProperty('offset-distance', '0%');
-              dot.style.setProperty('-webkit-offset-distance', '0%');
-              dot.style.setProperty('offset-rotate', '0deg');
-              dot.style.setProperty('--dot-stop', `${stopPct}%`);
-              dot.style.animationDelay = `${idx * 0.4}s`;
-
-              const motion = doc.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
-              motion.setAttribute('dur', '1.6s');
-              motion.setAttribute('begin', `${idx * 0.4}s`);
-              motion.setAttribute('fill', 'freeze');
-              motion.setAttribute('repeatCount', '1');
-              const mpath = doc.createElementNS('http://www.w3.org/2000/svg', 'mpath');
-              mpath.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `#${mainPath.id}`);
-              motion.appendChild(mpath);
-              dot.appendChild(motion);
-
-              svg.appendChild(dot);
-            });
-          }
-        }
-
         svg.setAttribute('aria-hidden', 'true');
         img.replaceWith(svg);
       })
