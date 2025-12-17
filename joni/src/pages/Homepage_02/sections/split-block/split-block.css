@@ -143,6 +143,10 @@
   flex-direction: column;
 }
 
+.split-block__item:not(.is-active) .split-block__panel {
+  display: none;
+}
+
 .split-block__item.is-active .split-block__panel {
   display: flex;
 }
@@ -153,6 +157,15 @@
   gap: var(--space-1, 0.25rem);
   text-decoration: none;
   color: var(--color-system-black, #0a0a0a);
+  align-self: flex-start;
+}
+
+.split-block__cta.diet-btn-txt {
+  --btn-padding-inline: 0;
+  --btn-padding-block: 0;
+  --btn-border-width: 0;
+  --btn-bg: transparent;
+  --btn-hover-bg: transparent;
 }
 
 .split-block__cta-icon {

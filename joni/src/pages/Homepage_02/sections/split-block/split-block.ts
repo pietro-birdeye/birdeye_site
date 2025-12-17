@@ -8,7 +8,14 @@ export const initSplitBlock = () => {
   let splitLottiePlayer: AnimationItem | null = null;
   let autoTimer: number | null = null;
   const AUTO_MS = 6000;
-  const staticBackground = `${steveOrigin()}/v1/split-block/06.png`;
+  const staticBackground = `${steveOrigin()}/v1/split-block/07.jpg`;
+  const DEFAULT_LOTTIES = [
+    'Animations/Minimal_Listings.json',
+    'Animations/Minimal_Reviews.json',
+    'Animations/Minimal_Social.json',
+    'Animations/Minimal_Survey.json',
+    'Animations/Minimal_Listings.json', // reuse first for the 5th slot
+  ];
 
   const restartProgress = (btn: HTMLButtonElement) => {
     const progress = btn.querySelector<HTMLElement>('.split-block__progress');
@@ -59,9 +66,7 @@ export const initSplitBlock = () => {
     setHeroImage();
 
     if (splitLottie) {
-      const lottieFile =
-        btn.dataset.splitLottie ||
-        (btnIndex === 1 ? 'Animations/Outcomes 2.json' : 'Animations/Outcomes 1.json');
+      const lottieFile = btn.dataset.splitLottie || DEFAULT_LOTTIES[btnIndex] || DEFAULT_LOTTIES[0];
       const lottieSrc = `${steveOrigin()}/v1/split-block/${lottieFile}`;
       loadLottieLib()
         .then((lottie) => {

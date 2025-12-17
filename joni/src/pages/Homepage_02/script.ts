@@ -8,21 +8,19 @@ import { hydrateIcons } from '../../utils/icons';
 import { initHeader } from './header';
 import { initFooter } from './footer';
 import { initSplitBlock } from './sections/split-block/split-block';
-import { initAIStack } from './sections/ai-stack/ai-stack';
 import { initMainValues } from './sections/main-values/main-values';
 import { initProductBlock } from './sections/product-block/product-block';
 import { initVariantSwitcher } from '../../components/variant-switcher/variantSwitcher';
 import { initHeroSection } from './sections/hero/hero';
 import '../../components/variant-switcher/variant-switcher.css';
-import aiStackTemplate from './sections/ai-stack/ai-stack.html?raw';
 import mainValuesTemplate from './sections/main-values/main-values.html?raw';
 import productBlockTemplate from './sections/product-block/product-block.html?raw';
 import splitBlockTemplate from './sections/split-block/split-block.html?raw';
-import industriesTemplate from './sections/industries/industries.html?raw';
 import heroTemplate from './sections/hero/hero.html?raw';
 import platformBlockTemplate from './sections/platform-block/platform-block.html?raw';
-import { initIndustries } from './sections/industries/industries';
 import { initPlatformBlock } from './sections/platform-block/platform-block';
+import contextAITemplate from './sections/context-ai/context-ai.html?raw';
+import { initContextAI } from './sections/context-ai/context-ai';
 
 const INLINE_ARROW = `<svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.5 3.5h-2v1.75h-5v2h5V9l2.5-2.5L10.5 4z"/><path d="M5 11.25h2v2h-2z"/><path d="M8 11.25h2v2H8z"/><path d="M11 11.25h2v2h-2z"/></svg>`;
 
@@ -104,8 +102,7 @@ const footerMount = document.querySelector<HTMLElement>('[data-footer]');
 const mainValuesMount = document.querySelector<HTMLElement>('[data-main-values]');
 const productBlockMount = document.querySelector<HTMLElement>('[data-product-block]');
 const splitBlockMount = document.querySelector<HTMLElement>('[data-split-block]');
-const aiStackMount = document.querySelector<HTMLElement>('[data-ai-stack]');
-const industriesMount = document.querySelector<HTMLElement>('[data-industries]');
+const contextAIMount = document.querySelector<HTMLElement>('[data-context-ai]');
 
 let platformBlockMount = document.querySelector<HTMLElement>('[data-platform-block]');
 if (!platformBlockMount) {
@@ -164,18 +161,9 @@ if (splitBlockMount) {
   initSplitBlock();
 }
 
-if (industriesMount) {
-  industriesMount.innerHTML = industriesTemplate;
-  hydrateIcons(industriesMount);
-  ensureInlineArrow(industriesMount);
-  initIndustries();
-}
-
-if (aiStackMount) {
-  aiStackMount.innerHTML = aiStackTemplate;
-  hydrateIcons(aiStackMount);
-  ensureInlineArrow(aiStackMount);
-  initAIStack();
+if (contextAIMount) {
+  contextAIMount.innerHTML = contextAITemplate;
+  initContextAI(contextAIMount);
 }
 
 hydrateIcons(pageRoot);

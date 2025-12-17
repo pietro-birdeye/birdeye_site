@@ -6,6 +6,11 @@
   isolation: isolate;
 }
 
+.product-block__stage.homepage02-soft-bg {
+  background-color: var(--color-system-white, #ffffff);
+  background-image: none;
+}
+
 .product-block__stage .block {
   position: relative;
   z-index: 2;
@@ -55,7 +60,7 @@
   gap: var(--space-4, 1rem);
   height: 100%;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  background: var(--color-system-white, #ffffff);
+  background: var(--color-system-gray-6-step1, #f6f6f9);
 }
 
 .card01__header {
@@ -63,10 +68,12 @@
   max-height: 68px;
   display: flex;
   align-items: flex-start;
+  transition: color 150ms ease;
 }
 
 .card01__header h3 {
   margin: 0;
+  transition: color 150ms ease;
 }
 
 .card01__body {
@@ -150,15 +157,25 @@
   font-size: var(--fs-14);
   line-height: var(--lh-tight);
   font-weight: 600;
+  transition: color 150ms ease;
 }
 
 .card01__cta-label {
   flex: 1 1 auto;
   text-align: left;
+  transition: color 150ms ease;
 }
 
 .card01__cta:hover .card01__cta-icon {
   transform: rotate(45deg);
+}
+
+.card01:hover .card01__header h3,
+.card01:hover .card01__cta-label,
+.card01:hover .card01__cta-icon,
+.card01:hover .card01__cta-top,
+.card01:hover .card01__cta-bottom {
+  color: var(--color-system-purple, #af52de);
 }
 
 .product-wave {
