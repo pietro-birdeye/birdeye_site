@@ -1,5 +1,4 @@
 .stage-platform {
-  background: var(--color-system-white, #ffffff);
   padding-block: var(--space-16, 4rem);
 }
 
@@ -21,6 +20,10 @@
   position: relative;
   flex: 1 1 0;
   border-radius: var(--control-radius-lg, 1rem);
+}
+
+.platfrom-wrapper .platformsection:hover {
+  background-color: color-mix(in oklab, var(--color-system-orange, #ff9500), white 82%);
 }
 
 .platfrom-wrapper .header {
@@ -66,6 +69,8 @@
   height: 20px;
   color: var(--color-system-black, #212121);
   flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 180ms ease;
 }
 
 .platfrom-wrapper .contentwrapper {
@@ -124,6 +129,10 @@
   border-radius: var(--control-radius-lg, 1rem);
 }
 
+.platfrom-wrapper .platformsection-2:hover {
+  background-color: color-mix(in oklab, var(--color-system-cyan, #32ade6), white 80%);
+}
+
 .platfrom-wrapper .contentwrapper-2 {
   align-items: center;
   align-self: stretch;
@@ -173,21 +182,90 @@
   position: relative;
   flex: 2 1 0;
   background-color: color-mix(in oklab, var(--color-system-purple, #af52de), white 88%);
-  border-radius: var(--control-radius-lg, 1rem) 0 0 var(--control-radius-lg, 1rem);
+  border-radius: var(--control-radius-lg, 1rem);
+}
+
+.platfrom-wrapper .platformsection-3:hover {
+  background-color: color-mix(in oklab, var(--color-system-purple, #af52de), white 80%);
 }
 
 .platfrom-wrapper .headerwrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-6, 1.5rem);
+  display: grid;
+  grid-template-columns: 0.38fr 0.58fr;
+  column-gap: var(--space-4, 1rem);
+  align-items: start;
   position: relative;
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
 }
 
+.platformline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: auto;
+  pointer-events: none;
+  padding-top: var(--space-8, 2rem); /* roughly header height */
+  color: var(--color-system-black, #212121);
+  position: relative;
+}
+
+.platformline img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.platformline .graph-line-path {
+  stroke: none;
+  fill: currentColor;
+  transition: fill 200ms ease;
+}
+
+.platformline--sources .graph-line-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  animation-name: none;
+  animation-duration: 1.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-play-state: paused;
+  pointer-events: none;
+  offset-distance: 0%;
+  -webkit-offset-distance: 0%;
+}
+
+.platformsection:hover + .platformline--sources .graph-line-path {
+  fill: url(#graph-wave-gradient);
+}
+
+.platformsection-2:hover + .platformline--unified .graph-line-path {
+  fill: url(#graph-wave-gradient);
+}
+
+.platformsection-3:hover + .platformline--agents .graph-line-path {
+  fill: url(#graph-wave-gradient);
+}
+
+.platformsection:hover + .platformline--sources .graph-line-dot {
+  animation-name: platform-dot-run;
+  animation-play-state: running;
+  animation-iteration-count: 1;
+}
+
+@keyframes platform-dot-run {
+  to {
+    offset-distance: var(--dot-stop, 100%);
+    -webkit-offset-distance: var(--dot-stop, 100%);
+  }
+}
+
 .platfrom-wrapper .header-2 {
-  flex: 1 1 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: start;
@@ -206,6 +284,14 @@
   flex-grow: 1;
 }
 
+.platformsection-3 .contentwrapper-2 {
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  column-gap: var(--space-6, 1.5rem);
+  align-items: center;
+  padding-top: var(--space-10, 2.5rem);
+}
+
 .platfrom-wrapper .bird-AI {
   display: flex;
   flex-direction: column;
@@ -214,10 +300,10 @@
   gap: 32px;
   padding: 24px 20px;
   position: relative;
-  flex: 1;
+  flex: 0 0 38%;
   flex-grow: 1;
   background-color: var(--master-primitives-purple-0);
-  border-radius: 8px;
+  border-radius: var(--control-radius-xs, 0.35rem);
   border: 1px solid;
   border-color: var(--color-border-borders-primary-2);
 }
@@ -267,10 +353,10 @@
   gap: var(--space-4, 1rem);
   padding: var(--space-6, 1.5rem) var(--space-5, 1.25rem);
   position: relative;
-  flex: 1;
+  flex: 0 0 58%;
   flex-grow: 1;
   background-color: color-mix(in oklab, var(--color-system-purple, #af52de), white 80%);
-  border-radius: var(--control-radius-md, 0.75rem);
+  border-radius: var(--control-radius-xs, 0.35rem);
   border: 1px solid color-mix(in oklab, var(--color-system-indigo, #5856d6), transparent 40%);
 }
 
@@ -309,81 +395,10 @@
 }
 
 .platfrom-wrapper .birdailogo {
-  position: relative;
-  width: 106px;
-  height: 29px;
-}
-
-.platfrom-wrapper .vector {
-  position: absolute;
-  width: 11.93%;
-  height: 60.72%;
-  top: 36.43%;
-  left: 25.95%;
-}
-
-.platfrom-wrapper .img {
-  position: absolute;
-  width: 4.17%;
-  height: 15.23%;
-  top: 34.05%;
-  left: 38.84%;
-}
-
-.platfrom-wrapper .vector-2 {
-  position: absolute;
-  width: 3.59%;
-  height: 42.53%;
-  top: 54.64%;
-  left: 39.13%;
-}
-
-.platfrom-wrapper .vector-3 {
-  position: absolute;
-  width: 7.39%;
-  height: 43.08%;
-  top: 54.09%;
-  left: 44.55%;
-}
-
-.platfrom-wrapper .vector-4 {
-  position: absolute;
-  width: 12.37%;
-  height: 62.86%;
-  top: 35.11%;
-  left: 52.15%;
-}
-
-.platfrom-wrapper .vector-5 {
-  position: absolute;
-  width: 19.00%;
-  height: 66.84%;
-  top: 30.20%;
-  left: 0;
-}
-
-.platfrom-wrapper .vector-6 {
-  position: absolute;
-  width: 3.38%;
-  height: 61.67%;
-  top: 35.20%;
-  left: 82.28%;
-}
-
-.platfrom-wrapper .vector-7 {
-  position: absolute;
-  width: 16.07%;
-  height: 61.76%;
-  top: 35.11%;
-  left: 64.90%;
-}
-
-.platfrom-wrapper .vector-8 {
-  position: absolute;
-  width: 13.77%;
-  height: 62.04%;
-  top: 0;
-  left: 85.55%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: var(--space-4, 1rem);
 }
 
 .platfrom-wrapper .platformsection-4 {
@@ -396,6 +411,18 @@
   position: relative;
   flex: 1 1 0;
   border-radius: var(--control-radius-lg, 1rem);
+}
+
+.platfrom-wrapper .platformsection-4:hover {
+  background-color: color-mix(in oklab, var(--color-system-green, #34c759), white 80%);
+}
+
+/* Reveal arrows on hover */
+.platformsection:hover .platform-block__icon,
+.platformsection-2:hover .platform-block__icon,
+.platformsection-3:hover .platform-block__icon,
+.platformsection-4:hover .platform-block__icon {
+  opacity: 1;
 }
 
 .platfrom-wrapper .header-3 {

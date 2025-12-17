@@ -22,6 +22,7 @@ import industriesTemplate from './sections/industries/industries.html?raw';
 import heroTemplate from './sections/hero/hero.html?raw';
 import platformBlockTemplate from './sections/platform-block/platform-block.html?raw';
 import { initIndustries } from './sections/industries/industries';
+import { initPlatformBlock } from './sections/platform-block/platform-block';
 
 const INLINE_ARROW = `<svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.5 3.5h-2v1.75h-5v2h5V9l2.5-2.5L10.5 4z"/><path d="M5 11.25h2v2h-2z"/><path d="M8 11.25h2v2H8z"/><path d="M11 11.25h2v2h-2z"/></svg>`;
 
@@ -154,6 +155,7 @@ if (productBlockMount) {
 platformBlockMount.innerHTML = platformBlockTemplate;
 hydrateIcons(platformBlockMount);
 ensureInlineArrow(platformBlockMount);
+initPlatformBlock();
 
 if (splitBlockMount) {
   splitBlockMount.innerHTML = splitBlockTemplate;
