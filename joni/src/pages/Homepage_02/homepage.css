@@ -14,4 +14,9 @@
 @import './sections/split-block/split-block.css';
 @import './sections/platform-block/platform-block.css';
 @import './sections/context-ai/context-ai.css';
+@import '../../components/logo-slider/logo-slider.css';
+
+.section-name[data-section-name='Logo slider'] .stage {
+  padding-block: var(--space-8, 2rem);
+}
 @import './sections/customer-cards/customer-cards.css';

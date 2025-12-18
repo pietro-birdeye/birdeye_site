@@ -18,6 +18,9 @@ import '../../components/variant-switcher/variant-switcher.css';
 import '../../components/cta-expand/cta-expand.css';
 import { initHorizontalSlider } from '../../components/horizontal-slider/horizontal-slider';
 import horizontalSliderTemplate from '../../components/horizontal-slider/horizontal-slider.html?raw';
+import { initLogoSlider } from '../../components/logo-slider/logo-slider';
+import logoSliderTemplate from '../../components/logo-slider/logo-slider.html?raw';
+import '../../components/logo-slider/logo-slider.css';
 import mainValuesTemplate from './sections/main-values/main-values.html?raw';
 import productBlockTemplate from './sections/product-block/product-block.html?raw';
 import splitBlockTemplate from './sections/split-block/split-block.html?raw';
@@ -110,6 +113,7 @@ const mainValuesMount = document.querySelector<HTMLElement>('[data-main-values]'
 const productBlockMount = document.querySelector<HTMLElement>('[data-product-block]');
 const splitBlockMount = document.querySelector<HTMLElement>('[data-split-block]');
 const contextAIMount = document.querySelector<HTMLElement>('[data-context-ai]');
+const logoSliderMount = document.querySelector<HTMLElement>('[data-logo-slider-section]');
 let horizontalSliderCustomersMount = document.querySelector<HTMLElement>(
   '[data-horizontal-slider-customers], [data-customer-results]',
 );
@@ -148,6 +152,11 @@ if (navController && heroSection) {
   });
 }
 initFooter(footerMount);
+
+if (logoSliderMount) {
+  logoSliderMount.innerHTML = logoSliderTemplate;
+  initLogoSlider(logoSliderMount.querySelector<HTMLElement>('[data-logo-slider]'));
+}
 
 if (mainValuesMount) {
   mainValuesMount.innerHTML = mainValuesTemplate;

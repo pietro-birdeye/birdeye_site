@@ -20,7 +20,8 @@ export const initCTAExpand = (scope: ParentNode = document) => {
 
     const onClick = (event: MouseEvent) => {
       event.stopPropagation();
-      toggleState(root, true);
+      const isActive = root.classList.contains('is-active');
+      toggleState(root, !isActive);
       button.focus();
     };
 
