@@ -1,0 +1,509 @@
+.stage-platform {
+  padding-top: var(--space-8, 2rem);
+  padding-bottom: var(--space-16, 4rem);
+  background: var(--color-system-white, #ffffff);
+}
+
+.platform-block__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: end;
+  gap: var(--space-4, 1rem);
+  width: 100%;
+}
+
+.platform-block__header h1 {
+  margin: 0;
+}
+
+.platform-block__subhead {
+  grid-column: 1 / -1;
+  margin: 0 0 var(--space-6, 1.5rem);
+  color: color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 40%);
+  white-space: nowrap;
+}
+
+.platfrom-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  gap: var(--space-1, 0.25rem);
+  position: relative;
+}
+
+.platfrom-wrapper .platformsection {
+  background-color: var(--color-system-gray-6, #f2f2f7);
+  display: inline-flex;
+  flex-direction: column;
+  height: 489px;
+  align-items: flex-start;
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 1 1 0;
+  border-radius: var(--control-radius-lg, 1rem);
+}
+
+.platfrom-wrapper .platformsection:hover {
+  background-color: color-mix(in oklab, var(--color-system-orange, #ff9500), white 90%);
+}
+
+.platfrom-wrapper .header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: var(--space-2, 0.5rem);
+  position: relative;
+}
+
+.platfrom-wrapper .text-wrapper {
+  position: relative;
+  margin-top: -1px;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--color-system-black, #212121);
+  font-size: 1.125rem;
+  letter-spacing: -0.06em;
+  line-height: 1.3;
+  white-space: normal;
+  text-align: left;
+}
+
+.platfrom-wrapper .div {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--font-ui);
+  font-weight: 400;
+  color: var(--color-system-black, #212121);
+  font-size: 1.125rem;
+  letter-spacing: -0.06em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.platform-block__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--color-system-black, #212121);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.platfrom-wrapper .contentwrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.platfrom-wrapper .sourcesblock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-5, 1.25rem);
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 0 0 auto;
+  /* System white @ 85% opacity (reliable across browsers) */
+  background-color: rgba(255, 255, 255, 0.74);
+  border-radius: var(--control-radius-xs);
+  border: 1px solid transparent;
+}
+
+@media (max-width: 900px) {
+  .platform-block__header {
+    grid-template-columns: 1fr;
+    gap: var(--space-3, 0.75rem);
+  }
+
+  .platform-block__header .diet-btn-ictxt {
+    justify-self: flex-start;
+  }
+
+  .platform-block__subhead {
+    white-space: normal;
+  }
+}
+
+
+
+.platfrom-wrapper .text-wrapper-2 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--color-system-black, #212121);
+  font-size: 1rem;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+}
+
+.platfrom-wrapper .platformsection-2 {
+  display: inline-flex;
+  flex-direction: column;
+  height: 489px;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 1 1 0;
+  background-color: var(--color-system-brown-5, #f1eae1);
+  border-radius: var(--control-radius-lg, 1rem);
+}
+
+.platfrom-wrapper .platformsection-2:hover {
+  background-color: color-mix(in oklab, var(--color-system-cyan, #32ade6), white 88%);
+}
+
+.platfrom-wrapper .contentwrapper-2 {
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.platfrom-wrapper .unifdatablock {
+  display: inline-flex;
+  flex-direction: column;
+  height: 171px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  padding: var(--space-6, 1.5rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--color-surface-bg-primary-0);
+  border-radius: var(--control-radius-md, 0.75rem);
+  border: 1px solid color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 50%);
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.platfrom-wrapper .unifdatablock:hover {
+  background-color: var(--color-system-white, #ffffff);
+  border-color: color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 30%);
+}
+
+.platfrom-wrapper .customer-data {
+  position: relative;
+  width: fit-content;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--color-system-black, #212121);
+  font-size: 1.125rem;
+  text-align: center;
+  letter-spacing: -0.06em;
+  line-height: 1.3;
+}
+
+.platfrom-wrapper .platformsection-3 {
+  display: flex;
+  flex-direction: column;
+  height: 489px;
+  align-items: flex-start;
+  gap: var(--space-5, 1.25rem);
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 2 1 0;
+  background-color: var(--color-system-brown-5, #f1eae1);
+  border-radius: var(--control-radius-lg, 1rem);
+}
+
+.platfrom-wrapper .platformsection-3:hover {
+  background-color: color-mix(in oklab, var(--color-system-purple, #af52de), white 88%);
+}
+
+.platfrom-wrapper .headerwrapper {
+  display: grid;
+  grid-template-columns: 0.38fr 0.58fr;
+  column-gap: var(--space-4, 1rem);
+  align-items: start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.platformline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: auto;
+  pointer-events: none;
+  padding-top: var(--space-8, 2rem); /* roughly header height */
+  color: var(--color-system-black, #212121);
+}
+
+.platformline img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.platformline .graph-line-path {
+  stroke: none;
+  fill: currentColor;
+  transition: fill 200ms ease;
+}
+
+.platformsection:hover + .platformline--sources .graph-line-path {
+  fill: url(#graph-wave-gradient);
+}
+
+.platformsection-2:hover + .platformline--unified .graph-line-path {
+  fill: url(#graph-wave-gradient);
+}
+
+.platformsection-3:hover + .platformline--agents .graph-line-path {
+  fill: url(#graph-wave-gradient);
+}
+
+.platfrom-wrapper .header-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: var(--space-2, 0.5rem);
+  position: relative;
+}
+
+.platfrom-wrapper .parentwrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.platformsection-3 .contentwrapper-2 {
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  column-gap: var(--space-6, 1.5rem);
+  align-items: center;
+  padding-top: var(--space-10, 2.5rem);
+}
+
+.platfrom-wrapper .bird-AI {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px 20px;
+  position: relative;
+  flex: 0 0 38%;
+  flex-grow: 1;
+  background-color: var(--color-surface-bg-primary-0);
+  border-radius: var(--control-radius-md, 0.75rem);
+  border: 1px solid color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 50%);
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.platfrom-wrapper .list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.platfrom-wrapper .div-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  align-self: stretch;
+  width: 100%;
+  border-radius: var(--control-radius-md, 0.75rem);
+  flex-direction: column;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.platfrom-wrapper .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--color-system-black, #212121);
+  font-size: 1.125rem;
+  text-align: center;
+  letter-spacing: -0.06em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.platfrom-wrapper .AI-agents {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4, 1rem);
+  padding: var(--space-6, 1.5rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 0 0 58%;
+  flex-grow: 1;
+  background-color: var(--color-surface-bg-primary-0);
+  border-radius: var(--control-radius-md, 0.75rem);
+  border: 1px solid color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 50%);
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.platfrom-wrapper .list-2 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 4px;
+  flex-direction: column;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.platfrom-wrapper .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--color-system-black, #212121);
+  font-size: 0.95rem;
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.platfrom-wrapper .text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--color-system-black, #212121);
+  font-size: 0.95rem;
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.platfrom-wrapper .birdailogo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: var(--space-4, 1rem);
+}
+
+.platfrom-wrapper .bird-AI:hover {
+  background-color: var(--color-system-white, #ffffff);
+  border-color: color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 30%);
+}
+
+.platfrom-wrapper .AI-agents:hover {
+  background-color: var(--color-system-white, #ffffff);
+  border-color: color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 30%);
+}
+
+.platfrom-wrapper .platformsection-4 {
+  background-color: var(--color-system-gray-6, #f2f2f7);
+  display: inline-flex;
+  flex-direction: column;
+  height: 489px;
+  align-items: flex-start;
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 1 1 0;
+  border-radius: var(--control-radius-lg, 1rem);
+}
+
+.platfrom-wrapper .platformsection-4:hover {
+  background-color: color-mix(in oklab, var(--color-system-green, #34c759), white 88%);
+}
+
+/* Reveal arrows on hover */
+.platformsection:hover .platform-block__icon,
+.platformsection-2:hover .platform-block__icon,
+.platformsection-3:hover .platform-block__icon,
+.platformsection-4:hover .platform-block__icon {
+  opacity: 1;
+}
+
+.platfrom-wrapper .header-3 {
+  gap: 10px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.platfrom-wrapper .contentwrapper-3 {
+  flex-direction: column;
+  width: 238px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.platfrom-wrapper .sourcesblock-2 {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-5, 1.25rem);
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 0 0 auto;
+  /* System white @ 85% opacity (reliable across browsers) */
+  background-color: rgb(255 255 255 / 85%);
+  border-radius: var(--control-radius-sm);
+  border: 1px solid transparent;
+}
+
+.platfrom-wrapper .sourcesblock-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    198deg,
+    var(--color-system-blue, #007aff) 0%,
+    var(--color-system-indigo, #5856d6) 50%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+  pointer-events: none;
+}

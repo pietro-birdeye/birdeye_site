@@ -1,0 +1,22 @@
+.stage-g2-brag {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-system-white, #ffffff);
+  padding-block: var(--space-10, 2.5rem);
+}
+
+.stage-g2-brag::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(80% 70% at 50% 15%, rgba(0, 0, 0, 0.12), transparent),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.32) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stage-g2-brag > * {
+  position: relative;
+  z-index: 1;
+}

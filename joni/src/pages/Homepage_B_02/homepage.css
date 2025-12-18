@@ -1,0 +1,19 @@
+/* Homepage-specific styles (import map for maintainability)
+ * - shared.css: common patterns (hero typography, CTA helpers)
+ * - hero.css: hero + G2 block
+ * - product-block.css: product grid/cards
+ * - brand-carousel.css: brand cards + carousel/main-values grid
+ * - split-block.css: split section visuals/interactions
+ * - context-ai.css: context-aware split block
+ */
+@import '../../components/horizontal-slider/horizontal-slider.css';
+@import './sections/hero/hero.css';
+@import './sections/main-values/main-values.css';
+@import './sections/product-block/product-block.css';
+@import './sections/brand-carousel/brand-carousel.css';
+@import './sections/split-block/split-block.css';
+@import './sections/platform-block/platform-block.css';
+@import './sections/context-ai/context-ai.css';
+@import './sections/customer-cards/customer-cards.css';
+@import './sections/g2-brag/g2-brag.css';
+@import './sections/g2-brag/g2-brag-stage.css';

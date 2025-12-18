@@ -6,12 +6,11 @@ export type VariantLink = {
 };
 
 const DEFAULT_VARIANTS: VariantLink[] = [
-  // Homepage_00 is served at the root index; no standalone /Homepage_00/ file in the build.
-  { label: 'Homepage_00', url: '/' },
-  { label: 'Homepage_01', url: '/Homepage_01/' },
-  { label: 'Homepage_02', url: '/Homepage_02/' },
-  { label: 'Homepage_03', url: '/Homepage_03/' },
-  { label: 'Homepage_04', url: '/Homepage_04/' },
+  { label: 'Nrg G2', url: '/Homepage_02/' },
+  { label: 'Nrg Product', url: '/Homepage_01_v2/' },
+  { label: 'Luxe Product', url: '/Homepage_B_01/' },
+  { label: 'Luxe Product Serif', url: '/Homepage_B_02/' },
+  { label: 'Minimal Product', url: '/Homepage_B_03/' },
 ];
 
 const createVariantItem = (variant: VariantLink) => {

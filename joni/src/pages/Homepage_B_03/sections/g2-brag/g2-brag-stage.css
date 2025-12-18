@@ -1,0 +1,21 @@
+.stage-g2-brag {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-system-white, #ffffff);
+  padding-block: var(--space-10, 2.5rem);
+}
+
+.stage-g2-brag::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: none;
+  mix-blend-mode: normal;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stage-g2-brag > * {
+  position: relative;
+  z-index: 1;
+}

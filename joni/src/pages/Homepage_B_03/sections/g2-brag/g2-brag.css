@@ -1,0 +1,151 @@
+.stage-g2-brag .block {
+  align-items: stretch;
+}
+
+.g2-brag {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6, 1.5rem);
+  align-items: stretch;
+}
+
+.g2-brag .ablock,
+.g2-brag .bblock {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  padding: var(--space-10, 2.5rem);
+  background: transparent;
+  border-radius: var(--control-radius-lg, 1rem);
+  min-height: 100%;
+  height: 100%;
+}
+
+.g2-brag__b {
+  justify-content: center;
+  align-self: stretch;
+  height: 100%;
+  min-height: clamp(260px, 45vw, 520px);
+  align-items: flex-start;
+  display: flex;
+}
+
+.g2-brag__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  color: #ff492c;
+  opacity: 1;
+}
+
+.g2-brag__logo {
+  inline-size: 24px;
+  block-size: 24px;
+  object-fit: contain;
+  opacity: 1;
+  filter: none;
+}
+
+.g2-brag__eyebrow-text {
+  color: #ff492c;
+}
+
+.g2-brag__card {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  height: auto;
+  background: var(--color-system-white, #ffffff);
+  border: 1px solid color-mix(in oklab, var(--role-border, rgba(10, 10, 12, 0.14)), transparent 40%);
+  border-radius: var(--control-radius-lg, 1rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.g2-brag__base {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.g2-brag__overlay-img,
+.g2-brag__overlay-logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.g2-brag__overlays {
+  position: absolute;
+  inset: 0;
+}
+
+.g2-brag__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.g2-brag__overlay-logo {
+  pointer-events: none;
+}
+
+.g2-brag__dots {
+  display: inline-flex;
+  gap: var(--space-2, 0.5rem);
+}
+
+.g2-brag__dot {
+  inline-size: 12px;
+  block-size: 12px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 10%);
+}
+
+.g2-brag__dot.is-active {
+  inline-size: 32px;
+  background: color-mix(in oklab, var(--color-system-gray-2, #8e8e93), transparent 10%);
+}
+
+.g2-brag__b .header h2,
+.g2-brag__b .header p {
+  color: var(--color-system-black, #0a0a0a);
+}
+
+@keyframes g2-brag-cycle {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  8% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  38% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 900px) {
+  .g2-brag {
+    flex-direction: column;
+  }
+}

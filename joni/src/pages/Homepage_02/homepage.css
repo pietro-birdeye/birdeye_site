@@ -6,6 +6,7 @@
  * - split-block.css: split section visuals/interactions
  * - context-ai.css: context-aware split block
  */
+@import '../../components/horizontal-slider/horizontal-slider.css';
 @import './sections/hero/hero.css';
 @import './sections/main-values/main-values.css';
 @import './sections/product-block/product-block.css';
@@ -13,3 +14,4 @@
 @import './sections/split-block/split-block.css';
 @import './sections/platform-block/platform-block.css';
 @import './sections/context-ai/context-ai.css';
+@import './sections/customer-cards/customer-cards.css';

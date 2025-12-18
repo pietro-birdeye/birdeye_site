@@ -157,7 +157,7 @@ body.nav-2026-locked {
 
 .diet-nav-btn .nav-label {
   color: var(--color-system-gray-2, #636366);
-  font-weight: 600;
+  font-weight: 500;
   transition: color 160ms var(--duration-base, ease);
 }
 

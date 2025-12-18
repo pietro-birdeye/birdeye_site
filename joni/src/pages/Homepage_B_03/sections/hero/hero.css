@@ -1,0 +1,163 @@
+/* Homepage_B_01 hero — poster background, no waves/video */
+.stage-hero {
+  margin-top: -56px;
+  padding-top: calc(56px + var(--space-4, 1rem));
+  padding-bottom: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.stage-hero .block {
+  padding-inline: 0;
+}
+
+.hero-block {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-4, 1rem);
+}
+
+.hero-ablock,
+.hero-bblock {
+  min-height: 240px;
+  border-radius: var(--control-radius-lg, 1rem);
+  padding: var(--space-10, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  background: transparent;
+  color: var(--color-system-black, #0a0a0a);
+}
+
+.hero-ablock {
+  align-items: center;
+  text-align: center;
+}
+
+.hero-ablock .bannerHeading {
+  margin: 0;
+  padding: 0;
+  color: var(--color-system-black, #0a0a0a);
+}
+
+.hero-ablock .bannerDescription {
+  margin: 0 0 var(--space-6, 1.5rem);
+  color: var(--color-system-black, #0a0a0a);
+}
+
+.hero-bblock {
+  padding: 0 var(--space-12, 3.5rem);
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
+}
+
+.hero-bblock__media {
+  display: flex;
+  width: 100%;
+  max-height: 680px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: var(--control-radius-lg, 1rem);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.hero-bblock__media svg,
+.hero-bblock__media canvas,
+.hero-bblock__media > div {
+  background: transparent !important;
+}
+
+.hero-bblock__media > * {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 680px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bblock__media {
+    box-shadow: none;
+  }
+}
+
+/* Darken + polish the poster background */
+.stage-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: none;
+  mix-blend-mode: normal;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stage-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA block — match Homepage_02 */
+.emailFormWrapper {
+  width: 300px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+  align-items: stretch;
+}
+
+.HeroCTAs {
+  display: flex;
+  gap: var(--space-3, 0.75rem);
+  align-items: stretch;
+}
+
+.diet-btn-ictxt,
+.diet-btn-txt {
+  white-space: normal;
+  width: auto;
+  align-self: flex-start;
+}
+
+.HeroCTAs .diet-btn-txt {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+  white-space: normal;
+}
+
+/* Hero CTA overrides for light theme */
+.HeroCTAs .diet-btn-txt[data-variant='line1'] {
+  color: var(--color-system-black, #0a0a0a);
+  border-color: color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 10%);
+}
+
+.HeroCTAs .diet-btn-txt[data-variant='line1']:hover {
+  color: var(--color-system-black, #0a0a0a);
+  border-color: var(--color-system-black, #0a0a0a);
+  background: color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 92%);
+}
+
+/* Input styling on light image */
+.emailFormWrapper .input-group {
+  color: var(--color-system-black, #0a0a0a);
+}
+
+.emailFormWrapper .input {
+  color: var(--color-system-black, #0a0a0a);
+  border-color: color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 10%);
+  background: var(--color-system-white, #ffffff);
+}
+
+.emailFormWrapper .input::placeholder,
+.emailFormWrapper .user-label {
+  color: color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 35%);
+}

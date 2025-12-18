@@ -1,0 +1,220 @@
+/* Shared soft gradient background for Hero + Product block */
+.homepage02-soft-bg {
+  background-color: #f4f7ff;
+  background-image:
+    radial-gradient(60% 60% at 20% 20%, rgba(214, 231, 255, 0.9) 0%, rgba(214, 231, 255, 0) 55%),
+    radial-gradient(55% 55% at 80% 35%, rgba(255, 216, 194, 0.85) 0%, rgba(255, 216, 194, 0) 60%),
+    radial-gradient(65% 60% at 50% 85%, rgba(224, 207, 255, 0.65) 0%, rgba(224, 207, 255, 0) 65%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage02-soft-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.1));
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hero + G2 block */
+.stage-hero {
+  padding-top: calc(56px + var(--space-4, 1rem));
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-hero > * {
+  margin-block: 0;
+}
+
+.stage-hero .block {
+  height: auto;
+  padding-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Stack hero columns for Homepage_01_v2 */
+.stage-hero .grid-horizontal {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-6, 1.5rem);
+}
+
+.stage-hero__bg {
+  display: none;
+}
+
+.hero-wave {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: clamp(200px, 28vw, 340px);
+  opacity: 0;
+  transform: scaleY(0.05) translateY(20%);
+  transform-origin: bottom;
+  transition: transform 800ms var(--motion-ease-standard, ease), opacity 600ms ease;
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform, opacity;
+}
+
+.hero-wave__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-wave.is-visible {
+  opacity: 1;
+  transform: scaleY(1) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-hero__bg {
+    display: none;
+  }
+}
+
+.ablock,
+.bblock {
+  min-height: 240px;
+  border-radius: var(--control-radius-lg, 1rem);
+  padding: var(--space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-4, 1rem);
+}
+
+.ablock {
+  background: transparent;
+  color: var(--color-system-black, #0a0a0a);
+  align-items: center;
+  text-align: center;
+}
+
+.ablock .bannerHeading,
+.ablock .bannerDescription {
+  color: var(--color-system-black, #0a0a0a);
+}
+
+.ablock .bannerHeading {
+  text-align: center;
+}
+
+.ablock .bannerDescription {
+  text-align: center;
+}
+
+.css-4i06av {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4, 1rem);
+}
+
+.bblock {
+  background: var(--color-system-gray-4-step4, #eaeaec);
+  color: var(--color-system-black);
+  align-items: stretch;
+  height: auto;
+  padding: 0;
+  gap: 0;
+  overflow: hidden;
+  max-width: 1200px;
+  margin-inline: auto;
+  max-height: 680px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.hero-anim {
+  width: 100%;
+  height: auto;
+  flex: 1 1 auto;
+  display: block;
+  margin: 0;
+  background: transparent;
+  border: none;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Shared hero patterns */
+.HeroCTAs {
+  display: flex;
+  gap: var(--space-3, 0.75rem);
+  width: 100%;
+  justify-content: center;
+}
+
+.diet-btn-ictxt,
+.diet-btn-txt {
+  white-space: normal;
+  width: auto;
+  align-self: flex-start;
+}
+
+.HeroCTAs .diet-btn-txt {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: center;
+  white-space: normal;
+}
+
+.emailFormWrapper {
+  width: 300px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.75rem);
+  align-items: stretch;
+}
+
+.display-hero--stacked {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-1, 0.25rem);
+}
+
+.display-hero__line {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+}
+
+.display-hero__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.5em;
+  block-size: 1.5em;
+  color: var(--color-system-purple, #af52de);
+}
+
+.display-hero__icon svg {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.display-hero {
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim {
+    animation: none;
+  }
+}

@@ -67,9 +67,16 @@
 
 .context-ai__visual {
   width: 100%;
-  background: yellow;
   border-radius: var(--control-radius-lg, 1rem);
   overflow: hidden;
+  max-width: 80%;
+  margin-inline: auto;
+  padding-block: var(--space-10, 2.5rem);
+}
+
+/* Stage background and padding */
+.stage-context-ai {
+  background: var(--color-system-white, #ffffff);
 }
 
 .context-ai__visual img {
@@ -146,4 +153,8 @@
   .context-ai__visual {
     min-height: 240px;
   }
+}
+/* Stage background override */
+.stage-context-ai {
+  background: var(--color-system-white, #ffffff);
 }

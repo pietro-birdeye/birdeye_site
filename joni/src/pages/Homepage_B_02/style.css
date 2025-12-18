@@ -1,0 +1,21 @@
+@import '../../joni.css';
+
+/* Homepage_B_02 overrides */
+.page-homepage-02 h1,
+.page-homepage-02 h2,
+.page-homepage-02 h3,
+.page-homepage-02 h4,
+.page-homepage-02 h5,
+.page-homepage-02 h6,
+.page-homepage-02 .display-h1,
+.page-homepage-02 .display-h2,
+.page-homepage-02 .heading-1,
+.page-homepage-02 .heading-2,
+.page-homepage-02 .heading-3,
+.page-homepage-02 .heading-4,
+.page-homepage-02 .heading-5,
+.page-homepage-02 .heading-6 {
+  font-family: 'Libre Baskerville', 'Inter Tight', var(--font-ui, system-ui), serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
