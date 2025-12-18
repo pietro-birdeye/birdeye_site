@@ -99,7 +99,7 @@
   display: grid;
   gap: var(--space-2, 0.5rem);
   cursor: pointer;
-  transition: none;
+  transition: background-color 150ms ease, color 150ms ease, padding 150ms ease;
 }
 
 .context-ai__item span {
@@ -114,7 +114,9 @@
 .context-ai__item:focus-visible,
 .context-ai__item.is-active {
   border: none;
-  background: transparent;
+  background-color: var(--color-system-gray-5, #e5e5ea);
+  border-radius: var(--control-radius-sm, 0.5rem);
+  padding: var(--space-3, 0.75rem);
 }
 
 /* Muted siblings on hover; hovered stays black */

@@ -17,6 +17,9 @@
 @import '../../components/logo-slider/logo-slider.css';
 @import './sections/customer-cards/customer-cards.css';
 
+.page-homepage-02 .emailFormWrapper {
+  align-self: flex-start;
+}
 .section-name[data-section-name='Logo slider'] .stage {
   padding-block: var(--space-1, 0.25rem);
 }

@@ -6,7 +6,7 @@ const initProductWave = () => {
 
   if (!stage) return;
 
-  const TOP_TRIGGER_PX = 140; // when the stage top nears the viewport top
+  const TOP_TRIGGER_PX = 50; // trigger when the stage top is closer to the viewport top
   let isVisible = false;
 
   const toggleWave = () => {

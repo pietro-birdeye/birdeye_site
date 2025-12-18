@@ -101,6 +101,32 @@
   color: var(--color-system-black, #0a0a0a);
 }
 
+/* Homepage_02 hero: left-align stack and CTA */
+.page-homepage-02 .css-4i06av {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.page-homepage-02 .css-4i06av .bannerHeading,
+.page-homepage-02 .css-4i06av .bannerDescription {
+  text-align: left;
+}
+
+.page-homepage-02 .emailFormWrapper {
+  align-self: flex-start;
+}
+
+.page-homepage-02 .cta-expand {
+  justify-content: flex-start;
+  margin-left: 0;
+  margin-right: auto;
+  transform-origin: left center;
+}
+
+.page-homepage-02 .cta-expand.is-active {
+  justify-content: flex-start;
+}
+
 .bblock {
   background: var(--color-system-gray-4-step4, #eaeaec);
   color: var(--color-system-black);
@@ -277,6 +303,20 @@
   display: inline-flex;
   width: auto;
   max-width: 100%;
+}
+
+/* Make CTA expand anchor to the left for this page */
+.page-homepage-02 .cta-expand {
+  justify-content: flex-start;
+  transform-origin: left center;
+}
+
+.page-homepage-02 .cta-expand.is-active {
+  justify-content: flex-start;
+}
+
+.page-homepage-02 .emailFormWrapper {
+  align-self: flex-start;
 }
 
 .display-hero--stacked {
