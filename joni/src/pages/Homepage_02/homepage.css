@@ -16,3 +16,7 @@
 @import './sections/context-ai/context-ai.css';
 @import '../../components/logo-slider/logo-slider.css';
 @import './sections/customer-cards/customer-cards.css';
+
+.section-name[data-section-name='Logo slider'] .stage {
+  padding-block: var(--space-1, 0.25rem);
+}

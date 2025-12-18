@@ -13,8 +13,14 @@ import { initProductBlock } from './sections/product-block/product-block';
 import { initVariantSwitcher } from '../../components/variant-switcher/variantSwitcher';
 import { initHeroSection } from './sections/hero/hero';
 import '../../components/variant-switcher/variant-switcher.css';
+import { initCTAExpand } from '../../components/cta-expand/cta-expand';
+import ctaExpandTemplate from '../../components/cta-expand/cta-expand.html?raw';
+import '../../components/cta-expand/cta-expand.css';
 import { initHorizontalSlider } from '../../components/horizontal-slider/horizontal-slider';
 import horizontalSliderTemplate from '../../components/horizontal-slider/horizontal-slider.html?raw';
+import { initLogoSlider } from '../../components/logo-slider/logo-slider';
+import logoSliderTemplate from '../../components/logo-slider/logo-slider.html?raw';
+import '../../components/logo-slider/logo-slider.css';
 import mainValuesTemplate from './sections/main-values/main-values.html?raw';
 import productBlockTemplate from './sections/product-block/product-block.html?raw';
 import splitBlockTemplate from './sections/split-block/split-block.html?raw';
@@ -108,6 +114,7 @@ const mainValuesMount = document.querySelector<HTMLElement>('[data-main-values]'
 const productBlockMount = document.querySelector<HTMLElement>('[data-product-block]');
 const splitBlockMount = document.querySelector<HTMLElement>('[data-split-block]');
 const contextAIMount = document.querySelector<HTMLElement>('[data-context-ai]');
+const logoSliderMount = document.querySelector<HTMLElement>('[data-logo-slider-section]');
 let horizontalSliderCustomersMount = document.querySelector<HTMLElement>(
   '[data-horizontal-slider-customers], [data-customer-results]',
 );
@@ -129,6 +136,10 @@ if (!platformBlockMount) {
 
 if (heroMount) {
   heroMount.innerHTML = heroTemplate;
+  heroMount.querySelectorAll<HTMLElement>('[data-cta-expand]').forEach((node) => {
+    node.outerHTML = ctaExpandTemplate;
+  });
+  initCTAExpand(heroMount);
 }
 initHeroBackgroundVideo();
 initHeroSection();
@@ -143,6 +154,11 @@ if (navController && heroSection) {
   });
 }
 initFooter(footerMount);
+
+if (logoSliderMount) {
+  logoSliderMount.innerHTML = logoSliderTemplate;
+  initLogoSlider(logoSliderMount.querySelector<HTMLElement>('[data-logo-slider]'));
+}
 
 if (mainValuesMount) {
   mainValuesMount.innerHTML = mainValuesTemplate;

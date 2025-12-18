@@ -17,3 +17,8 @@
 @import './sections/customer-cards/customer-cards.css';
 @import './sections/g2-brag/g2-brag.css';
 @import './sections/g2-brag/g2-brag-stage.css';
+@import '../../components/logo-slider/logo-slider.css';
+
+.section-name[data-section-name='Logo slider'] .stage {
+  padding-block: var(--space-1, 0.25rem);
+}

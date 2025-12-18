@@ -1,10 +1,10 @@
 import { steveOrigin } from '../../utils/steve';
 
-type LogoItem = {
-  slug: string;
-  alt: string;
-};
+type LogoItem = { slug: string; alt: string };
 
+const CDN_LOGO_BASE = 'https://cdn2.birdeye.com/version2/v3/pages/2024/enterprise/client-logos';
+
+// Use known CDN PNG assets with srcset to avoid missing files.
 const LOGOS: LogoItem[] = [
   { slug: 'titlemax', alt: "Birdeye's Client: Titlemax" },
   { slug: 'smile-brands', alt: "Birdeye's Client: Smile Brands" },
@@ -23,11 +23,9 @@ const LOGOS: LogoItem[] = [
   { slug: 'extra-space-storage', alt: "Birdeye's Client: Extra Space Storage" },
 ];
 
-const logoSrc = (slug: string) =>
-  `${steveOrigin()}/v1/brand-carousel/Logos/${slug}.png`;
-
+const logoSrc = (slug: string) => `${CDN_LOGO_BASE}/${slug}@2x.png`;
 const logoSrcSet = (slug: string) =>
-  `${steveOrigin()}/v1/brand-carousel/Logos/${slug}.png 1x, ${steveOrigin()}/v1/brand-carousel/Logos/${slug}@2x.png 2x, ${steveOrigin()}/v1/brand-carousel/Logos/${slug}@3x.png 3x`;
+  `${CDN_LOGO_BASE}/${slug}@2x.png 1x, ${CDN_LOGO_BASE}/${slug}@2x.png 2x`;
 
 export const initLogoSlider = (mount: HTMLElement | null) => {
   if (!mount) return;
@@ -35,6 +33,7 @@ export const initLogoSlider = (mount: HTMLElement | null) => {
   if (!rail) return;
 
   rail.innerHTML = '';
+  const fragment = document.createDocumentFragment();
   LOGOS.forEach((logo) => {
     const wrap = document.createElement('div');
     wrap.className = 'logo-slider__logo';
@@ -45,6 +44,9 @@ export const initLogoSlider = (mount: HTMLElement | null) => {
     img.loading = 'lazy';
     img.decoding = 'async';
     wrap.appendChild(img);
-    rail.appendChild(wrap);
+    fragment.appendChild(wrap);
   });
+  rail.appendChild(fragment.cloneNode(true));
+  rail.appendChild(fragment);
+  rail.classList.add('is-animate');
 };

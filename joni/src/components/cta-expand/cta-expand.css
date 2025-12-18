@@ -1,7 +1,7 @@
 .cta-expand {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 10px;
   inline-size: 109px;
   min-inline-size: 109px;
@@ -19,8 +19,11 @@
   transition: opacity 150ms ease;
   white-space: nowrap;
   pointer-events: none;
-  font: 400 15px/1.2 var(--font-ui, "Inter", system-ui, -apple-system, sans-serif);
-  letter-spacing: -0.45px;
+  font-family: var(--font-ui, "Inter", system-ui, -apple-system, sans-serif);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.03em;
 }
 
 .cta-expand__button {
@@ -36,10 +39,18 @@
   background-color: #1976d2;
   border-radius: 6px;
   color: #ffffff;
-  font: 400 15px/1.2 var(--font-ui, "Inter", system-ui, -apple-system, sans-serif);
-  letter-spacing: -0.45px;
+  font-family: var(--font-ui, "Inter", system-ui, -apple-system, sans-serif);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.03em;
   white-space: nowrap;
   cursor: pointer;
+}
+
+.cta-expand__label {
+  font: inherit;
+  letter-spacing: inherit;
 }
 
 .cta-expand__button:focus-visible {

@@ -15,6 +15,9 @@ import { initProductBlock } from '../../components/product-block/product-block';
 import { initVariantSwitcher } from '../../components/variant-switcher/variantSwitcher';
 import '../../components/logo-slider/logo-slider.css';
 import { initHeroSection } from './sections/hero/hero';
+import { initCTAExpand } from '../../components/cta-expand/cta-expand';
+import ctaExpandTemplate from '../../components/cta-expand/cta-expand.html?raw';
+import '../../components/cta-expand/cta-expand.css';
 import { initHorizontalSlider } from '../../components/horizontal-slider/horizontal-slider';
 import '../../components/variant-switcher/variant-switcher.css';
 import { initNewCarousel } from './sections/new-carousel/new-carousel';
@@ -119,6 +122,10 @@ const logoSliderMount = document.querySelector<HTMLElement>('[data-logo-slider]'
 
 if (heroMount) {
   heroMount.innerHTML = heroTemplate;
+  heroMount.querySelectorAll<HTMLElement>('[data-cta-expand]').forEach((node) => {
+    node.outerHTML = ctaExpandTemplate;
+  });
+  initCTAExpand(heroMount);
 }
 initHeroBackgroundVideo();
 initHeroSection();
