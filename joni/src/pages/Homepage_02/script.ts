@@ -92,7 +92,8 @@ const initHeroBackgroundVideo = () => {
   heroVideo.addEventListener('error', showFallbackImage);
 };
 
-document.body.classList.add('page-homepage-01');
+document.body.classList.remove('page-homepage-01');
+document.body.classList.add('page-homepage-02');
 
 ensureSteveTokensStylesheet();
 ensureSteveComponentStylesheet('button');

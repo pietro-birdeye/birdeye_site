@@ -1,3 +1,6 @@
 @import '../../joni.css';
 
 /* Homepage_02 overrides */
+.page-homepage-02 .block {
+  padding-inline: clamp(var(--space-6, 1.5rem), 6vw, var(--space-12, 3rem));
+}
