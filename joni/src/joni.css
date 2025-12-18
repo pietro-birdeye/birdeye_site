@@ -184,3 +184,15 @@ h6,
   background-color: color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 70%);
   color: var(--color-system-white, #ffffff);
 }
+
+/* Global form + CTA sizing */
+.emailFormWrapper .input {
+  height: 50px;
+  padding-block: var(--space-3, 0.75rem);
+  line-height: 1.2;
+}
+
+.diet-btn-txt[data-size='lg'],
+.diet-btn-ictxt[data-size='lg'] {
+  min-height: 50px;
+}
