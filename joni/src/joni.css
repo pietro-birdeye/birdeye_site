@@ -188,11 +188,15 @@ h6,
 /* Global form + CTA sizing */
 .emailFormWrapper .input {
   height: 50px;
-  padding-block: var(--space-3, 0.75rem);
-  line-height: 1.2;
+  min-height: 50px;
+  padding-block: 0;
+  line-height: 50px;
 }
 
 .diet-btn-txt[data-size='lg'],
 .diet-btn-ictxt[data-size='lg'] {
+  height: 50px;
   min-height: 50px;
+  display: inline-flex;
+  align-items: center;
 }
