@@ -11,8 +11,11 @@ import { initSplitBlock } from './sections/split-block/split-block';
 import { initMainValues } from './sections/main-values/main-values';
 import { initProductBlock } from './sections/product-block/product-block';
 import { initVariantSwitcher } from '../../components/variant-switcher/variantSwitcher';
+import { initCTAExpand } from '../../components/cta-expand/cta-expand';
+import ctaExpandTemplate from '../../components/cta-expand/cta-expand.html?raw';
 import { initHeroSection } from './sections/hero/hero';
 import '../../components/variant-switcher/variant-switcher.css';
+import '../../components/cta-expand/cta-expand.css';
 import { initHorizontalSlider } from '../../components/horizontal-slider/horizontal-slider';
 import horizontalSliderTemplate from '../../components/horizontal-slider/horizontal-slider.html?raw';
 import mainValuesTemplate from './sections/main-values/main-values.html?raw';
@@ -127,6 +130,10 @@ if (!platformBlockMount) {
 
 if (heroMount) {
   heroMount.innerHTML = heroTemplate;
+  heroMount.querySelectorAll<HTMLElement>('[data-cta-expand]').forEach((node) => {
+    node.outerHTML = ctaExpandTemplate;
+  });
+  initCTAExpand(heroMount);
 }
 initHeroBackgroundVideo();
 initHeroSection();
