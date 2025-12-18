@@ -41,7 +41,7 @@
 }
 
 .hero-ablock .bannerDescription {
-  margin: 0;
+  margin: 0 0 var(--space-6, 1.5rem);
 }
 
 .hero-bblock {
