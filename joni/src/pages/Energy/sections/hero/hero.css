@@ -90,7 +90,7 @@
 .bblock {
   min-height: 240px;
   border-radius: var(--control-radius-lg, 1rem);
-  padding: var(--space-6, 1.5rem);
+  padding: var(--space-18, 4.5rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
