@@ -1,0 +1,4 @@
+.stage-g2-brag {
+  background: var(--color-system-white, #ffffff);
+  padding-block: var(--space-10, 2.5rem);
+}

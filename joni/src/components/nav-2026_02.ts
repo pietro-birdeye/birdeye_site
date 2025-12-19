@@ -259,6 +259,43 @@ export const mountNav2026_02 = (options: NavControllerOptions): NavController | 
     );
   };
 
+  const setupCardHoverState = () => {
+    const productsGrid = navRoot.querySelector<HTMLElement>('.products-grid');
+    const platformColumns = navRoot.querySelector<HTMLElement>('.platform-columns');
+
+    const wireCards = (container: HTMLElement | null, cardSelector: string) => {
+      if (!container) return;
+      const cards = Array.from(container.querySelectorAll<HTMLElement>(cardSelector));
+      if (!cards.length) return;
+
+      const clear = () => {
+        container.classList.remove('is-dimming');
+        cards.forEach((card) => card.classList.remove('is-active'));
+      };
+
+      const activate = (card: HTMLElement) => {
+        container.classList.add('is-dimming');
+        cards.forEach((c) => c.classList.toggle('is-active', c === card));
+      };
+
+      cards.forEach((card) => {
+        card.addEventListener('mouseenter', () => activate(card));
+        card.addEventListener('focusin', () => activate(card));
+      });
+
+      container.addEventListener('mouseleave', clear);
+      container.addEventListener('focusout', (event) => {
+        const next = event.relatedTarget as Node | null;
+        if (!next || !container.contains(next)) {
+          clear();
+        }
+      });
+    };
+
+    wireCards(productsGrid, '.product-card');
+    wireCards(platformColumns, '.platform-card');
+  };
+
   const setupSwitching = () => {
     tearDownListeners();
     const target = current.switchAt;
@@ -289,6 +326,7 @@ export const mountNav2026_02 = (options: NavControllerOptions): NavController | 
   applyState(false);
   setupSwitching();
   setupDropdowns();
+  setupCardHoverState();
 
   return {
     update(next) {

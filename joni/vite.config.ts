@@ -13,7 +13,11 @@ export default defineConfig(({ mode }) => {
   const rootDir = __dirname;
   const homepageInputs = fs
     .readdirSync(rootDir, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory() && entry.name.startsWith('Homepage_'))
+    .filter(
+      (entry) =>
+        entry.isDirectory() &&
+        (entry.name.startsWith('Homepage_') || entry.name === 'Energy' || entry.name === 'Luxe'),
+    )
     .map((entry) => {
       const htmlPath = path.resolve(rootDir, entry.name, 'index.html');
       return fs.existsSync(htmlPath) ? [entry.name, htmlPath] : null;

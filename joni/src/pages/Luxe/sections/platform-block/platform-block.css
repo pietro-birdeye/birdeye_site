@@ -1,0 +1,42 @@
+@import '../../../../components/platform-diagram/platform-diagram.css';
+
+.stage-platform {
+  padding-top: var(--space-8, 2rem);
+  padding-bottom: var(--space-16, 4rem);
+  background: var(--color-system-white, #ffffff);
+}
+
+.platform-block__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: end;
+  gap: var(--space-4, 1rem);
+  width: 100%;
+}
+
+.platform-block__header h1 {
+  margin: 0;
+}
+
+.platform-block__subhead {
+  grid-column: 1 / -1;
+  margin: 0 0 var(--space-6, 1.5rem);
+  color: color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 40%);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .platform-block__header {
+    grid-template-columns: 1fr;
+    gap: var(--space-3, 0.75rem);
+  }
+
+  .platform-block__header .diet-btn-ictxt {
+    justify-self: flex-start;
+  }
+
+  .platform-block__subhead {
+    white-space: normal;
+  }
+}

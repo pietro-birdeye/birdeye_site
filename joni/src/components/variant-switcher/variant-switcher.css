@@ -34,6 +34,13 @@
   gap: var(--space-2, 0.5rem);
 }
 
+.variant-switcher__divider {
+  block-size: 1px;
+  inline-size: 100%;
+  background: color-mix(in oklab, var(--role-border, rgba(10, 10, 12, 0.12)), transparent 50%);
+  margin: var(--space-1, 0.25rem) 0;
+}
+
 .variant-switcher__link {
   color: var(--color-text, #141414);
   text-decoration: none;

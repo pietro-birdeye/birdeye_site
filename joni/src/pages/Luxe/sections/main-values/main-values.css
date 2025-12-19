@@ -1,0 +1,71 @@
+@import '../brand-carousel/brand-carousel.css';
+
+.section-name[data-section-name='Main values'] .stage {
+  background: var(--color-system-white, #ffffff);
+}
+
+.main-values-grid .brand-card__animation {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.main-values-grid .brand-card__canvas {
+  inline-size: auto;
+  block-size: auto;
+  max-inline-size: 90%;
+  max-block-size: 90%;
+  aspect-ratio: 1 / 1;
+  display: block;
+}
+
+.main-values-grid .brand-card:hover .brand-card__animation,
+.main-values-grid .brand-card:focus-within .brand-card__animation {
+  filter: saturate(1.05);
+}
+
+.main-values-grid .brand-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--space-4, 1rem);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.main-values-grid .brand-card__media {
+  flex: 0 0 140px;
+  inline-size: 140px;
+  block-size: 140px;
+  aspect-ratio: 1 / 1;
+  align-self: center;
+  background: transparent !important;
+}
+
+.main-values-grid .brand-card__media::after {
+  content: none !important;
+}
+
+.main-values-grid .brand-card__content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .main-values-grid .brand-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-values-grid .brand-card__media {
+    flex-basis: auto;
+    inline-size: 100%;
+    block-size: auto;
+  }
+}

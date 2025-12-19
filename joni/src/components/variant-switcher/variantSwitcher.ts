@@ -5,13 +5,20 @@ export type VariantLink = {
   url: string;
 };
 
-const DEFAULT_VARIANTS: VariantLink[] = [
+const PRIMARY_VARIANTS: VariantLink[] = [
+  { label: 'Energy', url: '/Energy/' },
+  { label: 'Luxe', url: '/Luxe/' },
+];
+
+const SECONDARY_VARIANTS: VariantLink[] = [
   { label: 'Nrg G2', url: '/Homepage_02/' },
   { label: 'Nrg Product', url: '/Homepage_01_v2/' },
   { label: 'Luxe Product', url: '/Homepage_B_01/' },
   { label: 'Luxe Product Serif', url: '/Homepage_B_02/' },
   { label: 'Minimal Product', url: '/Homepage_B_03/' },
 ];
+
+const DEFAULT_VARIANTS: VariantLink[] = [...PRIMARY_VARIANTS, ...SECONDARY_VARIANTS];
 
 const createVariantItem = (variant: VariantLink) => {
   const link = document.createElement('a');
@@ -44,7 +51,19 @@ export const initVariantSwitcher = (variants: VariantLink[] = DEFAULT_VARIANTS) 
 
   const list = document.createElement('div');
   list.className = 'variant-switcher__list';
-  variants.forEach((variant) => list.appendChild(createVariantItem(variant)));
+  const useDefaultOrder = variants === DEFAULT_VARIANTS;
+  if (useDefaultOrder) {
+    PRIMARY_VARIANTS.forEach((variant) => list.appendChild(createVariantItem(variant)));
+    if (SECONDARY_VARIANTS.length) {
+      const divider = document.createElement('div');
+      divider.className = 'variant-switcher__divider';
+      divider.setAttribute('aria-hidden', 'true');
+      list.appendChild(divider);
+    }
+    SECONDARY_VARIANTS.forEach((variant) => list.appendChild(createVariantItem(variant)));
+  } else {
+    variants.forEach((variant) => list.appendChild(createVariantItem(variant)));
+  }
 
   panel.appendChild(list);
   root.appendChild(panel);

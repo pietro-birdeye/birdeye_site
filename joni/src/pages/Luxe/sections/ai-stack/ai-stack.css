@@ -1,0 +1,234 @@
+/* AI Stack */
+.stage-aistack {
+  padding-top: var(--space-12, 3.5rem);
+  padding-bottom: var(--space-12, 3.5rem);
+  background: transparent;
+}
+
+.aistack-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4, 1rem);
+  flex-wrap: wrap;
+}
+
+.aistack-brand {
+  color: var(--color-system-blue, #1976d2);
+}
+
+.aistack-sparkle {
+  display: inline-flex;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+}
+
+.aistack-block {
+  background: transparent;
+  border-radius: var(--control-radius-lg, 1.4rem);
+  padding: var(--space-8, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  border: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.aistack-block[data-expanded='false'] {
+  gap: 0;
+}
+
+.aistack-block[data-expanded='true'] {
+  gap: var(--space-4, 1rem);
+}
+
+.aistack-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--aistack-bg-image, none);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition:
+    opacity 440ms var(--motion-ease-emph-decel, ease),
+    transform 900ms var(--motion-ease-emph-decel, ease);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.aistack-block:hover::before,
+.aistack-block:focus-within::before {
+  opacity: 0.9;
+  transform: scale(1);
+}
+
+.aistack-block > * {
+  position: relative;
+  z-index: 1;
+}
+
+.aistack-stacks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 0.5rem);
+}
+
+.aistack-block--outcomes,
+.aistack-block--agents,
+.aistack-block--models {
+  background: transparent;
+}
+.aistack-block--outcomes {
+  background: var(--color-system-green-5, color-mix(in oklab, var(--color-system-green), white 90%));
+}
+.aistack-block--outcomes:hover {
+  background: var(--color-system-green-3, color-mix(in oklab, var(--color-system-green), white 60%));
+}
+.aistack-block--agents {
+  background: var(--color-system-blue-5, color-mix(in oklab, var(--color-system-blue), white 90%));
+}
+.aistack-block--agents:hover {
+  background: var(--color-system-cyan-3, color-mix(in oklab, var(--color-system-cyan), white 60%));
+}
+.aistack-block--models {
+  background: var(--color-system-purple-5, color-mix(in oklab, var(--color-system-purple), white 90%));
+}
+.aistack-block--models:hover {
+  background: var(--color-system-purple-3, color-mix(in oklab, var(--color-system-purple), white 60%));
+}
+
+.aistack-block__title {
+  color: var(--color-system-gray-1, #3a3a3c);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.aistack-block__title,
+.aistack-block__title .brand-card__arrow {
+  transition: color 200ms ease;
+}
+.aistack-block__title .brand-card__arrow {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+.aistack-block:hover .aistack-block__title,
+.aistack-block:hover .brand-card__arrow,
+.aistack-block:focus-within .aistack-block__title,
+.aistack-block:focus-within .brand-card__arrow {
+  color: var(--color-system-white, #ffffff);
+}
+
+.aistack-block__content {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.aistack-block__content-inner {
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+}
+
+.aistack-block[data-expanded='true'] .aistack-block__content {
+  grid-template-rows: 1fr;
+}
+
+.aistack-row {
+  display: flex;
+  gap: var(--space-3, 0.75rem);
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background: var(--color-system-white, #ffffff);
+  border-radius: var(--control-radius-xs, 0.8rem);
+  padding-block: var(--space-4, 1rem);
+  padding-inline: var(--space-10, 2.5rem);
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.aistack-row > * {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.aistack-block .diet-btn-ictxt__icon {
+  display: inline-flex;
+}
+
+.aistack-card {
+  background: transparent;
+  border-radius: var(--control-radius-xl, 1.6rem);
+  padding: var(--space-3, 0.75rem) var(--space-2, 0.5rem);
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  flex-wrap: wrap;
+  width: auto;
+  height: auto;
+}
+
+.aistack-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+}
+
+.aistack-card__body {
+  color: var(--color-system-gray-1, #3a3a3c);
+}
+
+.aistack-card__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+}
+
+.aistack-pill {
+  background: var(--color-system-white, #ffffff);
+  border-radius: var(--control-radius-lg, 1.4rem);
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  text-align: center;
+  border: 1px solid color-mix(in oklab, var(--role-border, rgba(10, 10, 12, 0.1)), transparent 50%);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aistack-row img {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+  background: var(--color-system-white, #ffffff);
+  border-radius: var(--control-radius-md, 1.2rem);
+  padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+}

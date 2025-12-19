@@ -1,0 +1,463 @@
+.platform-diagram {
+  width: 100%;
+}
+
+.platfrom-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  gap: var(--space-1, 0.25rem);
+  position: relative;
+}
+
+.platfrom-wrapper [data-platform-panel] {
+  cursor: pointer;
+  flex: 1 1 0;
+  transition: flex 220ms ease, width 220ms ease;
+}
+
+.platform-panel__header {
+  cursor: pointer;
+}
+
+.platform-panel__body {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  gap: var(--space-10, 2.5rem);
+  width: 100%;
+}
+
+.platform-panel__content {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  align-self: stretch;
+}
+
+.platform-panel__details {
+  flex: 1 1 0;
+  min-width: 220px;
+  color: color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 20%);
+  display: none;
+  align-self: center;
+}
+
+.platform-panel__details .heading-5 {
+  margin: 0 0 var(--space-2, 0.5rem);
+}
+
+.platform-panel__details .body-m {
+  margin: 0;
+}
+
+.platform-diagram[data-active-panel] .platfrom-wrapper [data-platform-panel] {
+  flex: 0 0 auto;
+  width: max-content;
+}
+
+.platform-diagram[data-active-panel]
+  .platfrom-wrapper
+  [data-platform-panel][data-active="true"] {
+  flex: 1 1 0;
+  width: auto;
+}
+
+.platform-diagram[data-active-panel]
+  .platfrom-wrapper
+  [data-platform-panel]:not([data-active="true"])
+  .platform-panel__body {
+  display: none;
+}
+
+.platform-diagram[data-active-panel]
+  .platfrom-wrapper
+  [data-platform-panel]:not([data-active="true"])
+  .platform-panel__details {
+  display: none;
+}
+
+.platform-diagram[data-active-panel]
+  .platfrom-wrapper
+  [data-platform-panel][data-active="true"]
+  .platform-panel__details {
+  display: block;
+}
+
+.platform-diagram[data-active-panel]
+  .platfrom-wrapper
+  [data-platform-panel][data-active="true"]
+  .platform-panel__content {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+}
+
+.platform-diagram[data-active-panel]
+  .platfrom-wrapper
+  [data-platform-panel][data-active="true"]
+  .platform-panel__details {
+  flex: 1 1 66.667%;
+  max-width: 66.667%;
+}
+
+
+.platform-diagram[data-active-panel]
+  .platfrom-wrapper
+  [data-platform-panel]:not([data-active="true"])
+  .text-wrapper {
+  white-space: nowrap;
+}
+
+.platfrom-wrapper .platformsection {
+  background-color: color-mix(in oklab, var(--color-system-orange, #ff9500), white 90%);
+  display: inline-flex;
+  flex-direction: column;
+  height: 489px;
+  align-items: flex-start;
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 1 1 0;
+  border-radius: var(--control-radius-lg, 1rem);
+}
+
+.platfrom-wrapper .platformsection:hover {
+  background-color: color-mix(in oklab, var(--color-system-orange, #ff9500), white 82%);
+}
+
+.platfrom-wrapper .header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: var(--space-2, 0.5rem);
+  position: relative;
+}
+
+.platfrom-wrapper .text-wrapper {
+  position: relative;
+  margin-top: -1px;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--color-system-black, #212121);
+  font-size: 1.125rem;
+  letter-spacing: -0.06em;
+  line-height: 1.3;
+  white-space: normal;
+  text-align: left;
+}
+
+.platfrom-wrapper .div {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--font-ui);
+  font-weight: 400;
+  color: var(--color-system-black, #212121);
+  font-size: 1.125rem;
+  letter-spacing: -0.06em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.platform-block__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--color-system-black, #212121);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.platfrom-wrapper .contentwrapper {
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.platfrom-wrapper .sourcesblock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-5, 1.25rem);
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 0 0 auto;
+  background-color: rgba(255, 255, 255, 0.74);
+  border-radius: var(--control-radius-xs);
+  border: 1px solid transparent;
+}
+
+.platfrom-wrapper .text-wrapper-2 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--color-system-black, #212121);
+  font-size: 1rem;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+}
+
+.platformsection-2--agents .sourcesblock {
+  padding: var(--space-2, 0.5rem);
+}
+
+.platformsection-2--agents .text-wrapper-2 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font: var(--label-text-m, 600 0.875rem/1.2 var(--font-ui));
+  color: var(--color-system-black, #212121);
+}
+
+.platformsection-2--agents .agent-sparkle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  color: var(--color-system-gray-contrast, #5c5c61);
+}
+
+.platformsection-2--agents .sourcesblock {
+  border-radius: var(--control-radius-xxs, 0.25rem);
+}
+
+.platfrom-wrapper .platformsection-2 {
+  display: inline-flex;
+  flex-direction: column;
+  height: 489px;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 1 1 0;
+  background-color: color-mix(in oklab, var(--color-system-cyan, #32ade6), white 88%);
+  border-radius: var(--control-radius-lg, 1rem);
+}
+
+.platfrom-wrapper .platformsection-2:hover {
+  background-color: color-mix(in oklab, var(--color-system-cyan, #32ade6), white 80%);
+}
+
+.platfrom-wrapper .contentwrapper-2 {
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.platfrom-wrapper .unifdatablock {
+  display: inline-flex;
+  flex-direction: column;
+  height: 171px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  padding: var(--space-6, 1.5rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--color-surface-bg-primary-0);
+  border-radius: var(--control-radius-md, 0.75rem);
+  border: 1px solid color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 50%);
+}
+
+.platfrom-wrapper .unifdatablock:hover {
+  background-color: var(--color-system-white, #ffffff);
+  border-color: color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 30%);
+}
+
+.platform-diagram[data-active-panel]
+  .platfrom-wrapper
+  [data-platform-panel][data-active="true"]
+  .unifdatablock {
+  background-color: var(--color-system-white, #ffffff);
+  border-color: color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 30%);
+}
+
+.platfrom-wrapper .customer-data {
+  position: relative;
+  width: fit-content;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  color: var(--color-system-black, #212121);
+  font-size: 1.125rem;
+  text-align: center;
+  letter-spacing: -0.06em;
+  line-height: 1.3;
+}
+
+
+.platformline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: auto;
+  pointer-events: none;
+  padding-top: var(--space-8, 2rem);
+  color: var(--color-system-black, #212121);
+}
+
+.platformline img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.platformline .graph-line-path {
+  stroke: none;
+  fill: currentColor;
+  transition: fill 200ms ease;
+}
+
+.platformsection:hover + .platformline--sources .graph-line-path {
+  fill: url(#graph-wave-gradient);
+}
+
+.platformsection-2:hover + .platformline--unified .graph-line-path {
+  fill: url(#graph-wave-gradient);
+}
+
+.platformsection-2--context:hover + .platformline--context .graph-line-path {
+  fill: url(#graph-wave-gradient);
+}
+
+.platformline--agents:hover .graph-line-path,
+.platformsection-4:hover + .platformline--agents .graph-line-path,
+.platformsection-2--agents:hover ~ .platformline--agents .graph-line-path {
+  fill: url(#graph-wave-gradient);
+}
+
+
+.platfrom-wrapper .platformsection-4 {
+  background-color: color-mix(in oklab, var(--color-system-green, #34c759), white 88%);
+  display: inline-flex;
+  flex-direction: column;
+  height: 489px;
+  align-items: flex-start;
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 1 1 0;
+  border-radius: var(--control-radius-lg, 1rem);
+}
+
+.platfrom-wrapper .platformsection-4:hover {
+  background-color: color-mix(in oklab, var(--color-system-green, #34c759), white 80%);
+}
+
+.platformsection:hover .platform-block__icon,
+.platformsection-2:hover .platform-block__icon,
+.platformsection-4:hover .platform-block__icon {
+  opacity: 1;
+}
+
+.platfrom-wrapper .header-3 {
+  gap: 10px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.platfrom-wrapper .contentwrapper-3 {
+  flex-direction: column;
+  width: 238px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.platfrom-wrapper .sourcesblock-2 {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-5, 1.25rem);
+  padding: var(--space-4, 1rem) var(--space-5, 1.25rem);
+  position: relative;
+  flex: 0 0 auto;
+  background-color: rgb(255 255 255 / 85%);
+  border-radius: var(--control-radius-sm);
+  border: 1px solid transparent;
+}
+
+.platfrom-wrapper .sourcesblock-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    198deg,
+    var(--color-system-blue, #007aff) 0%,
+    var(--color-system-indigo, #5856d6) 50%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.platform-diagram[data-variant="luxe"] .platformsection {
+  background-color: var(--color-system-gray-6, #f2f2f7);
+}
+
+.platform-diagram[data-variant="luxe"] .platformsection:hover {
+  background-color: color-mix(in oklab, var(--color-system-orange, #ff9500), white 90%);
+}
+
+.platform-diagram[data-variant="luxe"] .platformsection-2 {
+  background-color: var(--color-system-brown-5, #f1eae1);
+}
+
+.platform-diagram[data-variant="luxe"] .platformsection-2:hover {
+  background-color: color-mix(in oklab, var(--color-system-cyan, #32ade6), white 88%);
+}
+
+.platform-diagram[data-variant="luxe"] .unifdatablock {
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.platform-diagram[data-variant="luxe"] .unifdatablock:hover {
+  background-color: var(--color-system-white, #ffffff);
+  border-color: color-mix(in oklab, var(--color-system-gray-3, #c7c7cc), transparent 30%);
+}
+
+
+.platform-diagram[data-variant="luxe"] .platformsection-4 {
+  background-color: var(--color-system-gray-6, #f2f2f7);
+}
+
+.platform-diagram[data-variant="luxe"] .platformsection-4:hover {
+  background-color: color-mix(in oklab, var(--color-system-green, #34c759), white 88%);
+}

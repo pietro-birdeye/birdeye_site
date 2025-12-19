@@ -1,0 +1,180 @@
+.product-block__stage {
+  position: relative;
+  --product-card-min: clamp(200px, 16vw, 240px);
+  overflow: hidden;
+  padding-block: var(--space-20);
+  isolation: isolate;
+  background: var(--color-system-gray-6-step3, #f0f0f0);
+}
+
+.product-block__stage.homepage02-soft-bg {
+  background-color: var(--color-system-gray-6-step3, #f0f0f0);
+  background-image: none;
+}
+
+.product-block__stage .block {
+  position: relative;
+  z-index: 2;
+}
+
+/* Product block cards */
+.cardrow {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(var(--space-2, 0.5rem), 1vw, var(--space-3, 0.75rem));
+}
+
+.product-block__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: var(--space-4, 1rem);
+  width: 100%;
+}
+
+.product-block__header h1 {
+  margin: 0;
+}
+
+.product-block__header .diet-btn-ictxt {
+  justify-self: end;
+  align-self: end;
+  color: var(--color-system-black, #0a0a0a) !important;
+  border-color: var(--color-system-black, #0a0a0a) !important;
+  --btn-border-color: var(--color-system-black, #0a0a0a);
+  --btn-border-width: 1px;
+  --btn-color: var(--color-system-black, #0a0a0a);
+  --btn-hover-border-color: var(--color-system-black, #0a0a0a);
+  --btn-hover-border-width: 1px;
+  --btn-hover-color: var(--color-system-black, #0a0a0a);
+  --btn-icon-color: var(--color-system-black, #0a0a0a);
+  --btn-hover-bg: transparent;
+  --btn-clicked-bg: color-mix(in oklab, var(--color-system-black, #0a0a0a), transparent 92%);
+}
+
+.card01 {
+  padding-block: var(--space-8, 2rem);
+  padding-inline: var(--space-8, 2rem);
+  border-radius: var(--control-radius-md, 0.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 1rem);
+  height: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: var(--color-system-white, #ffffff);
+}
+
+.card01__header {
+  min-height: 68px; /* holds 1–2 heading lines */
+  max-height: 68px;
+  display: flex;
+  align-items: flex-start;
+  transition: color 150ms ease;
+}
+
+.card01__header h3 {
+  margin: 0;
+  transition: color 150ms ease;
+}
+
+.card01__body {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card01__body p {
+  margin: 0;
+}
+
+.card01__cta {
+  margin-top: auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--space-1, 0.25rem);
+  transition: color 150ms ease;
+}
+
+.card01 .diet-btn-txt {
+  align-self: flex-start;
+  width: auto;
+  white-space: normal;
+}
+
+.cardrow .diet-btn-ictxt {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  padding-inline: var(--space-4, 1rem);
+  white-space: normal;
+  text-align: left;
+}
+
+.cardrow .diet-btn-ictxt__label {
+  flex: 1 1 auto;
+  display: block;
+  text-align: left;
+}
+
+.cardrow .diet-btn-ictxt__icon {
+  margin-left: var(--space-2, 0.5rem);
+  flex-shrink: 0;
+}
+
+.card01__cta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card01__cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 16px;
+  block-size: 16px;
+  margin-left: var(--space-2, 0.5rem);
+  transition: transform 260ms var(--motion-ease-emph, ease);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.card01__cta-icon svg {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.card01__cta-bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2, 0.5rem);
+  font-size: var(--fs-14);
+  line-height: var(--lh-tight);
+  font-weight: 600;
+  transition: color 150ms ease;
+}
+
+.card01__cta-label {
+  flex: 1 1 auto;
+  text-align: left;
+  transition: color 150ms ease;
+}
+
+.card01__cta:hover .card01__cta-icon {
+  transform: rotate(45deg);
+}
+
+.card01:hover .card01__header h3,
+.card01:hover .card01__cta-label,
+.card01:hover .card01__cta-icon,
+.card01:hover .card01__cta-top,
+.card01:hover .card01__cta-bottom {
+  color: var(--color-system-purple, #af52de);
+}
